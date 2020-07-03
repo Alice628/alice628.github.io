@@ -24,11 +24,99 @@
             background-color: black !important;
             color: white !important;
         }
+
+        /* The snackbar - position it at the bottom and in the middle of the screen */
+        #snackbar {
+            visibility: hidden;
+            /* Hidden by default. Visible on click */
+            min-width: 250px;
+            /* Set a default minimum width */
+            margin-left: -125px;
+            /* Divide value of min-width by 2 */
+            background-color: #333;
+            /* Black background color */
+            color: #fff;
+            /* White text color */
+            text-align: center;
+            /* Centered text */
+            border-radius: 2px;
+            /* Rounded borders */
+            padding: 16px;
+            /* Padding */
+            position: fixed;
+            /* Sit on top of the screen */
+            z-index: 1;
+            /* Add a z-index if needed */
+            left: 50%;
+            /* Center the snackbar */
+            bottom: 30px;
+            /* 30px from the bottom */
+        }
+
+        /* Show the snackbar when clicking on a button (class added with JavaScript) */
+        #snackbar.show {
+            visibility: visible;
+            /* Show the snackbar */
+            /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* Animations to fade the snackbar in and out */
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         let codeList;
+        let snackbarTimeOut;
         function fn_lender() {
             fn_lenderList()
             fn_lenderSelect()
@@ -68,6 +156,7 @@
             let type = $("#slt_type").val();
 
             fn_copyText(index, type);
+            fn_showSnackbar(index, type);
 
             if (type == "code") {
                 $("#slt_type").val("title").prop("selected", true);
@@ -110,6 +199,35 @@
             $("#slt_type").val(type).prop("selected", true);
             fn_onChangeSelect();
             fn_copy();
+        }
+
+        function fn_showSnackbar(index, type) {
+            let ordinal = "";
+            switch (index) {
+                case 1:
+                    ordinal = "st";
+                    break;
+                case 2:
+                    ordinal = "nd";
+                    break;
+                case 3:
+                    ordinal = "rd";
+                    break;
+                default:
+                    ordinal = "th"
+                    break;
+            }
+            $("#snackbar").html(index + ordinal + " deck's " + type + " is copied!");
+
+            // Get the snackbar DIV
+            var x = document.getElementById("snackbar");
+
+            // Add the "show" class to DIV
+            x.className = "show";
+
+            // After 3 seconds, remove the show class from DIV
+            clearTimeout(snackbarTimeOut);
+            snackbarTimeOut = setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
         }
 
         $(function () {
@@ -163,6 +281,9 @@
     <button type="button" onclick="fn_copy()">copy</button>
     <div id="list_container">
     </div>
+
+    <!-- The actual snackbar -->
+    <div id="snackbar">Some text some message..</div>
 </body>
 
 </html>
