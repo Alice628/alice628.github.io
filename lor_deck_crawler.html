@@ -20,12 +20,12 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         let codeList;
-        function lender() {
-            lenderList()
-            lenderSelect()
+        function fn_lender() {
+            fn_lenderList()
+            fn_lenderSelect()
         }
 
-        function lenderList() {
+        function fn_lenderList() {
             let listHTML = "";
             codeList.forEach(function (deck, index) {
                 listHTML += '<p id="' + (index + 1) + '">'
@@ -36,7 +36,7 @@
             $("#list_container").html(listHTML);
         }
 
-        function lenderSelect() {
+        function fn_lenderSelect() {
             let sltHTML = "";
             sltHTML += '<select id="slt_index">';
             for (let i = 1; i <= codeList.length; i++) {
@@ -44,13 +44,18 @@
             }
             sltHTML += '</select>';
             $("#slt_container").html(sltHTML);
+
+            $("select").on("change", function() {
+                fn_onChangeSelect();
+            })
+            fn_onChangeSelect();
         }
 
-        function copy() {
+        function fn_copy() {
             let index = $("#slt_index").val();
             let type = $("#slt_type").val();
 
-            copyText(index, type);
+            fn_copyText(index, type);
 
             if (type == "code") {
                 $("#slt_type").val("title").prop("selected", true);
@@ -58,10 +63,10 @@
                 $("#slt_index").val(Number(index) + 1).prop("selected", true);
                 $("#slt_type").val("code").prop("selected", true);
             }
-
+            fn_onChangeSelect();
         }
 
-        function copyText(index, type) {
+        function fn_copyText(index, type) {
             var obj = $("#" + index + " > " + "." + type)[0];
             var range = document.createRange();
             range.selectNode(obj.childNodes[0]); //텍스트 정보를 Range 객체에 저장
@@ -70,6 +75,19 @@
             sel.addRange(range); //텍스트 정보 선택
             document.execCommand("copy"); //복사
             sel.removeRange(range); //선택 정보 삭제
+        }
+
+        function fn_onChangeSelect() {
+            let index = $("#slt_index").val();
+            let type = $("#slt_type").val();
+            var obj = $("#" + index + " > " + "." + type);
+            
+            $("#list_container > p > span").css("background-color", "white")
+            $("#list_container > p > span").css("color", "black")
+
+            obj.css("background-color", "black")
+            obj.css("color", "white")
+            console.log(obj)
         }
 
         $(function () {
@@ -94,7 +112,7 @@
                         codeList.push(code);
                     });
 
-                    lender();
+                    fn_lender();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -120,7 +138,7 @@
             </select>
         </span>
     </p>
-    <button type="button" onclick="copy()">copy</button>
+    <button type="button" onclick="fn_copy()">copy</button>
     <div id="list_container">
     </div>
 </body>
