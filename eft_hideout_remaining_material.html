@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFT hideout remaining material</title>
+    <link rel="stylesheet" type="text/css" href="eft_hideout_remaining_material.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="eft_hideout_remaining_material.js"></script>
+    <script>
+        let codeList;
+        $(function() {
+            axios.get('https://escapefromtarkov.gamepedia.com/Hideout', {})
+                .then(function(response) {
+                    console.log(response);
+
+                })
+                .catch(function(error) {
+                    console.log(error);
+                })
+                .finally(function() {
+                    // always executed
+                });
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

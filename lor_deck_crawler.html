@@ -5,127 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOR deck crawler</title>
-    <style>
-        select {
-            width: 40%;
-            height: 50px;
-        }
-
-        button {
-            width: 60%;
-            height: 50px;
-        }
-
-        #list_container span {
-            cursor: pointer;
-        }
-
-        #list_container span:hover {
-            background-color: black !important;
-            color: white !important;
-        }
-
-        /* The snackbar - position it at the bottom and in the middle of the screen */
-        #snackbar {
-            visibility: hidden;
-            /* Hidden by default. Visible on click */
-            min-width: 250px;
-            /* Set a default minimum width */
-            margin-left: -125px;
-            /* Divide value of min-width by 2 */
-            background-color: #333;
-            /* Black background color */
-            color: #fff;
-            /* White text color */
-            text-align: center;
-            /* Centered text */
-            border-radius: 2px;
-            /* Rounded borders */
-            padding: 16px;
-            /* Padding */
-            position: fixed;
-            /* Sit on top of the screen */
-            z-index: 1;
-            /* Add a z-index if needed */
-            left: 50%;
-            /* Center the snackbar */
-            bottom: 30px;
-            /* 30px from the bottom */
-        }
-
-        /* Show the snackbar when clicking on a button (class added with JavaScript) */
-        #snackbar.show {
-            visibility: visible;
-            /* Show the snackbar */
-            /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-
-        /* Animations to fade the snackbar in and out */
-        @-webkit-keyframes fadein {
-            from {
-                bottom: 0;
-                opacity: 0;
-            }
-
-            to {
-                bottom: 30px;
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadein {
-            from {
-                bottom: 0;
-                opacity: 0;
-            }
-
-            to {
-                bottom: 30px;
-                opacity: 1;
-            }
-        }
-
-        @-webkit-keyframes fadeout {
-            from {
-                bottom: 30px;
-                opacity: 1;
-            }
-
-            to {
-                bottom: 0;
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadeout {
-            from {
-                bottom: 30px;
-                opacity: 1;
-            }
-
-            to {
-                bottom: 0;
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="lor_deck_crawler.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="lor_deck_crawler.js"></script>
     <script>
         let codeList;
-        $(function () {
-            axios.get('https://lor.mobalytics.gg/api/v1/meta/tier-list', {
-            })
-                .then(function (response) {
+        $(function() {
+            axios.get('https://lor.mobalytics.gg/api/v1/meta/tier-list', {})
+                .then(function(response) {
                     let archetypes = response.data.archetypes
                     console.log(archetypes);
                     let numStr = "";
                     codeList = new Array;
-                    archetypes.forEach(function (element, index) {
+                    archetypes.forEach(function(element, index) {
                         let num = index + 1;
                         let code = {};
                         if (num < 10) {
@@ -140,13 +33,13 @@
                         codeList.push(code);
                     });
                     console.log(codeList);
-                    
+
                     fn_lender();
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log(error);
                 })
-                .finally(function () {
+                .finally(function() {
                     // always executed
                 });
         })
