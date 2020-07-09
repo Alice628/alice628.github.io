@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let obj = {};
+        $(function() {
+            let tableTagList = $('table')
+                //console.log(tableTagList);
+            let moduleList = []
+            tableTagList.each(function(index, tableTag) {
+                //console.log($(tableTag).find('th')[0]);
+                let module = $(tableTag).find('th')[0];
+                let moduleName = $(module).html().trim().replace(/ /gi, '')
+                    //console.log(moduleName);
+
+                obj[moduleName] = {}
+                moduleList.push(moduleName)
+
+                let a = $(tableTag).children().children();
+                a.each(function(index, item) {
+                        if (index < 2) {
+                            return true;
+                        }
+                        let material = $(item)
+                        console.log(material);
+
+                    })
+                    //console.log(a);
+
+            });
+            console.log(moduleList);
+            console.log(obj);
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Air Filtering Unit
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>10,000 Dollars</li>
+                        <li>Level 3 Generator</li>
+                        <li>Level 3 Vents</li>
+                        <li>Skier LL3</li>
+                    </ul>
+                </td>
+                <td>Group of skills levelling boost: Physical, +40%
+                </td>
+                <td>48 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Bitcoin farm
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>10 CPU Fan</li>
+                        <li>5 Power supply unit</li>
+                        <li>5 Powercord</li>
+                        <li>1 Electric drill</li>
+                        <li>Level 2 Intelligence Center</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Farming Physical bitcoins</li>
+                        <li>Additional slots +10 for Graphics card</li>
+                    </ul>
+                </td>
+                <td>30 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>15 CPU Fan</li>
+                        <li>5 Power supply unit</li>
+                        <li>5 Printed circuit board</li>
+                        <li>2 Phase control relay</li>
+                        <li>Level 3 Generator</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Farming Physical bitcoins</li>
+                        <li>Additional slots +15 for Graphics card (25 in total)</li>
+                    </ul>
+                </td>
+                <td>42 hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>25 CPU Fan</li>
+                        <li>10 Silicone tubes</li>
+                        <li>2 Electric motor</li>
+                        <li>4 Pressure gauges</li>
+                        <li>Level 1 Solar Power</li>
+                        <li>Level 3 Water Collector</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Farming Physical bitcoins</li>
+                        <li>Additional slots +25 for Graphics card (50 in total)</li>
+                    </ul>
+                </td>
+                <td>96 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Booze generator
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>4 Silicone tubes</li>
+                        <li>2 Analog thermometers</li>
+                        <li>2 Pressure gauges</li>
+                        <li>5 Corrugated hose</li>
+                        <li>Level 3 Water Collector</li>
+                        <li>Level 3 Nutrition Unit</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce "Fierce Hatchling" moonshine</li>
+                    </ul>
+                </td>
+                <td>48 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Generator
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>100,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>Additional fuel slots +2
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>5 Phase control relays</li>
+                        <li>1 Electric motor</li>
+                        <li>15 Wires</li>
+                        <li>Level 2 Security</li>
+                        <li>Level 2 Vents</li>
+                    </ul>
+                </td>
+                <td>Additional fuel slots +2 (4 in total)
+                </td>
+                <td>5 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>6 Phase control relays</li>
+                        <li>2 Electric motor</li>
+                        <li>5 Spark plug</li>
+                        <li>5 Power supply unit</li>
+                        <li>Level 3 Security</li>
+                        <li>Level 3 Vents</li>
+                        <li>Mechanic LL3</li>
+                    </ul>
+                </td>
+                <td>Additional fuel slots +2 (6 in total)
+                </td>
+                <td>16 hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Heating
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>25,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +2 EP/hr
+                        </li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>50,000 Roubles</li>
+                        <li>Level 1 Endurance</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +5 EP/hr (7 in total)</li>
+                    </ul>
+                </td>
+                <td>2 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>8 Radiator helix</li>
+                        <li>8 Wires</li>
+                        <li>Level 2 Generator</li>
+                        <li>Level 2 Workbench</li>
+                        <li>Level 2 Ragman</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +7 EP/hr (14 in total)</li>
+                        <li>Negative effects removal rate -50%
+                        </li>
+                    </ul>
+                </td>
+                <td>8 hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Illumination
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>10,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>Lights up your hideout with candles
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>14 Light bulb</li>
+                        <li>5 Wires</li>
+                        <li>Level 1 Generator</li>
+                    </ul>
+                </td>
+                <td>Lights up your hideout with basic lights.
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>50,000 Roubles</li>
+                        <li>7 Capacitors</li>
+                        <li>Level 2 Generator</li>
+                        <li>Mechanic LL2</li>
+                    </ul>
+                </td>
+                <td>Lights up your hideout with florescent lights.
+                </td>
+                <td>6 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Intelligence Center
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>1 Folder with intelligence</li>
+                        <li>Level 2 Security</li>
+                        <li>Level 2 Vents</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Scav cooldown timer -15%
+                        </li>
+                        <li>Quest money reward boost +5%
+                        </li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>3 Folder with intelligence</li>
+                        <li>3 Secure Flash drive</li>
+                        <li>4 Powercord</li>
+                        <li>4 Damaged hard drive</li>
+                        <li>Level 3 Security</li>
+                        <li>Level 3 Medstation</li>
+                        <li>Level 3 Nutrition Unit</li>
+                        <li>Mechanic LL2</li>
+                        <li>Level 3 Attention</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Quest money reward boost extra +10% (+15% in total)</li>
+                        <li>Insurance Return Time -20%
+                        </li>
+                        <li>Produce Secure Flash drives</li>
+                        <li>Produce VPX Flash Storage Module</li>
+                        <li>Produce Virtex programmable processor</li>
+                        <li>Produce Military COFDM wireless Signal Transmitter</li>
+                        <li>Produce UHF RFID Reader</li>
+                        <li>Produce Graphics card</li>
+                    </ul>
+                </td>
+                <td>6 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>2 Military COFDM wireless Signal Transmitters</li>
+                        <li>2 VPX Flash Storage Modules</li>
+                        <li>3 Gas analyzers</li>
+                        <li>4 Military cable</li>
+                        <li>Level 3 Generator</li>
+                        <li>Level 3 Workbench</li>
+                        <li>Prapor LL3</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Scav cooldown timer extra -20% (-35% in total)</li>
+                        <li>Flea market commission -30%
+                        </li>
+                        <li>Produce Folder with intelligence</li>
+                    </ul>
+                </td>
+                <td>24 hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Lavatory
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>2,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce Toilet paper</li>
+                        <li>Produce Air filter for gas mask</li>
+                        <li>Produce Scav Backpack</li>
+                        <li>Produce Aseptic bandage</li>
+                        <li>Produce Ripstop Cloth</li>
+                        <li>Produce Army Bandage</li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>3 Corrugated hoses</li>
+                        <li>5 A pack of screws</li>
+                        <li>1 Electric drill</li>
+                        <li>Level 1 Water Collector</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce Schaman shampoo</li>
+                        <li>Produce Ox bleach</li>
+                        <li>Produce Expeditionary fuel tank</li>
+                        <li>Produce Magazine case</li>
+                        <li>Produce Corrugated hose</li>
+                        <li>Produce WD-40 100ml.</li>
+                        <li>Produce Clin wiper</li>
+                        <li>Produce Module-3M bodyarmor</li>
+                        <li>Produce Splav Tarzan M22 Rig</li>
+                        <li>Produce 60-round 6L31 5.45x39 magazine for AK-74 and compatibles</li>
+                        <li>Produce Lucky Scav Junkbox</li>
+                    </ul>
+                </td>
+                <td>3 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>6 Corrugated hoses</li>
+                        <li>2 Pressure gauges</li>
+                        <li>1 A set of tools</li>
+                        <li>3 Xenomorph sealing foam</li>
+                        <li>Level 2 Water Collector</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce FP-100 filter absorber</li>
+                    </ul>
+                </td>
+                <td>7 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Library
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>400,000 Roubles</li>
+                        <li>Level 3 Rest Space</li>
+                        <li>Level 8 Memory skill</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Additional EXP +15%
+                        </li>
+                        <li>Group of skills levelling boost: Practical +30%
+                        </li>
+                    </ul>
+                </td>
+                <td>38 hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Medstation
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>25,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce Salewa FIRST AID KIT</li>
+                        <li>Produce AI-2 medikit</li>
+                        <li>Health regeneration rate +27 HP/hr
+                        </li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>50,000 Roubles</li>
+                        <li>2 Medical bloodset</li>
+                        <li>3 Saline solution</li>
+                        <li>Therapist LL2</li>
+                        <li>Level 2 Health</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce IFAK personal tactical first aid kit</li>
+                        <li>Produce Pile of meds</li>
+                        <li>Produce Combat stimulant injector SJ1 TGLabs</li>
+                        <li>Produce Morphine</li>
+                        <li>Produce Portable defibrillator</li>
+                        <li>Health regeneration rate +55 HP/hr (82 HP/hr in total)</li>
+                    </ul>
+                </td>
+                <td>3 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>150,000 Roubles</li>
+                        <li>4 Saline solution</li>
+                        <li>1 LEDX Skin Transilluminator</li>
+                        <li>1 Opthalmoscope</li>
+                        <li>Therapist LL3</li>
+                        <li>Skier LL2</li>
+                        <li>Vitality Level 3</li>
+                        <li>Level 2 Lavatory</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Health regeneration rate +92 HP/hr (174 HP/hr in total)</li>
+                        <li>Produce Propital</li>
+                        <li>Produce Grizzly First Aid Kit</li>
+                        <li>Produce Surv12 field surgical kit</li>
+                    </ul>
+                </td>
+                <td>12 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Nutrition unit
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>25,000 Roubles</li>
+                        <li>2 Phase control relay</li>
+                        <li>Level 1 Generator</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +6 EP/hr
+                        </li>
+                        <li>Produce Iskra lunch box</li>
+                        <li>Produce Can of beef stew</li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>4 Wrench</li>
+                        <li>2 Corrugated hose</li>
+                        <li>2 Heat-exchange alkali surface washer</li>
+                        <li>1 Phase control relay</li>
+                        <li>Level 2 Lavatory</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +6 EP/hr (12 EP/hr in total)</li>
+                        <li>Health regeneration rate +32 HP/hr
+                        </li>
+                        <li>Produce Wilston cigarettes</li>
+                        <li>Produce Condensed milk</li>
+                        <li>Produce Slickers bar</li>
+                        <li>Produce Pack of sugar</li>
+                    </ul>
+                </td>
+                <td>4 hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>125,000 Roubles</li>
+                        <li>3 Coffee Majaica</li>
+                        <li>3 Sodium bicarbonate</li>
+                        <li>Level 2 Generator</li>
+                        <li>Level 3 Lavatory</li>
+                        <li>Level 2 Stash</li>
+                        <li>Level 3 Metabolism</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +24 EP/hr (36 EP/hr in total)</li>
+                        <li>Hydration regeneration rate +12 WP/hr
+                        </li>
+                        <li>Produce Bottle of vodka Tarkovskaya</li>
+                        <li>Produce Water bottle with a filter Aquamari</li>
+                    </ul>
+                </td>
+                <td>14 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Rest Space
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>10,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Negative effects removal rate -10%
+                        </li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>35,000 Roubles</li>
+                        <li>Level 2 Generator</li>
+                        <li>Level 2 Heating</li>
+                        <li>Level 2 Ragman</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Energy regeneration rate +3 EP/hr
+                        </li>
+                        <li>Health regeneration rate +23 HP/hr
+                        </li>
+                    </ul>
+                </td>
+                <td>2 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>3,000 Dollars</li>
+                        <li>4 Powercord</li>
+                        <li>5 Capacitors</li>
+                        <li>7 Wires</li>
+                        <li>Level 3 Generator</li>
+                        <li>Level 3 Heating</li>
+                        <li>Skier LL3</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Health regeneration rate +46 HP/hr (69 HP/hr in total)</li>
+                        <li>Maximum energy reserve +10 points
+                        </li>
+                    </ul>
+                </td>
+                <td>10 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Scav case
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>4 Bronze lion</li>
+                        <li>6 Gold skull ring</li>
+                        <li>8 Golden neck chain</li>
+                        <li>4 Roler submariner gold wrist watch</li>
+                        <li>Level 2 Intelligence Center</li>
+                    </ul>
+                </td>
+                <td>Scavs will try to find various items for you if you pay properly, of course
+                    <p>There are multiple Tier costs, each returning roughly the amount invested (results can vary drastically)<br> Each case brings you a opportunity to get quest items with found-in-raid status. At the end of the tiers you will find roughly
+                        what each tier offers in terms of item rarity and how many.
+                    </p>
+                    <ul>
+                        <li>500 Roubles - 41m turnaround - 1-2 Common Items, 0-1 Rare Items</li>
+                        <li>7000 Roubles - 2h 8m turnaround - 1 Common Item, 1-3 Rare Items</li>
+                        <li>85000 Roubles - 2h 15m turnaround - 1-3 Rare Items, 1-2 Super Rare Items</li>
+                        <li>1x "Fierce Hatchling" moonshine - 4h 40m turnaround - 1 Rare Item, 4-6 Super Rare Items</li>
+                        <li>1x Folder with intelligence - 5h 20min turnaround - 2-4 Rare Items, 2-3 Super Rare Items</li>
+                    </ul>
+                </td>
+                <td>40 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Security
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>20,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>None
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>45,000 Roubles</li>
+                        <li>Level 2 Endurance</li>
+                    </ul>
+                </td>
+                <td>None
+                </td>
+                <td>3 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>2 Working LCD</li>
+                        <li>4 Wires</li>
+                        <li>8 NIXXOR lens</li>
+                        <li>1 SSD drive</li>
+                        <li>Level 3 Illumination</li>
+                        <li>Mechanic LL2</li>
+                    </ul>
+                </td>
+                <td>None
+                </td>
+                <td>17 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Shooting range
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>4 A pack of nails</li>
+                        <li>5 Screw nut</li>
+                        <li>5 Bolts</li>
+                        <li>3 Duct tape</li>
+                        <li>Level 2 Illumination</li>
+                    </ul>
+                </td>
+                <td>The ability to test out your firearms
+                </td>
+                <td>1 hour
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Solar power
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>15,000 Euros</li>
+                        <li>4 Military cable</li>
+                        <li>2 Phased array element</li>
+                        <li>4 Military power filter</li>
+                        <li>Level 3 Generator</li>
+                        <li>Level 3 Workbench</li>
+                        <li>Peacekeeper LL4</li>
+                    </ul>
+                </td>
+                <td>Fuel consumption -50%
+                </td>
+                <td>62 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Stash
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>Purchase of EFT Standard Edition
+                </td>
+                <td>Stash size 10x28
+                </td>
+                <td>N/A
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>Purchase of EFT Left Behind
+                    <p>Or
+                    </p>
+                    <ul>
+                        <li>3,500,000 Roubles</li>
+                        <li>1 Hand drill</li>
+                        <li>7 A pack of screws</li>
+                        <li>4 WD-40 100ml.</li>
+                    </ul>
+                </td>
+                <td>Stash size 10x38
+                </td>
+                <td>24 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>Purchase of EFT Prepare for Escape
+                    <p>Or
+                    </p>
+                    <ul>
+                        <li>8,500,000 Roubles</li>
+                        <li>2 Electric drill</li>
+                        <li>8 A pack of screws</li>
+                        <li>Level 2 Heating</li>
+                        <li>Level 2 Vents</li>
+                        <li>Prapor LL3</li>
+                        <li>Ragman LL3</li>
+                    </ul>
+                </td>
+                <td>Stash size 10x48
+                </td>
+                <td>48 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>4
+                </th>
+                <td>Purchase of EFT Edge of Darkness
+                    <p>Or
+                    </p>
+                    <ul>
+                        <li>150,000 Euros</li>
+                        <li>Level 3 Generator</li>
+                        <li>Level 3 Workbench</li>
+                        <li>Level 3 Heating</li>
+                        <li>Level 3 Intelligence Center</li>
+                        <li>Peacekeeper LL4</li>
+                        <li>Ragman LL4</li>
+                    </ul>
+                </td>
+                <td>Stash size 10x68
+                </td>
+                <td>96 hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Vents
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>25,000 Roubles</li>
+                    </ul>
+                </td>
+                <td>None
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>1 Electric motor</li>
+                        <li>1 Car battery</li>
+                    </ul>
+                </td>
+                <td>None
+                </td>
+                <td>3 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>4 Electric motor</li>
+                        <li>14 Wires</li>
+                        <li>5 Printed circuit board</li>
+                        <li>4 Car battery</li>
+                        <li>Level 2 Generator</li>
+                        <li>Level 2 Strength</li>
+                    </ul>
+                </td>
+                <td>None
+                </td>
+                <td>10 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Water collector
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>4 Corrugated hose</li>
+                        <li>5 Bolts</li>
+                        <li>5 Screw nut</li>
+                        <li>3 Duct tape</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Hydration regeneration rate +6 WP/hr
+                        </li>
+                    </ul>
+                </td>
+                <td>2 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>6 Corrugated hose</li>
+                        <li>2 Electric motor</li>
+                        <li>2 A set of tools</li>
+                        <li>Level 2 Workbench</li>
+                        <li>Jaeger LL2</li>
+                        <li>Level 3 Attention</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Hydration regeneration rate +12 WP/hr (18 WP/hr in total)</li>
+                    </ul>
+                </td>
+                <td>8 Hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>125,000 Roubles</li>
+                        <li>2 Pliers Elite</li>
+                        <li>5 Shustrilo sealing foam</li>
+                        <li>Level 3 Generator</li>
+                        <li>Level 3 Heating</li>
+                        <li>Jaeger LL3</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Hydration regeneration rate +24 WP/hr (42 WP/hr in total)</li>
+                        <li>Produce Purified water</li>
+                    </ul>
+                </td>
+                <td>16 Hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Workbench
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>2 Screw nuts</li>
+                        <li>2 Bolts</li>
+                        <li>1 Leatherman Multitool</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Off-raid weapon customization</li>
+                        <li>Produce 9x18 PM mm RG028 gzh</li>
+                        <li>Produce 12/70 8.5 mm "Magnum" Buckshot</li>
+                        <li>Produce Wires</li>
+                        <li>Produce Capacitors</li>
+                        <li>Produce Gunpowder "Hawk"</li>
+                        <li>Produce Gunpowder "Kite"</li>
+                        <li>Produce Weapon parts</li>
+                        <li>Produce Printed circuit board</li>
+                        <li>Produce Powercord</li>
+                        <li>Produce Broken LCD</li>
+                        <li>Produce VOG-25 Khattabka grenade</li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+            <tr>
+                <th>2
+                </th>
+                <td>
+                    <ul>
+                        <li>3 A set of tools</li>
+                        <li>2 Electric drill</li>
+                        <li>6 Bolts</li>
+                        <li>Level 2 Illumination</li>
+                        <li>Mechanic LL2</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce 7.62x54R SNB</li>
+                        <li>Produce 5.45x39 mm PP</li>
+                        <li>Produce 9x39 mm SP-6</li>
+                        <li>Produce AK-74M 5.45x39 assault rifle</li>
+                        <li>Produce Gunpowder "Hawk" (new recipe)</li>
+                        <li>Produce Gunpowder "Eagle"</li>
+                        <li>Produce Car battery</li>
+                        <li>Produce Rechargeable battery</li>
+                        <li>Produce Electric motor</li>
+                        <li>Produce Zarya stun grenade</li>
+                        <li>Produce 5.56x45 mm M856A1</li>
+                        <li>Produce 9x19 mm AP 6.3</li>
+                    </ul>
+                </td>
+                <td>3 hours
+                </td>
+            </tr>
+            <tr>
+                <th>3
+                </th>
+                <td>
+                    <ul>
+                        <li>195.000 Roubles</li>
+                        <li>2 Pliers Elite</li>
+                        <li>1 FireKlean gun lube</li>
+                        <li>Level 2 Stash</li>
+                        <li>Mechanic LL3</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce 5.56x45 mm Warmage</li>
+                        <li>Produce RGD-5 hand grenade</li>
+                        <li>Produce 7.62x39 mm BP</li>
+                        <li>Produce 9x19 mm RIP</li>
+                        <li>Produce 5.45x39 mm 7N39 "Igolnik"</li>
+                        <li>Produce 7.62x51 mm M61</li>
+                        <li>Produce 12/70 AP-20 Slug</li>
+                        <li>Produce 5.56x45 mm M995</li>
+                        <li>Produce 9x39 mm 7N12 BP</li>
+                    </ul>
+                </td>
+                <td>11 hours
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <th colspan="4">Christmas tree
+                </th>
+            </tr>
+            <tr>
+                <th>Level
+                </th>
+                <th>Requirements
+                </th>
+                <th>Function
+                </th>
+                <th>Construction Time
+                </th>
+            </tr>
+            <tr>
+                <th>1
+                </th>
+                <td>
+                    <ul>
+                        <li>10,000 Roubles</li>
+                        <li>1 Christmas tree decoration ball (red)</li>
+                        <li>1 Christmas tree decoration ball (silver)</li>
+                        <li>1 Christmas tree decoration ball (violet)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Produce DT MDR .308</li>
+                        <li>Produce Weapon case</li>
+                        <li>Produce MP9-N</li>
+                        <li>Produce 6SH118 raid backpack</li>
+                        <li>Produce Orsis T-5000 .308 sniper rifle</li>
+                        <li>Adds the Christmas lighting option</li>
+                    </ul>
+                </td>
+                <td>Instant
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

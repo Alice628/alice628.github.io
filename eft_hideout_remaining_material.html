@@ -12,7 +12,9 @@
     <script>
         let codeList;
         $(function() {
-            axios.get('https://escapefromtarkov.gamepedia.com/Hideout', {})
+            axios.get('https://escapefromtarkov.gamepedia.com/Hideout', {
+                    crossdomain: true,
+                })
                 .then(function(response) {
                     console.log(response);
 
