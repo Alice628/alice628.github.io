@@ -21,14 +21,36 @@
                 obj[moduleName] = {}
                 moduleList.push(moduleName)
 
-                let a = $(tableTag).children().children();
-                a.each(function(index, item) {
+                $(tableTag).children().children().each(function(index, item) {
                         if (index < 2) {
                             return true;
                         }
-                        let material = $(item)
-                        console.log(material);
-
+                        let materialList = $($(item)[0].cells[1]).children().children();
+                        let level = index - 1;
+                        console.log(moduleName);
+                        console.log(level);
+                        //console.log(materialList);
+                        materialList.each(function(index, materialTag) {
+                            let material = $(materialTag).html().trim();
+                            if (material.includes('Level') || material.includes('LL')) {
+                                return true;
+                            }
+                            material = material.replace(/ /g, '')
+                            material = material.replace(/\,/g, '')
+                            let materialNameLength = material.length;
+                            let amount = "";
+                            for (let i = 0; i < materialNameLength; i++) {
+                                //console.log(material[i]);
+                                if ($.isNumeric(material[i])) {
+                                    amount += material[i];
+                                } else {
+                                    material = material.substring(i);
+                                    break;
+                                }
+                            }
+                            console.log(material);
+                            console.log(amount);
+                        })
                     })
                     //console.log(a);
 
