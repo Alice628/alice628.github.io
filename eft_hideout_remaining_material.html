@@ -9,28 +9,74 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="eft_hideout_remaining_material.js"></script>
+    <script src="Hideout.js"></script>
     <script>
-        let codeList;
-        $(function() {
-            axios.get('https://escapefromtarkov.gamepedia.com/Hideout', {
-                    crossdomain: true,
-                })
-                .then(function(response) {
-                    console.log(response);
+        function fn_lenderContents(requirement) {
+            let keys = Object.keys(requirement);
+            let contentsHtml = '';
+            contentsHtml += '<table>';
+            keys.forEach(function(item, index, array) {
+                contentsHtml += '<tr>';
+                contentsHtml += '<th style="text-align: right;">' + item + '</th>';
+                contentsHtml += '<td>' + requirement[item] + '</td>';
+                contentsHtml += '</tr>';
+            })
+            contentsHtml += '</table>';
+            $('#contentsContainer').html(contentsHtml);
+        }
 
-                })
-                .catch(function(error) {
-                    console.log(error);
-                })
-                .finally(function() {
-                    // always executed
-                });
-        })
+        function fn_lenderOption() {
+            let moduleSelectHtml = '';
+            moduleSelectHtml += '<table>';
+            moduleList.forEach(function(item, index, array) {
+                if (index % 6 == 0) {
+
+                    moduleSelectHtml += '<tr>';
+                }
+
+                moduleSelectHtml += '<th>' + item + '</th>';
+                moduleSelectHtml += '<td>';
+                moduleSelectHtml += '<select id="' + item + '">';
+                let levelAmount = Object.keys(materialMap[item]).length;
+                for (let i = 0; i < levelAmount + 1; i++) {
+                    moduleSelectHtml += '<option value="' + i + '">' + i + '</option>'
+                }
+                moduleSelectHtml += '</select>';
+                moduleSelectHtml += '</td>';
+
+                if ((index + 1) % 6 == 0) {
+                    moduleSelectHtml += '</tr>';
+                }
+            })
+            moduleSelectHtml += '</table>';
+
+            $('#optionContainer').html(moduleSelectHtml);
+            $('select').on('change', function() {
+                fn_changeSelect();
+            });
+        };
+
+        function fn_changeSelect() {
+            let remainRequirement = JSON.parse(JSON.stringify(totalRequirement));
+            console.log(remainRequirement);
+
+        }
+
+        $(function() {
+            console.log(moduleList);
+            console.log(materialList);
+            console.log(totalRequirement);
+            console.log(materialMap);
+            fn_lenderOption();
+            fn_lenderContents(totalRequirement)
+        });
     </script>
 </head>
 
 <body>
-
+    <div id="optionContainer">
+    </div>
+    <div id="contentsContainer"></div>
 </body>
 
 </html>
