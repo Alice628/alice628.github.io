@@ -7,36 +7,38 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        let obj = {};
+        let materialMap = {};
+        let totalRequirement = {};
         $(function() {
             let tableTagList = $('table')
                 //console.log(tableTagList);
-            let moduleList = []
+            let moduleList = [];
+            let materialList = [];
             tableTagList.each(function(index, tableTag) {
                 //console.log($(tableTag).find('th')[0]);
-                let module = $(tableTag).find('th')[0];
-                let moduleName = $(module).html().trim().replace(/ /gi, '')
+                let moduleName = $($(tableTag).find('th')[0]).html().trim().replace(/ /gi, '')
                     //console.log(moduleName);
 
-                obj[moduleName] = {}
+                materialMap[moduleName] = {}
                 moduleList.push(moduleName)
 
                 $(tableTag).children().children().each(function(index, item) {
                         if (index < 2) {
                             return true;
                         }
-                        let materialList = $($(item)[0].cells[1]).children().children();
                         let level = index - 1;
                         console.log(moduleName);
                         console.log(level);
+                        materialMap[moduleName][level] = {};
                         //console.log(materialList);
-                        materialList.each(function(index, materialTag) {
+                        $($(item)[0].cells[1]).children().children().each(function(index, materialTag) {
                             let material = $(materialTag).html().trim();
                             if (material.includes('Level') || material.includes('LL')) {
                                 return true;
                             }
-                            material = material.replace(/ /g, '')
-                            material = material.replace(/\,/g, '')
+                            material = material.replace(/ /g, '');
+                            material = material.replace(/\,/g, '');
+                            material = material.replace(/\./g, '');
                             let materialNameLength = material.length;
                             let amount = "";
                             for (let i = 0; i < materialNameLength; i++) {
@@ -48,6 +50,14 @@
                                     break;
                                 }
                             }
+                            if (!materialList.includes(material)) {
+                                materialList.push(material);
+                            }
+                            materialMap[moduleName][level][material] = Number(amount);
+                            if (isNaN(totalRequirement[material])) {
+                                totalRequirement[material] = 0
+                            }
+                            totalRequirement[material] += Number(amount);
                             console.log(material);
                             console.log(amount);
                         })
@@ -56,7 +66,13 @@
 
             });
             console.log(moduleList);
-            console.log(obj);
+            console.log(materialList);
+            console.log(totalRequirement);
+            console.log(materialMap);
+            console.log("let moduleList = " + JSON.stringify(moduleList));
+            console.log("let materialList = " + JSON.stringify(materialList));
+            console.log("let totalRequirement = " + JSON.stringify(totalRequirement));
+            console.log("let materialMap = " + JSON.stringify(materialMap));
         })
     </script>
 </head>
