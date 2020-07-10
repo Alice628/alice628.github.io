@@ -30,7 +30,6 @@
             moduleSelectHtml += '<table>';
             moduleList.forEach(function(item, index, array) {
                 if (index % 6 == 0) {
-
                     moduleSelectHtml += '<tr>';
                 }
 
@@ -58,8 +57,23 @@
 
         function fn_changeSelect() {
             let remainRequirement = JSON.parse(JSON.stringify(totalRequirement));
-            console.log(remainRequirement);
 
+            $('select').each(function(index, item) {
+                let moduleName = $(item).attr('id');
+                let level = $(item).val();
+                for (let i = Number(level); i > 0; i--) {
+                    let achieved = materialMap[moduleName][i];
+                    console.log(achieved);
+                    let keys = Object.keys(achieved);
+                    keys.forEach(function(materialName, index, array) {
+                        remainRequirement[materialName] = remainRequirement[materialName] - achieved[materialName];
+                    });
+                }
+
+            });
+
+            //console.log(remainRequirement);
+            fn_lenderContents(remainRequirement);
         }
 
         $(function() {
