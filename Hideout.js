@@ -386,7 +386,7 @@ let materialMap = {
     }
 }
 let iconSource = {
-    "Dollars": '',
+    "Dollars": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/c/c4/Dollarsicon.png?version=f31d6c29f5a7beec810ae9dae23efc6e',
     "CPUFan": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/a/a8/CPU_Fan_Icon.png?version=34e6413f54d8c63fa71ed212d3bd13e7',
     "Powersupplyunit": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/thumb/8/81/Psuicon.png/105px-Psuicon.png?version=346fb9cbcfd7ac23d5e3139553d71619',
     "Powercord": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/e/e1/Powercord_icon.png?version=46674cf442f8527d0fe891e7dd119742',
@@ -398,7 +398,7 @@ let iconSource = {
     "Pressuregauges": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/e/ee/Pressure_gauge_icon.png?version=b32aab2dbc9970dd644ef2baa84f39f8',
     "Analogthermometers": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/9/92/Anal_Thermometer_Icon.png?version=cece51d082b4759acb81970fbbead049',
     "Corrugatedhose": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/b/b0/Hoseicon.png?version=51c20ce935ad10ea15ecc7fcd1740972',
-    "Roubles": '',
+    "Roubles": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/6/62/Roublesicon.png?version=1ddd57a1b36db139502eb137335569c9',
     "Wires": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/a/a4/Wiresicon.png?version=5290c686201f2318562959de42ff4987',
     "Sparkplug": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/4/46/Spark_Plug_Icon_.png?version=5d679b96f39a59d595f8bf4763197f7b',
     "Radiatorhelix": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/5/5a/RadiatorHelixIcon.png?version=40ef8108fb4ac0640418fdc32829a96c',
@@ -433,7 +433,7 @@ let iconSource = {
     "Screwnut": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/c/cd/Screwnuticon.png?version=97698ddbbcaa52348ce8209a2241ec21',
     "Bolts": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/7/70/Boltsicon.png?version=27b3299e61a7e75e8c572387b6760d3a',
     "Ducttape": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/3/38/Duct_tape_Icon.png?version=638332bc00b1bf3a1bf2bede5fae78cc',
-    "Euros": '',
+    "Euros": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/f/f3/Eurosicon.png?version=cc9e22e64df6f3dfcbd9c508fd84c906',
     "Phasedarrayelement": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/8/81/Phased-Array-Element-icon.png?version=4f3a992fadd9af64c5f895ad5cbfe1b1',
     "Militarypowerfilter": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/4/47/Mil_Filter_Icon.png?version=f0bb500127c878a404da418de96fe7b2',
     "Handdrill": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/0/04/Handdrill_icon.png?version=3c337807b558d4adf912d4fbd6cd7b5b',
