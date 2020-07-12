@@ -5,7 +5,7 @@ function fn_lenderContents(requirement) {
     keys.forEach(function(item, index, array) {
         contentsHtml += '<tr>';
         contentsHtml += '<th style="text-align: right;">' + item + '</th>';
-        contentsHtml += '<td></td>';
+        contentsHtml += '<td><img alt="' + item + '_icon.png" src="' + iconSource[item] + '" decoding="async" width="64" height="64"></td>';
         contentsHtml += '<td>' + requirement[item] + '</td>';
         contentsHtml += '</tr>';
     })
