@@ -57,9 +57,26 @@ function fn_changeSelect() {
                 remainRequirement[materialName] -= achieved[materialName];
             });
         }
-
     });
 
     //console.log(remainRequirement);
     fn_lenderContents(remainRequirement);
+}
+
+function readFile(file) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        try {
+            let fileContents = JSON.parse(reader.result);
+            let keys = Object.keys(fileContents);
+            keys.forEach(function(module, index, array) {
+                $("select#" + module).val(fileContents[module]).prop("selected", true);
+                $("select#" + module).change();
+            })
+        } catch (error) {
+            alert("Wrong file\nPlease download template");
+        }
+
+    };
+    reader.readAsText(file, /* optional */ "euc-kr");
 }

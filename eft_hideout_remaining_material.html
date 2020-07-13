@@ -18,12 +18,18 @@
             console.log(materialMap);
             fn_lenderOption();
             fn_lenderContents(totalRequirement)
+            $("#fileInput").on('change', function(e) {
+                readFile(event.target.files[0]);
+            })
         });
     </script>
 </head>
 
 <body>
-    <div id="templateContainer"><a href="eft_template.txt" download="eft_template.txt">Download template</a></div>
+    <div id="templateContainer">
+        <a href="eft_template.txt" download="eft_template.txt">Download template</a>
+        <span>/</span> Upload template -> <input type="file" id="fileInput">
+    </div>
     <div id="optionContainer"></div>
     <div id="contentsContainer"></div>
 </body>
