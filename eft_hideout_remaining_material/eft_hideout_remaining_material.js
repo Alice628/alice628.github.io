@@ -1,8 +1,13 @@
+let isShow = true;
+
 function fn_lenderContents(requirement) {
     let keys = Object.keys(requirement);
     let contentsHtml = '';
     contentsHtml += '<table>';
     keys.forEach(function(item, index, array) {
+        if (requirement[item] == 0 && !isShow) {
+            return true;
+        }
         contentsHtml += '<tr>';
         contentsHtml += '<th style="text-align: right;">' + item + '</th>';
         contentsHtml += '<td><img alt="' + item + '_icon.png" src="' + iconSource[item] + '" decoding="async" width="64" height="64"></td>';
@@ -44,6 +49,13 @@ function fn_lenderOption() {
 };
 
 function fn_changeSelect() {
+    let remainRequirement = fn_constructRemainRequirement();
+
+    //console.log(remainRequirement);
+    fn_lenderContents(remainRequirement);
+}
+
+function fn_constructRemainRequirement() {
     let remainRequirement = JSON.parse(JSON.stringify(totalRequirement));
 
     $('select').each(function(index, item) {
@@ -59,8 +71,7 @@ function fn_changeSelect() {
         }
     });
 
-    //console.log(remainRequirement);
-    fn_lenderContents(remainRequirement);
+    return remainRequirement;
 }
 
 function readFile(file) {
@@ -79,4 +90,12 @@ function readFile(file) {
 
     };
     reader.readAsText(file, /* optional */ "euc-kr");
+}
+
+function fn_changeShowCheck(element) {
+    isShow = !(element.prop('checked'));
+    let remainRequirement = fn_constructRemainRequirement();
+
+    //console.log(remainRequirement);
+    fn_lenderContents(remainRequirement);
 }
