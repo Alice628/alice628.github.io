@@ -21,6 +21,7 @@ let moduleList = [
     "Workbench",
     "Christmastree"
 ];
+
 let materialList = [
     "Dollars",
     "CPUFan",
@@ -82,7 +83,8 @@ let materialList = [
     "Christmastreedecorationball(red)",
     "Christmastreedecorationball(silver)",
     "Christmastreedecorationball(violet)"
-]
+];
+
 let totalRequirement = {
     "Dollars": 13000,
     "CPUFan": 50,
@@ -144,7 +146,8 @@ let totalRequirement = {
     "Christmastreedecorationball(red)": 1,
     "Christmastreedecorationball(silver)": 1,
     "Christmastreedecorationball(violet)": 1
-}
+};
+
 let materialMap = {
     "AirFilteringUnit": { "1": { "Dollars": 10000 } },
     "Bitcoinfarm": {
@@ -384,7 +387,8 @@ let materialMap = {
             "Christmastreedecorationball(violet)": 1
         }
     }
-}
+};
+
 let iconSource = {
     "Dollars": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/c/c4/Dollarsicon.png?version=f31d6c29f5a7beec810ae9dae23efc6e',
     "CPUFan": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/a/a8/CPU_Fan_Icon.png?version=34e6413f54d8c63fa71ed212d3bd13e7',
@@ -446,4 +450,67 @@ let iconSource = {
     "Christmastreedecorationball(red)": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/8/82/Christmas_ornament_red_icon.png?version=e669ca27192277f331f267902784b1cf',
     "Christmastreedecorationball(silver)": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/0/00/Christmas_ornament_silver_icon.png?version=1038f82653c63bc5c3249fe13ec58cbd',
     "Christmastreedecorationball(violet)": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/4/4c/Christmas_ornament_violet_icon.png?version=19bf390be9c3db3b933eb0c30e29cbf8',
-}
+};
+
+let materialShortNameList = {
+    "Dollars": "Dollars",
+    "CPUFan": "CPU Fan",
+    "Powersupplyunit": "PSU",
+    "Powercord": "Cord",
+    "Electricdrill": "Drill",
+    "Printedcircuitboard": "Circuit board",
+    "Phasecontrolrelay": "Relay",
+    "Siliconetubes": "Tube",
+    "Electricmotor": "Motor",
+    "Pressuregauges": "Gauge",
+    "Analogthermometers": "Therm.",
+    "Corrugatedhose": "Hose",
+    "Roubles": "Roubles",
+    "Wires": "Wires",
+    "Sparkplug": "Plug",
+    "Radiatorhelix": "Helix",
+    "Lightbulb": "Bulb",
+    "Capacitors": "Cap.",
+    "Folderwithintelligence": "Intelligence",
+    "SecureFlashdrive": "Flash drive",
+    "Damagedharddrive": "HDD",
+    "MilitaryCOFDMwirelessSignalTransmitters": "SG-C10",
+    "VPXFlashStorageModules": "VPX",
+    "Gasanalyzers": "GasAn",
+    "Militarycable": "M.Cable",
+    "Apackofscrews": "Screws",
+    "Asetoftools": "Set",
+    "Xenomorphsealingfoam": "Xeno",
+    "Medicalbloodset": "Bloodset",
+    "Salinesolution": "NaCl",
+    "LEDXSkinTransilluminator": "LEDX",
+    "Ophthalmoscopy": "Ophthalmoscopy",
+    "Wrench": "Wrench",
+    "Heat-exchangealkalisurfacewasher": "Alkali",
+    "CoffeeMajaica": "Coffee",
+    "Sodiumbicarbonate": "Sodium",
+    "Bronzelion": "Lion",
+    "Goldskullring": "Skull",
+    "Goldenneckchain": "GoldChain",
+    "Rolersubmarinergoldwristwatch": "Roler",
+    "WorkingLCD": "LCD",
+    "NIXXORlens": "NIXXOR",
+    "SSDdrive": "SSD",
+    "Apackofnails": "Nails",
+    "Screwnut": "Screw nut",
+    "Bolts": "Bolts",
+    "Ducttape": "Duct tape",
+    "Euros": "Euros",
+    "Phasedarrayelement": "AESA",
+    "Militarypowerfilter": "Filter",
+    "Handdrill": "Hand drill",
+    "WD-40100ml": "WD-40",
+    "Carbattery": "Baterry",
+    "PliersElite": "Pliers",
+    "Shustrilosealingfoam": "Shus",
+    "LeathermanMultitool": "Tool",
+    "FireKleangunlube": "#FireKlean",
+    "Christmastreedecorationball(red)": "R.Ball",
+    "Christmastreedecorationball(silver)": "S.Ball",
+    "Christmastreedecorationball(violet)": "V.Ball",
+};

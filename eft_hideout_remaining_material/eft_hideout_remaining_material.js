@@ -13,7 +13,7 @@ function fn_lenderContents(requirement) {
             return true; // continue
         }
         contentsHtml += '<tr>'; // 행시작
-        contentsHtml += '<th style="text-align: right;">' + item + '</th>'; // 1열 테이블 헤더: 재료이름
+        contentsHtml += '<th style="text-align: right;">' + item + '(' + materialShortNameList[item] + ')' + '</th>'; // 1열 테이블 헤더: 재료이름
         contentsHtml += '<td><img alt="' + item + '_icon.png" src="' + iconSource[item] + '" decoding="async" width="64" height="64"></td>'; // 2열: 재료 아이콘
         contentsHtml += '<td>' + requirement[item] + '</td>'; // 3열: 재료 남은 수량
         contentsHtml += '</tr>'; // 행끝
@@ -21,6 +21,7 @@ function fn_lenderContents(requirement) {
     contentsHtml += '</table>'; // 테이블 끝
     $('#contentsContainer').html(contentsHtml); // 구성된 html을 컨테이너에 붙여넣는다.
 }
+
 /**
  * 모듈레벨을 선택하는 셀렉트박스 영역을 랜더링한다.
  */
