@@ -36,7 +36,6 @@
                             if (material.includes('Level') || material.includes('LL')) {
                                 return true;
                             }
-                            material = material.replace(/ /g, '');
                             material = material.replace(/\,/g, '');
                             material = material.replace(/\./g, '');
                             let materialNameLength = material.length;
@@ -47,6 +46,7 @@
                                     amount += material[i];
                                 } else {
                                     material = material.substring(i);
+                                    material = material.trim();
                                     break;
                                 }
                             }
