@@ -53,7 +53,7 @@ let materialList = [
     "Medicalbloodset",
     "Salinesolution",
     "LEDXSkinTransilluminator",
-    "Opthalmoscope",
+    "Ophthalmoscopy",
     "Wrench",
     "Heat-exchangealkalisurfacewasher",
     "CoffeeMajaica",
@@ -115,7 +115,7 @@ let totalRequirement = {
     "Medicalbloodset": 2,
     "Salinesolution": 7,
     "LEDXSkinTransilluminator": 1,
-    "Opthalmoscope": 1,
+    "Ophthalmoscopy": 1,
     "Wrench": 4,
     "Heat-exchangealkalisurfacewasher": 2,
     "CoffeeMajaica": 3,
@@ -249,7 +249,7 @@ let materialMap = {
             "Roubles": 150000,
             "Salinesolution": 4,
             "LEDXSkinTransilluminator": 1,
-            "Opthalmoscope": 1
+            "Ophthalmoscopy": 1
         }
     },
     "Nutritionunit": {
@@ -417,7 +417,7 @@ let iconSource = {
     "Medicalbloodset": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/5/56/Medical_Bloodset_Icon.png?version=ac89775bb1d6ad64a4aa613c2ccd16ef',
     "Salinesolution": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/1/1b/Saline_Solution_icon.png?version=bfe1217bed38b994d1c9ef9e59d3ffe8',
     "LEDXSkinTransilluminator": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/4/4e/TransilluminatorIcon.png?version=b944a5fa8ba1e7ee655cbebf7e83fb11',
-    "Opthalmoscope": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/f/f6/Ophthalmoscopeicon.png?version=babd77052efaac857a77f8f78e9224aa',
+    "Ophthalmoscopy": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/f/f6/Ophthalmoscopeicon.png?version=babd77052efaac857a77f8f78e9224aa',
     "Wrench": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/a/a4/Wrench_Icon.png?version=db3d963c98cfdd39d7d196e06fd4619d',
     "Heat-exchangealkalisurfacewasher": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/b/b3/Heat-exchange_alkali_surface_washer_icon.png?version=cc5432636b36e6f035b6bd39a8293143',
     "CoffeeMajaica": 'https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/1/14/Coffeicon.png?version=ecb73d49812f3183c24f7a468226294c',
