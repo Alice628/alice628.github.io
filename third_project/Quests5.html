@@ -1,0 +1,3857 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="third_project.js"></script>
+    <script>
+        $(function() {
+            $('i').contents().unwrap();
+            $("table > tbody").each(function(index, item) {
+                $(item).children('tr').eq(1).remove();
+            });
+
+            $("table > tbody").each(function(index, item) {
+                $(item).children('tr').each(function(index, item2) {
+                    $(item2).children('th').eq(1).remove();
+                    $(item2).children('td').eq(1).remove();
+                });
+            });
+
+            console.log($('body').html());
+        });
+    </script>
+</head>
+
+<body>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="11">Prapor </th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Debut </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 5 Scavs at Customs</li>
+                        <li>Hand over 2 MP-133 pump-action shotguns</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+600 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>5,000 Roubles</li>
+                        <li>PM 9x18PM pistol</li>
+                        <li>3x 90-93 9x18PM Magazine, for 8 PM rounds</li>
+                        <li>Unlocks purchase of Kalashnikov AKS-74U 5.45x39 at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Checking </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find the bronze pocket watch
+                            <ul>
+                                <li>(<i>Optional</i>) Find the key to the tank truck</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the bronze pocket watch to Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+800 EXP</li>
+                        <li>Prapor Rep <b>+0.05</b> </li>
+                        <li>4,000 Roubles</li>
+                        <li>TT pistol 7.62x25 TT</li>
+                        <li>3x TT-105 7.62x25 TT Magazine</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Shootout picnic </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Neutralize 15 Scavs on Woods</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+2,000 EXP</li>
+                        <li>Prapor Rep <b>+0.1</b> </li>
+                        <li>6,000 Roubles</li>
+                        <li>Kalashnikov AKS-74U 5.45x39</li>
+                        <li>3x 6L20 30-round 5.45x39 magazine for AK-74 and compatible weapons</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Delivery from the past </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a secure case in the Tarcone Director's Office at the Customs terminal</li>
+                        <li>Leave the case in the Factory swing room, on 2nd floor of shop 3</li>
+                        <li>Survive and exit Factory location</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,100 EXP</li>
+                        <li>Prapor Rep <b>+0.11</b> </li>
+                        <li>12,000 Roubles</li>
+                        <li>Saiga 12ga ver. 10 12/76 shotgun</li>
+                        <li>3x Sb.5 5-round 12/76 magazine for SOK-12 and compatible weapons</li>
+                        <li>Unlocks purchase of 5.45x39 mm PS at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>BP depot </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Mark fuel tank №1 with beacon on Customs</li>
+                        <li>Mark fuel tank №2 with beacon on Customs</li>
+                        <li>Mark fuel tank №3 with beacon on Customs</li>
+                        <li>Mark fuel tank №4 with beacon on Customs</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+2,900 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>8,000 Roubles</li>
+                        <li>3x RGD-5 hand grenade</li>
+                        <li>Expeditionary fuel tank</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The bunker - Part 1 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find underground bunker</li>
+                        <li>Locate control room in the underground bunker</li>
+                        <li>Survive and extract</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6000 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>AK-74N 5.45x39 assault rifle</li>
+                        <li>120x 5.45x39 mm BT</li>
+                        <li>20,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The bunker - Part 2 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Locate the hermetic door leading to the hospital (white bishop)</li>
+                        <li>Locate one of two hermetic doors leading to academy building (black bishop)</li>
+                        <li>Locate one of two hermetic doors leading to barracks №1 (black pawn)</li>
+                        <li>Locate one of two hermetic doors leading to barracks №2 (white pawn)</li>
+                        <li>Locate the hermetic door leading to the building of the air control center (white king)</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6600 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>Kalashnikov AKS-74UB 5.45x39</li>
+                        <li>120x 5.45x39 mm BS</li>
+                        <li>25,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Bad rep evidence </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find secure folder 0031 in a bunkhouse on Customs
+                            <ul>
+                                <li>(<i>Optional</i>) Gain access to the closed room in the Factory offices</li>
+                                <li>(<i>Optional</i>) Find the bunkhouse key</li>
+                            </ul>
+                        </li>
+                        <li>Hand over secure folder 0031 to Prapor</li>
+                        <li>Survive and exit Customs location</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,200 EXP</li>
+                        <li>Prapor Rep <b>+0.1</b> </li>
+                        <li>16,000 Roubles</li>
+                        <li>PP-9 Klin 9x18PMM SMG</li>
+                        <li>3x Standard 9x18PM 30-round magazine for PP-91</li>
+                        <li>Unlocks purchase of Zenit-Belomo PSO 1M2-1 4x24 scope at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Ice cream cones </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find 6 60-round mags for AK
+                            <ul>
+                                <li>(<i>Optional</i>) Find the key from the bunker in the Terragroup employee room</li>
+                                <li>(<i>Optional</i>) Locate the right bunker in the Woods</li>
+                            </ul>
+                        </li>
+                        <li>Hand over 6 60 round mags for AK to Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+5,400 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>17,000 Roubles</li>
+                        <li>3x 60-round 6L31 5.45x39 magazine for AK-74 and compatibles</li>
+                        <li>100x 5.45x39 mm BP</li>
+                        <li>Unlocks barter for 60-round 6L31 5.45x39 magazine for AK-74 and compatibles at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Postman Pat - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a letter on a messenger in the Factory</li>
+                        <li>Survive and exit Factory location</li>
+                        <li>Hand over the letter to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,000 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>19,000 Roubles</li>
+                        <li>Flyye MBSS Backpack</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Shaking up teller </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find something valuable in the dorm room 203
+                            <ul>
+                                <li>(<i>Optional</i>) Gain access to room 214</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the item to Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,100 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>22,000 Roubles</li>
+                        <li>Unlocks purchase of PBS-4 5.45x39 Silencer at LL3</li>
+                        <li>Unlocks purchase of Hexagon 12K sound suppressor at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Punisher - Part 1 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 15 Scavs at the Shoreline using AKM series weapon</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,800 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>40,000 Roubles</li>
+                        <li>6B43 Zabralo-Sh 6A Armor</li>
+                        <li>Unlocks purchase of SV-98 bolt-action sniper rifle at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Punisher - Part 2 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 12 Scavs at the Shoreline using a suppressed weapon</li>
+                        <li>Find in raid 7 lower half-masks</li>
+                        <li>Hand masks over to Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+13,900 EXP</li>
+                        <li>Prapor Rep <b>+0.1</b> </li>
+                        <li>70,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Punisher - Part 3 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 25 Scavs on Customs using AKS-74U</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,400 EXP</li>
+                        <li>Prapor Rep <b>+0.08</b> </li>
+                        <li>Skier Rep <b>+0.05</b> </li>
+                        <li>2,500 Dollars</li>
+                        <li>DVL-10 Saboteur sniper rifle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Punisher - Part 4 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 10 Scavs in Woods using 12 gauge shotguns</li>
+                        <li>Kill 10 PMCs on Shoreline while wearing a balaclava and a scav vest.</li>
+                        <li>Find in raid 5 knives Bars A-2607</li>
+                        <li>Handover knives to Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,000 EXP</li>
+                        <li>Prapor Rep <b>+0.12</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>Colt M4A1 5.56x45 Assault Rifle</li>
+                        <li>100,000 Roubles</li>
+                        <li>Unlocks purchase of 5.45x39 mm BT at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Punisher - Part 5 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find 3 AK-74N</li>
+                        <li>Handover AK-74N rifles to Prapor</li>
+                        <li>Find 3 M4A1 assault rifles</li>
+                        <li>Handover M4A1 rifles to Prapor</li>
+                        <li>Find 5 PM pistols</li>
+                        <li>Handover pistols to Prapor</li>
+                        <li>Kill 10 PMC operatives. You must be wearing a PACA vest and 6b47 helmet</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,300 EXP</li>
+                        <li>Prapor Rep <b>+0.12</b> </li>
+                        <li>5,000 Dollars</li>
+                        <li>Pistol case</li>
+                        <li>Documents case</li>
+                        <li>Unlocks purchase of 7.62x39 mm BP at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Punisher - Part 6 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 15 PMC operators. You must use SVD</li>
+                        <li>Find 7 PMC USEC dogtags</li>
+                        <li>Hand over 7 PMC USEC dogtags</li>
+                        <li>Find 7 PMC BEAR dogtags</li>
+                        <li>Hand over 7 PMC BEAR dogtags</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,600 EXP</li>
+                        <li>Prapor Rep <b>+0.12</b> </li>
+                        <li>Skier Rep <b>+0.06</b> </li>
+                        <li>Therapist Rep <b>+0.15</b> </li>
+                        <li>250,000 Roubles</li>
+                        <li>Secure container Epsilon</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Polikhim hobo </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 25 Scavs on Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,000 EXP</li>
+                        <li>Prapor Rep <b>+0.1</b> </li>
+                        <li>17,000 Roubles</li>
+                        <li>4x F-1 Hand grenade</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Big customer </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find a transport with chemicals</li>
+                        <li>Mark the chemical transport with a beacon</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,200 EXP</li>
+                        <li>Prapor Rep <b>+0.1</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>200,000 Roubles</li>
+                        <li>PACA Soft Armor</li>
+                        <li>2x Ammo case</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>No offence </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find 10 M67 grenades</li>
+                        <li>Handover grenades to Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Prapor Rep <b>+0.4</b> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Grenadier </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 12 PMC's with grenades</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+21,300 EXP</li>
+                        <li>50,000 Roubles</li>
+                        <li>7x F-1 Hand grenade</li>
+                        <li>240x 5.45x39 mm BT</li>
+                        <li>Unlocks barter for 8 pcs pack of 9x39 7N12 BP ammo at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Perfect mediator </th>
+                <th>Standing </th>
+                <td>
+                    <ul>
+                        <li>Reach 4-th level of standing with Ragman</li>
+                        <li>Reach 4-th level of standing with Skier</li>
+                        <li>Reach 4-th level of standing with Mechanic</li>
+                        <li>Reach 4-th level of standing with Peacekeeper</li>
+                        <li>Reach 4-th level of standing with Prapor</li>
+                        <li>Reach 4-th level of standing with Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+17,200 EXP</li>
+                        <li>Prapor Rep <b>+0.9</b> </li>
+                        <li>55,000 Roubles</li>
+                        <li>T H I C C Weapon case</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Insomnia </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 30 PMC's during nighttime (23 to 04)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+18,500 EXP</li>
+                        <li>85,000 Roubles</li>
+                        <li>3x PNV-10T Night Vision</li>
+                        <li>3x Zenit 2P Klesch flashlight + laser designator</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Test drive - Part 1 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 5 PMC's using an M1A with a Hybrid 46 silencer and a Trijicon REAP-IR thermal scope</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+31,000 EXP</li>
+                        <li>Prapor Rep <b>+0.12</b> </li>
+                        <li>300,000 Roubles</li>
+                        <li>2x RPK-16 5.45x39 light machine gun</li>
+                        <li>6x 95-round 5.45x39 magazine for RPK-16 and compatibles</li>
+                        <li>5x Golden neck chain</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Regulated materials </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid military battery</li>
+                        <li>Handover military battery</li>
+                        <li>Find in raid 10 30-mil. shells for BMP cannon</li>
+                        <li>Handover 10 30-mil. shells for BMP cannon</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>150,000 Roubles</li>
+                        <li>Unlocks barter for ASh-12 12.7x55 assault rifle at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Therapist </th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Shortage </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find 5 Salewa kits</li>
+                        <li>Hand over 5 Salewa kits to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+500 EXP</li>
+                        <li>Therapist Rep <b>+0.07</b> </li>
+                        <li>10,000 Roubles</li>
+                        <li>4x Analgin painkillers</li>
+                        <li>4x AI-2 medikit</li>
+                        <li>4x Immobilizing splint</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sanitary Standards - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find gas analyzer
+                            <ul>
+                                <li>(<i>Optional</i>) Get access to the pumping station at the Factory</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the gas analyzer to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+2,200 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>14,000 Roubles</li>
+                        <li>2x Car first aid kit</li>
+                        <li>Unlocks purchase of Car first aid kit at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sanitary Standards - Part 2 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 2 gas analyzers</li>
+                        <li>Hand over the gas analyzers to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,500 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>18,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Operation Aquarius - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find hidden water in the dorm</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+3,400 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>Skier Rep <b>-0.08</b> </li>
+                        <li>14,000 Roubles</li>
+                        <li>8x 0.6L water bottle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Operation Aquarius - Part 2 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Eliminate 15 Scavs on Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+3,400 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>Skier Rep <b>-0.08</b> </li>
+                        <li>15,000 Roubles</li>
+                        <li>3x Army bandage</li>
+                        <li>Unlocks purchase of Army bandage at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Painkiller </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 4 morphine syringes</li>
+                        <li>Hand the syringes over to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,600 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>17,000 Roubles</li>
+                        <li>10x Analgin painkillers</li>
+                        <li>5x Disposable syringe</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Pharmacist </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a case with the device
+                            <ul>
+                                <li>(<i>Optional</i>) Find the paramedic's car</li>
+                                <li>(<i>Optional</i>) Get into dorm room 114</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the case to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+5,900 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>25,000 Roubles</li>
+                        <li>4x IFAK personal tactical first aid kit</li>
+                        <li>Unlocks barter for 6B47 Helmet with cover (flora digital) at Ragman LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Supply plans </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find the secure folder on the sawmill</li>
+                        <li>Survive and exit Woods location</li>
+                        <li>Hand over the folder to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,700 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>70,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>General wares </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 15 cans of meat</li>
+                        <li>Hand the cans over to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+5,000 EXP</li>
+                        <li>Therapist Rep <b>+0.07</b> </li>
+                        <li>4x Can of pacific saury</li>
+                        <li>2x Iskra lunch box</li>
+                        <li>2x Coffee Majaica</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Car repair </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 4 car batteries</li>
+                        <li>Find in raid 8 spark plugs</li>
+                        <li>Hand car batteries over to Therapist</li>
+                        <li>Hand spark plugs over to Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,600 EXP</li>
+                        <li>Therapist Rep <b>+0.08</b> </li>
+                        <li>1,500 Dollars</li>
+                        <li>2x Grizzly First Aid Kit</li>
+                        <li>Regenerative stimulant injector eTG-change</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 1 </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Mark 1st ambulance</li>
+                        <li>Mark 2nd ambulance</li>
+                        <li>Mark 3rd ambulance</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,500 EXP</li>
+                        <li>Therapist Rep <b>+0.07</b> </li>
+                        <li>22,000 Roubles</li>
+                        <li>2x IFAK personal tactical first aid kit</li>
+                        <li>Unlocks purchase of IFAK personal tactical first aid kit at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 2 </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Gather info on the fate of the Terragroup research</li>
+                        <li>Hand over info on the fate of the Terragroup research</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,600 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>24,000 Roubles</li>
+                        <li>4x Salewa FIRST AID KIT</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 3 </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Find the car that belonged to the head of the Medical Service</li>
+                        <li>Pick up the blood sample</li>
+                        <li>Hand over the blood sample</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,400 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>26,000 Roubles</li>
+                        <li>2x Morphine injector</li>
+                        <li>Unlocks purchase of Morphine injector at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 4 </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Increase Health skill level to 4</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,200 EXP</li>
+                        <li>Therapist Rep <b>+0.09</b> </li>
+                        <li>29,000 Roubles</li>
+                        <li>2x Grizzly First Aid Kit</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 5 </th>
+                <th>Multi </th>
+                <td>
+                    <ul>
+                        <li>Locate the drop spot in the nighttime in Factory</li>
+                        <li>Obtain 3 packs of gunpowder and leave them in the designated spot</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+13,300 EXP</li>
+                        <li>Therapist Rep <b>+0.1</b> </li>
+                        <li>35,000 Roubles</li>
+                        <li>Meds case</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Postman Pat - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Hand over the letter from messenger to the Therapist</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,200 EXP</li>
+                        <li>Therapist Rep <b>+0.06</b> </li>
+                        <li>5,000 Roubles</li>
+                        <li>Unlocks purchase of Salewa FIRST AID KIT at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Out of curiosity </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a transport with chemicals</li>
+                        <li>Mark the chemical transport with a beacon</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,300 EXP</li>
+                        <li>Therapist Rep <b>+0.3</b> </li>
+                        <li>170,000 Roubles</li>
+                        <li>Meds case</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Trust regain </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find 303 dorm room key</li>
+                        <li>Find ZB-014 key</li>
+                        <li>Find the customs military checkpoint key</li>
+                        <li>Find gas station closet key</li>
+                        <li>Hand over 303 key</li>
+                        <li>Hand over ZB-014 key</li>
+                        <li>Hand over the checkpoint key</li>
+                        <li>Hand over closet key</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Therapist Rep <b>+0.3</b> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Hippocratic Vow </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Handover 500 dollars.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Therapist Rep <b>+0.2</b> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Private clinic </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Handover 3 Ophthalmoscopes</li>
+                        <li>Handover 3 LEDX Skin Transilluminators</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,100 EXP</li>
+                        <li>Therapist Rep <b>+0.11</b> </li>
+                        <li>130,000 Roubles</li>
+                        <li>1x T H I C C Items case</li>
+                        <li>1x West wing room 306 key</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Athlete </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Earn 10 Health skill level</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,600 EXP</li>
+                        <li>Therapist Rep <b>+0.11</b> </li>
+                        <li>110,000 Roubles</li>
+                        <li>3x Hemostatic drug Zagustin</li>
+                        <li>3x Adrenaline injector</li>
+                        <li>Unlocks purchase of Adrenaline injector at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Decontamination service </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 30 Scavs at the Interchange, from the range less than 60 meters.You must be wearing spec. gear</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+21,600 EXP</li>
+                        <li>Therapist Rep <b>+0.11</b> </li>
+                        <li>300,000 Roubles</li>
+                        <li>3x Morphine injector</li>
+                        <li>3x IFAK personal tactical first aid kit</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>An apple a day - keeps the doctor away </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Handover 400,000 roubles</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+2 Health skill levels</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Skier </th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Supplier </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Hand over 4 body armor to Skier</li>
+                        <li>Hand over 4 shotguns to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+3,300 EXP</li>
+                        <li>Skier Rep <b>+0.12</b> </li>
+                        <li>60,000 Roubles</li>
+                        <li>Unlocks purchase of Saiga-9 9x19 Carbine at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Extortionist </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find the hidden valuable cargo
+                            <ul>
+                                <li>(<i>Optional</i>) Find the messenger body</li>
+                                <li>(<i>Optional</i>) Find a place where the messenger hid the item</li>
+                            </ul>
+                        </li>
+                        <li>Hand it over to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+3,200 EXP</li>
+                        <li>Skier Rep <b>+0.08</b> </li>
+                        <li>500 Dollars</li>
+                        <li>Vepr AKM / VPO-209 366TKM carbine</li>
+                        <li>3x Izhmash AK magazine (issued ‘55 or later) 30-round for 7.62x39 AK and compatibles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Stirrup </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Eliminate 3 PMC operators. You must be using pistols</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,700 EXP</li>
+                        <li>Skier Rep <b>+0.12</b> </li>
+                        <li>Prapor Rep <b>-0.12</b> </li>
+                        <li>Therapist Rep <b>-0.05</b> </li>
+                        <li>65,000 Roubles</li>
+                        <li>Camelbak Tri-Zip Backpack</li>
+                        <li>Unlocks purchase of Vepr AKM / VPO-209 366TKM carbine at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>What's on the flash drive? </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid two USB flash drives with information</li>
+                        <li>Hand them over to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,500 EXP</li>
+                        <li>Skier Rep <b>+0.1</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>Simonov Semi-Automatic Carbine SKS 7.62x39 Hunting Rifle Version</li>
+                        <li>2x ProMag SKS-A5 7.62x39 20-round SKS magazine</li>
+                        <li>1x Hexagon "DTKP MK.2" 7.62x39 sound suppressor</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Golden swag </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find a Gilded Zibbo lighter</li>
+                        <li>Leave the lighter in the bunkhouse in the trailer parking (Customs)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,600 EXP</li>
+                        <li>Skier Rep <b>+0.1</b> </li>
+                        <li>+17,000 Roubles</li>
+                        <li>AS VAL</li>
+                        <li>3x 20-round 6L25 9x39 VSS magazine</li>
+                        <li>Unlocks purchase of VOMZ Pilad P1X42 "WEAVER" reflex sight at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Chemical - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find some information about the Deputy Chief's past life
+                            <ul>
+                                <li>(<i>Optional</i>) Find a sleeping place of the former Deputy Chief of Security</li>
+                            </ul>
+                        </li>
+                        <li>Hand it over to Skier</li>
+                        <li>Find items that can help the investigation</li>
+                        <li>Hand them over to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,800 EXP</li>
+                        <li>Skier Rep <b>+0.08</b> </li>
+                        <li>15,000 Roubles</li>
+                        <li>PACA Soft Armor</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Chemical - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find any information that could help with the investigation</li>
+                        <li>Hand it over to Skier</li>
+                        <li>Find any evidence that could help with the investigation</li>
+                        <li>Hand the evidence over to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,900 EXP</li>
+                        <li>Skier Rep <b>+0.08</b> </li>
+                        <li>15,000 Roubles</li>
+                        <li>3x F-1 Hand grenade</li>
+                        <li>Unlocks purchase of SAI-02 10-round 12x76 magazine for SOK-12 and compatible weapons at Jaeger LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Chemical - Part 3 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a Syringe with a chemical in the Factory</li>
+                        <li>Hand over the syringe to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+5,400 EXP</li>
+                        <li>Skier Rep <b>+0.08</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>17,000 Roubles</li>
+                        <li>2x Zenit-Belomo PSO 1M2-1 4x24 scope</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Chemical - Part 4 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a transport with chemicals</li>
+                        <li>Mark the chemical transport with a beacon</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,600 EXP</li>
+                        <li>Skier Rep <b>+0.1</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>36,500 Roubles</li>
+                        <li>1x Grenade case</li>
+                        <li>Unlocks purchase of ZSh-1-2M helmet (black) at Ragman LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Loyalty buyout </th>
+                <th>Standing </th>
+                <td>
+                    <ul>
+                        <li>Give 1 million roubles to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Skier Rep <b>+0.3</b> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Friend from the West - Part 1 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 7 USEC</li>
+                        <li>Find 7 PMC USEC dogtags</li>
+                        <li>Hand over 7 PMC USEC dogtags</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,800 EXP</li>
+                        <li>Skier Rep <b>+0.14</b> </li>
+                        <li>700 Dollars</li>
+                        <li>Colt M4A1 5.56x45 Assault Rifle</li>
+                        <li>Golden rooster</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Friend from the West - Part 2 </th>
+                <th>Merchant </th>
+                <td>
+                    <ul>
+                        <li>Hand over $6,000</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,200 EXP</li>
+                        <li>Skier Rep <b>+0.12</b> </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"Vitamins" - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Get first Chemical container</li>
+                        <li>Hand over first Chemical container</li>
+                        <li>Get second Chemical container</li>
+                        <li>Hand over second Chemical container</li>
+                        <li>Get third Chemical container</li>
+                        <li>Hand over third Chemical container</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+14,100 EXP</li>
+                        <li>Skier Rep <b>+0.1</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>37,000 Roubles</li>
+                        <li>3x Holosun HS401G5 reflex sight</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"Vitamins" - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 3 Medical bloodset</li>
+                        <li>Hand over Medical bloodset, 3 pcs</li>
+                        <li>Find in raid 4 Respirator</li>
+                        <li>Hand over Respirator, 4 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+17,200 EXP</li>
+                        <li>Skier Rep <b>+0.12</b> </li>
+                        <li>40,000 Roubles</li>
+                        <li>5x Morphine injector</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Lend lease - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Get first Motor Controller</li>
+                        <li>Hand over first controller</li>
+                        <li>Get second Motor Controller</li>
+                        <li>Hand over second controller</li>
+                        <li>Get third Motor Controller</li>
+                        <li>Hand over third controller</li>
+                        <li>Get first Single-axis Fiber Optic Gyroscope</li>
+                        <li>Hand over first Single-axis Fiber Optic Gyroscope</li>
+                        <li>Get second Single-axis Fiber Optic Gyroscope</li>
+                        <li>Hand over second Single-axis Fiber Optic Gyroscope</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,000 EXP</li>
+                        <li>Skier Rep <b>+0.12</b> </li>
+                        <li>3,500 Dollars</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Informed means armed </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Install a WIFI camera to watch the pier</li>
+                        <li>Install the WIFI camera to watch the road to port</li>
+                        <li>Install the WIFI camera to watch Kiba Arms store</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+15,900 EXP</li>
+                        <li>Skier Rep <b>+0.1</b> </li>
+                        <li>45,000 Roubles</li>
+                        <li>2x Fab Defense UAS for AK</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Chumming </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Stash 3 gold chains under the mattress next to BTR-80A</li>
+                        <li>Stash 3 gold chains in the microwave on the 3rd floor of dorms</li>
+                        <li>Stash 3 gold chains in the middle accommodation unit of the sawmill</li>
+                        <li>Kill 5 PMC operators on Interchange in time period from 23:00 till 10:00</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+22,000 EXP</li>
+                        <li>Skier Rep <b>+0.12</b> </li>
+                        <li>65,000 Roubles</li>
+                        <li>Roler submariner gold wrist watch</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Kind of sabotage </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Hand over folder 0052 to Skier</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,600 EXP</li>
+                        <li>Skier Rep <b>+0.3</b> </li>
+                        <li>180,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Silent caliber </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 20 Scavs with a suppressed 12 gauge shotgun</li>
+                        <li>Kill 10 PMC's with a suppressed 12 gauge shotgun</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,900 EXP</li>
+                        <li>Skier Rep <b>+0.09</b> </li>
+                        <li>100,000 Roubles</li>
+                        <li>DVL-10 Saboteur sniper rifle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Flint </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Earn 6 Stress Resistance skill level</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,000 EXP</li>
+                        <li>Skier Rep <b>+0.08</b> </li>
+                        <li>150,000 Roubles</li>
+                        <li>Unlocks barter for Miller Bros. Blades M-2 Tactical Sword at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Bullshit </th>
+                <th>Discovery </th>
+                <td>
+                    <ul>
+                        <li>Find False flash drive</li>
+                        <li>Put fake flash drive (Dorms, 3-rd floor. Pile of trash opposite the stairs)</li>
+                        <li>Put sniper rifle SV-98 (Dorms, 3-rd floor. Pile of trash opposite the stairs</li>
+                        <li>Put Roler watch (Dorms, 3-rd floor. Pile of trash opposite the stairs)</li>
+                        <li>Do not kill Scavs at Customs until the quest is completed</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+29,700 EXP</li>
+                        <li>Skier Rep <b>+0.07</b> </li>
+                        <li>120,000 Roubles</li>
+                        <li>Unlocks barter for 5 pcs. 12x70 DIPP ammo box at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Setup </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 15 PMC's at Customs. You must be wearing spec. gear</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+29,300 EXP</li>
+                        <li>Skier <b>+0.07</b> </li>
+                        <li>100,000 Roubles</li>
+                        <li>Unlocks barter for 20 pcs. 9x19 mm DIPP ammo box at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Peacekeeper</th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Fishing Gear </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find the secret spot</li>
+                        <li>Leave sniper rifle in place</li>
+                        <li>Leave multitool in place</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+5,400 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>800 Dollars</li>
+                        <li>Kiver-M Helmet</li>
+                        <li>Unlocks purchase of Aimpoint Micro T-1 reflex sight at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Tigr Safari </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Mark first Tigr vehicle at Customs</li>
+                        <li>Mark second Tigr vehicle at Customs</li>
+                        <li>Mark third Tigr vehicle at Customs</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,600 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>900 Dollars</li>
+                        <li>ANA Tactical Alpha chest rig</li>
+                        <li>2x 60-round MAG5-60 5.56x45 STANAG magazine</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Scrap Metal </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Mark first tank T-90 at Shoreline</li>
+                        <li>Mark second tank T-90 at Shoreline</li>
+                        <li>Mark third tank T-90 at Shoreline</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,200 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>850 Dollars</li>
+                        <li>2x AKM 7.62x39 assault rifle</li>
+                        <li>200x 7.62x39 mm PS</li>
+                        <li>Unlocks purchase of HK MP5 9x19 submachinegun (Navy 3 Round Burst) "SD" variant at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Eagle Eye </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find the first UAV crash site</li>
+                        <li>Find SAS disk from the first crashed drone</li>
+                        <li>Hand over SAS disk from the first crashed drone</li>
+                        <li>Find the second UAV crash site</li>
+                        <li>Find SAS disk from the second crashed drone</li>
+                        <li>Hand over SAS disk from the second crashed drone</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,300 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>900 Dollars</li>
+                        <li>Leupold Mark 4 HAMR 4x24mm DeltaPoint hybrid assault scope</li>
+                        <li>ELCAN SpecterDR 1x/4x Scope FDE</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Humanitarian Supplies </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Mark first truck with lost UN cargo
+                            <ul>
+                                <li>(<i>Optional</i>) Find first truck with lost UN cargo</li>
+                            </ul>
+                        </li>
+                        <li>Mark second truck with lost UN cargo
+                            <ul>
+                                <li>(<i>Optional</i>) Find second truck with lost UN cargo</li>
+                            </ul>
+                        </li>
+                        <li>Find 5 MRE ration packs</li>
+                        <li>Deliver 5 MRE ration packs to Peacekeeper</li>
+                        <li>Kill 10 Scavs at the Shoreline. You must be wearing UN uniform (MF-UNTAR armor vest and UNTAR helmet)</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,400 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>800 Dollars</li>
+                        <li>Unlocks purchase of Hexagon AK-74 5.45x39 sound suppressor at Skier LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Cult - Part 1 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Find the missing informant</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,700 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>700 Dollars</li>
+                        <li>3x Golden neck chain</li>
+                        <li>Unlocks purchase of 5.56x45 mm M856A1 at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Cult - Part 2 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Put the beacon on the ritual spot at the Customs</li>
+                        <li>Put the beacon on the ritual spot in the Woods</li>
+                        <li>Put the beacon on the ritual spot in the Shoreline</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,200 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>850 Dollars</li>
+                        <li>3x Gas analyzer</li>
+                        <li>3x Geiger-Muller counter</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 1 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 7 Scavs at the Shoreline with 12 gauge shotgun headshots</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,900 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>950 Dollars</li>
+                        <li>SIG MPX 9x19 Submachine gun</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 2 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Mark the helicopter with a beacon</li>
+                        <li>Mark a safe road with a beacon</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,500 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>900 Dollars</li>
+                        <li>Unlocks purchase of M67 Hand grenade at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 3 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid WD-40 100ml</li>
+                        <li>Hand over WD-40 100ml</li>
+                        <li>Find in raid Clin wipers, 2 pcs</li>
+                        <li>Hand over Clin wipers, 2 pcs</li>
+                        <li>Find in raid Corrugated hoses, 2 pcs</li>
+                        <li>Hand over Corrugated hoses, 2 pcs</li>
+                        <li>Find in raid Ox bleach, 2 pcs</li>
+                        <li>Hand over Ox bleach, 2 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,100 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>800 Dollars</li>
+                        <li>2x HK MP5 9x19 submachinegun (Navy 3 Round Burst)</li>
+                        <li>5x M67 Hand grenade</li>
+                        <li>1x set of tools</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 4 </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Find generators in right wing</li>
+                        <li>Find generators in left wing</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,300 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>1,100 Dollars</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 5 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find the key from the locked resort rooms</li>
+                        <li>Hand over key from the locked resort rooms</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,800 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>980 Dollars</li>
+                        <li>4x IFAK personal tactical first aid kit</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 6 </th>
+                <th>Standing </th>
+                <td>
+                    <ul>
+                        <li>Hand over $8,000</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,400 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.09</b> </li>
+                        <li>Unlocks purchase of 7.62x51 mm M62 at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 7 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Morphine injector, 4 pcs</li>
+                        <li>Hand over Morphine injector, 4 pcs</li>
+                        <li>Find in raid Heat-exchange alkali surface washer, 2 pcs</li>
+                        <li>Hand over Heat-exchange alkali surface washer, 2 pcs</li>
+                        <li>Find in raid Corrugated hose, 2 pcs</li>
+                        <li>Hand over Corrugated hose, 2 pcs</li>
+                        <li>Find in raid 5L propane tank, 2 pcs</li>
+                        <li>Hand over 5L propane tank, 2 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,600 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.09</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>Factory exit key</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Cargo X - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find the cargo record in the computer room</li>
+                        <li>Hand over the retrieved data to Peacekeeper</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,400 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>700 Dollars</li>
+                        <li>Pistol case</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Cargo X - Part 2 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Find a room with reservoirs</li>
+                        <li>Find any information on the second part of the shipment</li>
+                        <li>Give the info on the second part of the cargo to Peacekeeper</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,600 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>850 Dollars</li>
+                        <li>Unlocks purchase of KAC QDSS NT-4 5.56x45 silencer (Black) at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Cargo X - Part 3 </th>
+                <th>Multi </th>
+                <td>
+                    <ul>
+                        <li>Find hidden Terragroup cargo</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,700 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>900 Dollars</li>
+                        <li>HK MP5 9x19 submachinegun (Navy 3 Round Burst)</li>
+                        <li>3x Standard MP5 30-round 9x19 magazine</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Lend lease - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Military COFDM wireless Signal Transmitter</li>
+                        <li>Find in raid 2 Virtex programmable processors</li>
+                        <li>Handover Military COFDM wireless Signal Transmitter</li>
+                        <li>Handover 2 Virtex programmable processors</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+22,200 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.09</b> </li>
+                        <li>2,000 Dollars</li>
+                        <li>2x HK 416A5 5.56x45 Assault Rifle</li>
+                        <li>300x 5.56x45 mm M995</li>
+                        <li>2x Magpul PMAG D-60 5.56x45 60-round magazine</li>
+                        <li>2x 60-round MAG5-60 5.56x45 STANAG magazine</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Wet Job - Part 1 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 10 Scavs at the Shoreline using a suppressed M4 or ADAR</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+13,000 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.09</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>1,200 Dollars</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Wet Job - Part 2 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Find the fisher's dwelling</li>
+                        <li>Set the beacon</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,700 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.07</b> </li>
+                        <li>1,300 Dollars</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Wet Job - Part 3 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Find Artyom's car</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,900 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>1,500 Dollars</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Wet Job - Part 4 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find a list of resort tenants</li>
+                        <li>Hand over the list of tenants to Peacekeeper</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,000 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>1,600 Dollars</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Wet Job - Part 5 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find info on Artyom's work</li>
+                        <li>Hand over the info to Peacekeeper</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,200 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>1,600 Dollars</li>
+                        <li>Unlocks purchase of Remington R11 RSASS 7.62x51 at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Wet Job - Part 6 </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Reach level 7 in Sniper rifle handling skill</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,400 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.06</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>3,500 Dollars</li>
+                        <li>DVL-10 Saboteur sniper rifle</li>
+                        <li>Unlocks purchase of 7.62x51 mm M61 at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The guide </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Survive at Interchange (Status: Survived)</li>
+                        <li>Survive at Shoreline (Status: Survived)</li>
+                        <li>Survive at Factory (Status: Survived)</li>
+                        <li>Survive at Laboratory (Status: Survived)</li>
+                        <li>Survive at Woods (Status: Survived)</li>
+                        <li>Survive at Customs (Status: Survived)</li>
+                        <li>Survive at Reserve (Status: Survived)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+35,100 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.12</b> </li>
+                        <li>25,000 Dollars</li>
+                        <li>Eotech HHS-1 sight Tan</li>
+                        <li>SLAAP armor Plate (Tan)</li>
+                        <li>3x Arsenal CWP 30-round 5.56x45 magazine for SLR-106 and compatible weapons</li>
+                        <li>Unlocks purchase of Eotech HHS-1 sight Tan at LL4</li>
+                        <li>Unlocks purchase of SLAAP armor Plate (Tan) at LL4</li>
+                        <li>Unlocks purchase of Arsenal CWP 30-round 5.56x45 magazine for SLR-106 and compatible weapons at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Peacekeeping mission </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 12 Scavs on Customs while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                        <li>Kill 12 Scavs on Interchange while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                        <li>Kill 12 Scavs on Shoreline while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                        <li>Kill 12 Scavs on Woods while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+32,400 EXP</li>
+                        <li>Peacekeeper Rep <b>+0.12</b> </li>
+                        <li>Remington Model 700 Sniper rifle</li>
+                        <li>150x 7.62x51 mm M61</li>
+                        <li>2x GPNVG-18 Night Vision</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Mentor </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Handover 50,000 euros</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+3 Sniper Rifles skill levels</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Mechanic </th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 1 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify MP-133 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>20,000 Roubles</li>
+                        <li>GLOCK 17 9x19 pistol</li>
+                        <li>50x 9x19 mm Pst gzh</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 2 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AKS-74U to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>60,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 3 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify MP5 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.05</b> </li>
+                        <li>500 Euros</li>
+                        <li>Submachinegun 19-01 Vityaz-SN 9x19</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 4 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify M4A1 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,100 EXP</li>
+                        <li>Mechanic Rep <b>+0.05</b> </li>
+                        <li>800 Euros</li>
+                        <li>Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 5 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify DVL-10 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+13,900 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>200,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 6 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify R11 RSASS to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+14,900 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>1,000 Euros</li>
+                        <li>3x Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 7 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify Remington Model 870 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>100,000 Roubles</li>
+                        <li>GLOCK 17 9x19 pistol</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 8 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AKM to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,200 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>1,500 Euros</li>
+                        <li>2x Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 9 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AKS-74N to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+17,300 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>500 Euros</li>
+                        <li>Colt M4A1 5.56x45 Assault Rifle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 10 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AK-105 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+17,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>2x Ammo case</li>
+                        <li>Unlocks purchase of Colt M4A1 5.56x45 Assault Rifle "SOPMOD I" variant at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 11 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AS VAL to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+18,600 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>Key to KIBA Outlet grate door</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 12 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AK-102 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+14,400 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>70,000 Roubles</li>
+                        <li>Remington Model 870 12ga shotgun</li>
+                        <li>Unlocks purchase of Magpul AFG grip OD at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 13 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify SIG MPX to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.05</b> </li>
+                        <li>500 Dollars</li>
+                        <li>Muzzle brake Vendetta precision VP-09 5.56x45</li>
+                        <li>Unlocks purchase of Skeletonized AR-15 pistol grip at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 14 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify AKMN to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,800 EXP</li>
+                        <li>Mechanic Rep <b>+0.05</b> </li>
+                        <li>100,000 Roubles</li>
+                        <li>EOtech Vudu 1-6 riflescope</li>
+                        <li>Unlocks purchase of LAS/TAC 2 tactical flashlight at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 15 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify M1A to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+22,600 EXP</li>
+                        <li>Mechanic Rep <b>+0.05</b> </li>
+                        <li>700 Euros</li>
+                        <li>Springfield Armory M1A 7.62x51</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 16 </th>
+                <th>Parameter-oriented modding </th>
+                <td>
+                    <ul>
+                        <li>Modify M4A1 to comply with the required specification</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+28,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>2,500 Euros</li>
+                        <li>Colt M4A1 5.56x45 Assault Rifle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Farming - Part 1 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Fix the first control board</li>
+                        <li>Fix the second control board</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>25,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Farming - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>"Find in raid Powercord, 2 pcs</li>
+                        <li>Hand over Powercord, 2 pcs</li>
+                        <li>"Find in raid T-Shaped Plug, 4 pcs</li>
+                        <li>Hand over T-Shaped Plug, 4 pcs</li>
+                        <li>"Find in raid Printed circuit board, 2 pcs</li>
+                        <li>Hand over Printed circuit board, 2 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,800 EXP</li>
+                        <li>Mechanic Rep <b>+0.03</b> </li>
+                        <li>15,000 Roubles</li>
+                        <li>AS VAL</li>
+                        <li>NIXXOR lens</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Farming - Part 3 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find a warehouse of confiscate</li>
+                        <li>Get package with graphics cards</li>
+                        <li>Hand over package with graphics cards</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,100 EXP</li>
+                        <li>Mechanic Rep <b>+0.03</b> </li>
+                        <li>20,000 Roubles</li>
+                        <li>Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Farming - Part 4 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Graphics card, 3 pcs</li>
+                        <li>Hand over Graphics card, 3 pcs</li>
+                        <li>Find in raid CPU Fan, 8 pcs</li>
+                        <li>Hand over CPU Fan, 8 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,800 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>300 Euros</li>
+                        <li>GLOCK 17 9x19 pistol</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Signal - Part 1 </th>
+                <th>Discover </th>
+                <td>
+                    <ul>
+                        <li>Find the first signal source</li>
+                        <li>Find the second signal source</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>10,000 Roubles</li>
+                        <li>3x SGMT Drum mag for Glock 9x19, 50 rounds capacity</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Signal - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 3 PC CPU</li>
+                        <li>Find in raid 3 Rechargeable battery</li>
+                        <li>Find in raid 3 Printed circuit board</li>
+                        <li>Find in raid 3 Broken GPhone</li>
+                        <li>Hand over PC CPU, 3 pcs</li>
+                        <li>Hand over Rechargeable battery, 3 pcs</li>
+                        <li>Hand over Printed circuit board, 3 pcs</li>
+                        <li>Hand over Broken GPhone, 3 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,700 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>50,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Signal - Part 3 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Place first jammer</li>
+                        <li>Place second jammer</li>
+                        <li>Place third jammer</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>Remington Model 870 12ga shotgun</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Signal - Part 4 </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Increase memory skill level to 4</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,100 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>20,000 Roubles</li>
+                        <li>Nightforce ATACR 7-35x56 riflescope</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Bad habit </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Malboro cigarettes, 5 pcs</li>
+                        <li>Hand over Malboro cigarettes, 5 pcs</li>
+                        <li>Find in raid Strike cigarettes, 5 pcs</li>
+                        <li>Hand over Strike cigarettes, 5 pcs</li>
+                        <li>Find in raid Wilston cigarettes, 5 pcs</li>
+                        <li>Hand over Wilston cigarettes, 5 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,000 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>300 Euros</li>
+                        <li>GLOCK 18C 9x19 pistol</li>
+                        <li>300x 9x19 mm Green Tracer</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Scout </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find a way out of the factory 1</li>
+                        <li>Find a way out of the factory 2</li>
+                        <li>Find a way out of the factory 3</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,200 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>2x Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Insider </th>
+                <th>Standing </th>
+                <td>
+                    <ul>
+                        <li>Reach level 3 loyalty with Prapor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,300 EXP</li>
+                        <li>Mechanic Rep <b>+0.04</b> </li>
+                        <li>800 Euros</li>
+                        <li>2x SilencerCo Osprey 9 9x19mm sound suppressor</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Psycho Sniper </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Upgrade the Sniper skill to level 9</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+32,400 EXP</li>
+                        <li>150,000 Roubles</li>
+                        <li>+1 level Intellect</li>
+                        <li>+1 level Sniper Rifles</li>
+                        <li>+1 level Stress Resistance</li>
+                        <li>+1 level Perception</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Import </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid UHF RFID Reader</li>
+                        <li>Find in raid VPX Flash Storage Module</li>
+                        <li>Handover UHF RFID Reader</li>
+                        <li>Handover VPX Flash Storage Module</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+42,800 EXP</li>
+                        <li>Mechanic Rep <b>+0.07</b> </li>
+                        <li>Jaeger Rep <b>-0.01</b> </li>
+                        <li>Trijicon REAP-IR thermal riflescope</li>
+                        <li>85,000 Roubles</li>
+                        <li>3x Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Fertilizers </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 5 Wires</li>
+                        <li>Find in raid 5 Capacitors</li>
+                        <li>Handover 5 Wires</li>
+                        <li>Handover 5 Capacitors</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>65,000 Roubles</li>
+                        <li>3x Physical bitcoin</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>A Shooter Born in Heaven </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 3 PMCs with headshots in the Woods from a distance of more than 100 meters.</li>
+                        <li>Kill 3 PMCs with headshots in the Interchange from a distance of more than 100 meters.</li>
+                        <li>Kill 3 PMCs with headshots in the Shoreline from a distance of more than 100 meters.</li>
+                        <li>Kill 3 PMCs with headshots in the Customs from a distance of more than 100 meters.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+39,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.06</b> </li>
+                        <li>100,000 Roubles</li>
+                        <li>4x 7.62x54r ProMag OPFOR for Archangel Mosin rifle kit, 10-round capacity</li>
+                        <li>100x 7.62x54R SNB</li>
+                        <li>1x Mosin bolt-action sniper rifle</li>
+                        <li>Unlocks purchase of Magazine case at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Introduction </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find Jaeger's camp</li>
+                        <li>Find Jaeger's message</li>
+                        <li>Handover the message to the Mechanic</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,500 EXP</li>
+                        <li>Mechanic Rep <b>+0.05</b> </li>
+                        <li>15,000 Roubles</li>
+                        <li>Unlocks Jaeger</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Ragman </th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Only business </th>
+                <th>Merchant </th>
+                <td>
+                    <ul>
+                        <li>Obtain level 2 loyalty with Ragman</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,700 EXP</li>
+                        <li>Ragman Rep <b>+0.06</b> </li>
+                        <li>10,000 Roubles</li>
+                        <li>Wartech gear rig (TV-109, TV-106)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Make ULTRA Great Again </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 25 Scavs at the Interchange.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,800 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>50,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Big sale </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Check AVOKADO</li>
+                        <li>Check KOSTIN</li>
+                        <li>Check tRend</li>
+                        <li>Check DINO CLOTHES</li>
+                        <li>Check TOP BRAND</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+8,900 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>17,000 Roubles</li>
+                        <li>Camelback Tri-Zip Backpack</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Blood of War - Part 1 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Mark tank 1</li>
+                        <li>Mark tank 2</li>
+                        <li>Mark tank 3</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7,500 EXP</li>
+                        <li>Ragman Rep <b>+0.06</b> </li>
+                        <li>60,000 Roubles</li>
+                        <li>2x Metal fuel tank</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Dressed to kill </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Hand over Ushanka ear-flap cap, 7 pcs</li>
+                        <li>Hand over Kinda cowboy hat, 7 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,200 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>21,000 Roubles</li>
+                        <li>BNTI Gzhel-K armor</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Gratitude </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find the secret spot</li>
+                        <li>Leave the Ghost balaclava in place</li>
+                        <li>Leave the Shemagh in place</li>
+                        <li>Leave the RayBench sunglasses in place</li>
+                        <li>Leave the Round frame sunglasses in place</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,300 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>80,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sales Night </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Survive in the raid at Interchange 7 times</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,800 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>35,000 Roubles</li>
+                        <li>2x SSO "Attack 2" raid backpack</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Hot delivery </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Stash Peltor ComTac 2 in specified place</li>
+                        <li>Stash 6B47 Ratnik-BSh Helmet in specified place</li>
+                        <li>Stash BNTI Gzhel-K armor in specified place</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+25,000 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>55,000 Roubles</li>
+                        <li>IOTV Gen4 armor (full protection)</li>
+                        <li>Unlocks barter for IOTV Gen4 armor (full protection) at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Database - Part 1 </th>
+                <th>Exploration </th>
+                <td>
+                    <ul>
+                        <li>Get Goshan cargo manifests</li>
+                        <li>Hand over Goshan cargo manifests</li>
+                        <li>Get OLI cargo manifests</li>
+                        <li>Hand over OLI cargo manifests</li>
+                        <li>Get IDEA cargo manifests</li>
+                        <li>Hand over IDEA cargo manifests</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,500 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>22,000 Roubles</li>
+                        <li>MSA Sordin Supreme PRO-X/L active headphones</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Database - Part 2 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Get OLI cargo route documents</li>
+                        <li>Hand over OLI cargo route documents</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,700 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>60,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Minibus </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Mark first minibus</li>
+                        <li>Mark second minibus</li>
+                        <li>Mark third minibus</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,500 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>50,000 Roubles</li>
+                        <li>Ana tactical Beta 2 battle backpack</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sew it good - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Ski hat with holes for eyes</li>
+                        <li>Hand over Ski hat with holes for eyes</li>
+                        <li>Find in raid Pilgrim tourist backpack</li>
+                        <li>Hand over Pilgrim tourist backpack</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,300 EXP</li>
+                        <li>Ragman Rep <b>+0.06</b> </li>
+                        <li>25,000 Roubles</li>
+                        <li>SSSh-95 Sfera-S (Sphere-S)</li>
+                        <li>LBT 6094A Slick Plate Carrier</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sew it good - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Get Gzhel in 0-50% condition</li>
+                        <li>Hand over Gzhel in 0-50% condition</li>
+                        <li>Get Gzhel in 50-100% condition</li>
+                        <li>Hand over Gzhel in 50-100% condition</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+18,700 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>10,000 Roubles</li>
+                        <li>2x ZSh-1-2M face shield</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sew it good - Part 3 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Get 6B43 with 0-50% condition</li>
+                        <li>Hand over 6B43 with 0-50% condition</li>
+                        <li>Get 6B43 with 50-100% condition</li>
+                        <li>Hand over 6B43 with 50-100% condition</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,700 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>65,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Sew it good - Part 4 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 2 Wartech (TV-109, TV-106)</li>
+                        <li>Hand over 2 Wartech (TV-109, TV-106)</li>
+                        <li>Find in raid 2 BlackRock chest rig</li>
+                        <li>Hand over 2 BlackRock chest rig</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,700 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>25,000 Roubles</li>
+                        <li>ANA Tactical M2 armored rig</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Blood of War - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Fuel conditioner, 4 pcs</li>
+                        <li>Hand over Fuel conditioner, 4 pcs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+15,600 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>20,000 Roubles</li>
+                        <li>Highcom Striker ACHHC IIIA black helmet</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The Blood of War - Part 3 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find and mark first fuel stash</li>
+                        <li>Find and mark second fuel stash</li>
+                        <li>Find and mark third fuel stash</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+21,000 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>75,000 Roubles</li>
+                        <li>2x Highcom Trooper TFO armor (multicam)</li>
+                        <li>1x Mystery Ranch Blackjack 50 backpack (multicam)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The key to success </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Get Clothes design handbook Part 1</li>
+                        <li>Hand over Clothes design handbook Part 1</li>
+                        <li>Get Clothes design handbook Part 2</li>
+                        <li>Hand over Clothes design handbook Part 2</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+18,100 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>60,000 Roubles</li>
+                        <li>2x Ghost balaclava</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Living high is not a crime - Part 1 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid Bronze lion, 2 pcs</li>
+                        <li>Hand over Bronze lion, 2 pcs</li>
+                        <li>Find in raid Horse figurine, 2 pcs</li>
+                        <li>Hand over Horse figurine, 2 pcs</li>
+                        <li>Find in raid Cat figurine</li>
+                        <li>Hand over Cat figurine</li>
+                        <li>Find in raid Roler submariner gold wrist watch</li>
+                        <li>Hand over Roler submariner gold wrist watch</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+23,000 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>75,000 Roubles</li>
+                        <li>3x Golden neck chain</li>
+                        <li>Vulkan-5 (LShZ-5) heavy helmet</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Living high is not a crime - Part 2 </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 3 antique teapots</li>
+                        <li>Find in raid 2 antique vases</li>
+                        <li>Handover 3 antique teapots</li>
+                        <li>Handover 2 antique vases</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+29,600 EXP</li>
+                        <li>Ragman Rep <b>+0.12</b> </li>
+                        <li>110,000 Roubles</li>
+                        <li>2x Ars Arma CPC MOD.2 plate carrier</li>
+                        <li>2x Altyn helmet</li>
+                        <li>2x Altyn face shield</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Charisma brings success </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Increase the Charisma level to 10</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,700 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>2x Altyn face shield</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>No fuss needed </th>
+                <th>Standing </th>
+                <td>
+                    <ul>
+                        <li>Increase the Therapist loyalty level to 3</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,900 EXP</li>
+                        <li>Ragman Rep <b>+0.07</b> </li>
+                        <li>32,000 Roubles</li>
+                        <li>Altyn helmet</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Supervisor </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Get key from Goshan cash registers</li>
+                        <li>Hand over key from Goshan cash registers</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+24,100 EXP</li>
+                        <li>Ragman Rep <b>+0.09</b> </li>
+                        <li>250,000 Roubles</li>
+                        <li>Unlocks purchase of BNTI Gzhel-K armor at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Scavenger </th>
+                <th>Skill </th>
+                <td>
+                    <ul>
+                        <li>Earn 9 Search skill level</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+15,400 EXP</li>
+                        <li>Ragman Rep <b>+0.11</b> </li>
+                        <li>65,000 Roubles</li>
+                        <li>Unlocks barter for Crash Axe at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The stylish one </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Eliminate Killa 100 times</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>100,000 Roubles</li>
+                        <li>Adik Tracksuit clothing</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Textile - Part 1 </th>
+                <th>Pickup </th>
+                <td>
+                    <ul>
+                        <li>Obtain in raid 5 pcs. of Aramid fiber cloth</li>
+                        <li>Obtain in raid 10 pcs. of Ripstop cloth</li>
+                        <li>Obtain in raid 3 pcs. of paracord</li>
+                        <li>Hand over Aramid fiber cloth 5 pcs.</li>
+                        <li>Hand over Ripstop cloth 10 pcs.</li>
+                        <li>Hand over paracord 3 pcs.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>100,000 Roubles</li>
+                        <li>BEAR TIGR lower or USEC Commando Lower clothing</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Textile - Part 2 </th>
+                <th>Pickup </th>
+                <td>
+                    <ul>
+                        <li>Obtain in raid 10 pcs. of Fleece cloth</li>
+                        <li>Hand over Fleece cloth 10 pcs.</li>
+                        <li>Obtain in raid 10 pcs. of Polyamide fabric Cordura</li>
+                        <li>Hand over Polyamide fabric Cordura 10 pcs.</li>
+                        <li>Obtain in raid KEKTAPE duct tape 5 pcs.</li>
+                        <li>Hand over KEKTAPE duct tape 5 pcs.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>100,000 Roubles</li>
+                        <li>Mystery Ranch Blackjack 50 backpack (multicam)</li>
+                        <li>BEAR TIGR upper or USEC TIER2 Upper clothing</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Jaeger</th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Acquaintance </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Get 5 Iskra lunch box</li>
+                        <li>Get 6 packs of Emelya rye croutons</li>
+                        <li>Get 3 cans of delicious beef stew</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+4,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>15,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Unprotected, but dangerous </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 5 scavs on Woods. You should not wear body armor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+7000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>20,000 Roubles</li>
+                        <li>2x Vepr AKM / VPO-209 366TKM carbine</li>
+                        <li>200x .366 TKM EKO</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Thrifty </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Stash "Iskra" MRE in the ZB-016 bunker</li>
+                        <li>Stash bottle of water in the ZB-016 bunker</li>
+                        <li>Stash "Iskra" MRE in the ZB-014 bunker</li>
+                        <li>Stash bottle of water in the ZB-014 bunker</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+6,500 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>20,000 Roubles</li>
+                        <li>2x Phase control relay</li>
+                        <li>1x Metal fuel tank</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Zhivchik </th>
+                <th>Experience </th>
+                <td>
+                    <ul>
+                        <li>Spend 5 minutes in a state of complete dehydration</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.03</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>2x Water bottle with a filter Aquamari</li>
+                        <li>2x water filters</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Wounded beast </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 4 scavs while suffering from pain effect</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,000 EXP</li>
+                        <li>65,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Tough guy </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Eliminate 4 scavs on Woods in a single raid. You must not use medicine.</li>
+                        <li>Don't use any medicine during the quest</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,000 EXP</li>
+                        <li>40,000 Roubles</li>
+                        <li>CMS kit</li>
+                        <li>3x Pile of meds</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Cold blooded </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Eliminate 3 PMCs with the headshot while having tremor</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>50,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Junkie </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 20 scavs on Woods while having stimulant effects</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.03</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>30x 12x70 RIP</li>
+                        <li>80x 5.56x45 mm Warmage</li>
+                        <li>+2 Metabolism skill levels</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>The survivalist path - Combat medic </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Reach level 5 Vitality skill</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+14,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>Vitality: +2 points</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Secured perimeter </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Eliminate 8 PMС on Factory in the office area</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+14,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.03</b> </li>
+                        <li>35,000 Roubles</li>
+                        <li>2x Pliers Elite</li>
+                        <li>1x A set of tools</li>
+                        <li>2x Nippers</li>
+                        <li>2x Corrugated hose</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - The trophy </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Eliminate Reshala</li>
+                        <li>Find in raid the golden TT</li>
+                        <li>Handover golden TT to Jaeger</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>90,000 Roubles</li>
+                        <li>Surv12 field surgical kit</li>
+                        <li>4x Gunpowder "Kite"</li>
+                        <li>5x Piece of plexiglas</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Woods cleaning </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 40 scavs all over the Tarkov territory</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+18,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>50,000 Roubles</li>
+                        <li>2x Remington Model 700 Sniper rifle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Controller </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 2 PMCs blinded with the flashbang</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+21,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>49,999 Roubles</li>
+                        <li>EOtech Vudu 1-6 riflescope</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Sell-out </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Eliminate Killa</li>
+                        <li>Find In Raid Killa's helmet</li>
+                        <li>Handover Killa's helmet to Jaeger</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+23,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>150,000 Roubles</li>
+                        <li>3x Folder with intelligence</li>
+                        <li>Key to IDEA cash register</li>
+                        <li>Key to OLI cash register</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Woods keeper </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Eliminate Shturman</li>
+                        <li>Find in raid Shturman's key</li>
+                        <li>Handover the Shturman's stash key to Jaeger</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+25,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>17,000 Roubles</li>
+                        <li>4x Gunpowder "Hawk"</li>
+                        <li>VPX Flash Storage Module</li>
+                        <li>3x TerraGroup Labs access keycard</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Justice </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 3 scavs that are dressed in police uniform</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>80,000 Roubles</li>
+                        <li>5x Expeditionary fuel tank</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Evil watchman </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Kill 7 PMCs in the Dorms area on Customs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,000 EXP</li>
+                        <li>Jaeger Rep <b>0.04</b> </li>
+                        <li>75,000 Roubles</li>
+                        <li>2x Folder with intelligence</li>
+                        <li>2x Secure Flash drive</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Eraser - Part 1 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find and eliminate Glukhar</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+30,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>199,999 Roubles</li>
+                        <li>5,000 Dollars</li>
+                        <li>Weapon case</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Huntsman path - Eraser - Part 2 </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Eliminate 8 raiders</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+17,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>80,000 Roubles</li>
+                        <li>Trijicon REAP-IR thermal riflescope</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Ambulance </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find in raid portable defibrillator</li>
+                        <li>Find in raid 2 CMS surgery kits</li>
+                        <li>Handover portable defibrillator</li>
+                        <li>Handover 2 CMS surgery kits</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+12,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.3</b> </li>
+                        <li>35,000 Roubles</li>
+                        <li>3x Grizzly First Aid Kit</li>
+                        <li>Unlocks purchase of Surv12 field surgical kit</li>
+                        <li>+1 Vitality skill levels</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Shady business </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 3 flash drives</li>
+                        <li>Handover 3 flash drives</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+11,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>50,000 Roubles</li>
+                        <li>SSD drive</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Nostalgia </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find a room with the view of a bay, where Jaeger was staying</li>
+                        <li>Find Jaegers' photo album</li>
+                        <li>Handover photo album to Jaeger</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.03</b> </li>
+                        <li>30,000 Roubles</li>
+                        <li>Documents case</li>
+                        <li>Key to HEP station storage</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Fishing place </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find in raid 3 TerraGroup Labs access keycards</li>
+                        <li>Handover 3 TerraGroup Labs access keycards</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+15,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>75,000 Roubles</li>
+                        <li>1 x Highcom Trooper TFO armor (multicam)</li>
+                        <li>1 x Remington Model 700 Sniper rifle AAC SD</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Courtesy visit </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find priest house</li>
+                        <li>Find fisherman house</li>
+                        <li>Find chairman house</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+10,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.03</b> </li>
+                        <li>35,000 Roubles</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Hunting trip </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Give the Jaeger 3x M700 sniper rifles of a certain configuration</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>60,000 Roubles</li>
+                        <li>VPX Flash Storage Module</li>
+                        <li>Military thermal vision module Iridium</li>
+                        <li>Unlocks purchase of Remington Model 700 Sniper rifle ARCH variant at LL3</li>
+                        <li>Unlocks purchase of Remington Model 700 Sniper rifle AICS variant at LL3</li>
+                        <li>Unlocks purchase of Remington Model 700 Sniper rifle PRO variant at LL4</li>
+                        <li>Unlocks purchase of Remington Model 700 Sniper rifle MRS variant at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Reserv </th>
+                <th>Completion </th>
+                <td>
+                    <ul>
+                        <li>Find the food storage</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+9,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.03</b> </li>
+                        <li>16,000 Roubles</li>
+                        <li>Silicone tube</li>
+                        <li>3x A pack of nails</li>
+                        <li>3x A pack of screws</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 1 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 8 Scavs over 40 meters away with a Mosin rifle without a scope</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+18,900 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>50,000 Roubles</li>
+                        <li>2x PU 3.5x riflescope</li>
+                        <li>2x PU 3.5x ring mount</li>
+                        <li>2x Kochetov Mount for Mosin rifle</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 2 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Make 3 hits in the legs from more than 60 meters away with a Mosin</li>
+                        <li>Make 2 headshots from more than 60 meters away with a Mosin</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+19,200 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>65,000 Roubles</li>
+                        <li>Aim Sports MNG rail for Mosin rifle</li>
+                        <li>Unlocks purchase of Aim Sports MNG rail for Mosin rifle at LL1</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 3 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 4 PMC operatives with a Mosin at close range, less than 25 meters away</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,200 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>Kinda cowboy hat</li>
+                        <li>Tacfire Tanker style muzzle brake for Mosin rifle</li>
+                        <li>Recoil pad from Aim Sports for Mosin rifle</li>
+                        <li>Unlocks purchase of Tacfire Tanker style muzzle brake for Mosin rifle at LL2</li>
+                        <li>Unlocks purchase of Recoil pad from Aim Sports for Mosin rifle at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 4 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Level up the Sniper Rifles skill to 4</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+16,400 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>57,000 Roubles</li>
+                        <li>Aim Sports "Tri-Rail" rail for Mosin rifle</li>
+                        <li>Tacfire pistol grip for Mosin rifle</li>
+                        <li>Unlocks purchase of Aim Sports "Tri-Rail" rail for Mosin rifle at LL2</li>
+                        <li>Unlocks purchase of Tacfire pistol grip for Mosin rifle at LL2</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 5 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 10 Scavs at Customs with a Mosin rifle between 21:00 and 5:00</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,000 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>75,000 Roubles</li>
+                        <li>Texas Precision Products muzzle brake for Mosin rifle</li>
+                        <li>Unlocks purchase of Texas Precision Products muzzle brake for Mosin rifle at LL3 </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 6 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 7 Scav snipers with a Mosin</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,300 EXP</li>
+                        <li>Jaeger Rep <b>+0.05</b> </li>
+                        <li>50,000 Roubles</li>
+                        <li>ATI Monte Carlo Mosin rifle stock</li>
+                        <li>Unlocks purchase of ATI Monte Carlo Mosin rifle stock at LL3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 7 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 5 PMC operatives with a suppressed Mosin at least 55 meters away</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+20,700 EXP</li>
+                        <li>Jaeger Rep <b>+0.04</b> </li>
+                        <li>85,000 Roubles</li>
+                        <li>Witt Machine muzzle brake for Mosin rifle</li>
+                        <li>Unlocks purchase of Witt Machine muzzle brake for Mosin rifle at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 8 </th>
+                <th>Elimination </th>
+                <td>
+                    <ul>
+                        <li>Kill 3 PMC operatives with a Mosin over one raid in the Woods</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>+25,200 EXP</li>
+                        <li>Jaeger Rep <b>+0.06</b> </li>
+                        <li>200,000 Roubles</li>
+                        <li>ProMag Archangel OPFOR PRS Mosin rifle stock</li>
+                        <li>7.62x54r ProMag OPFOR for Archangel Mosin rifle kit, 10-round capacity</li>
+                        <li>Unlocks purchase of ProMag Archangel OPFOR PRS Mosin rifle stock at LL4</li>
+                        <li>Unlocks purchase of 7.62x54r ProMag OPFOR for Archangel Mosin rifle kit, 10-round capacity at LL4</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Fence </th>
+            </tr>
+            <tr>
+                <th>Quest </th>
+                <th>Type </th>
+                <th>Objectives </th>
+                <th>Rewards </th>
+            </tr>
+            <tr>
+                <th>Collector </th>
+                <th>PickUp </th>
+                <td>
+                    <ul>
+                        <li>Find an Old firesteel in raid</li>
+                        <li>Handover the Old firesteel</li>
+                        <li>Find an Antique axe in raid</li>
+                        <li>Handover the Antique axe</li>
+                        <li>Find a Battered antique Book in raid</li>
+                        <li>Handover the Battered antique Book</li>
+                        <li>Find a FireKlean gun lube in raid</li>
+                        <li>Handover the FireKlean gun lube</li>
+                        <li>Find a Golden rooster in raid</li>
+                        <li>Handover the Golden rooster</li>
+                        <li>Find a Silver Badge in raid</li>
+                        <li>Handover the Silver Badge</li>
+                        <li>Find a Deadlyslob's beard oil in raid</li>
+                        <li>Handover the Deadlyslob's beard oil</li>
+                        <li>Find a Golden 1GPhone in raid</li>
+                        <li>Handover the Golden 1GPhone</li>
+                        <li>Find a Jar of DevilDog mayo in raid</li>
+                        <li>Handover the Jar of DevilDog mayo</li>
+                        <li>Find a Can of sprats in raid</li>
+                        <li>Handover the Can of sprats</li>
+                        <li>Find a Fake mustache in raid</li>
+                        <li>Handover the Fake mustache</li>
+                        <li>Find a Kotton beanie in raid</li>
+                        <li>Handover the Kotton beanie</li>
+                        <li>Find a Can of Dr. Lupo's coffee beans in raid</li>
+                        <li>Handover the Can of Dr. Lupo's coffee beans</li>
+                        <li>Find a Pestily plague mask in raid</li>
+                        <li>Handover the Pestily plague mask</li>
+                        <li>Find a Raven figurine in raid</li>
+                        <li>Handover the Raven figurine</li>
+                        <li>Find a Shroud half-mask in raid</li>
+                        <li>Handover the Shroud half-mask</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Secure container Kappa</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

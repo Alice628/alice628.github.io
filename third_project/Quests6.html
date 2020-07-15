@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="third_project.js"></script>
+    <script>
+        let dealerList = [];
+        let questMap = {};
+        $(function() {
+            $('table').children('tbody').each(function(index, table) {
+                let dealerName = $(table).children('tr').eq('0').children('th').html();
+                //console.log(dealerName);
+                dealerName = dealerName.trim();
+                dealerList.push(dealerName);
+                questMap[dealerName] = {};
+
+                $(table).children('tr').each(function(index2, quest) {
+                    if (index2 == 0) {
+                        return true;
+                    }
+                    let questName = $(quest).children('th').eq(0).html();
+                    questMap[dealerName][questName] = {};
+                    $(quest).children('td').find('li').each(function(index3, requirement) {
+                        //console.log($(requirement));
+                        let requirementHtml = $(requirement).html();
+                        if (!requirementHtml.includes('Find')) {
+                            return true;
+                        }
+                        let index_start = requirementHtml.indexOf('Find');
+                        let index_end = requirementHtml.indexOf('<');
+                        let requirementSource;
+                        if (index_end != -1) {
+                            requirementSource = requirementHtml.substring(index_start + 5, index_end);
+                        } else {
+                            requirementSource = requirementHtml.substring(index_start + 5);
+                        }
+                        requirementSource = requirementSource.trim();
+                        //console.log(requirementHtml);
+
+                        //console.log(requirementSource);
+                        let isInRaid = false;
+                        if (requirementSource.includes('in raid')) {
+                            isInRaid = true;
+                            requirementSource = requirementSource.replace('in raid', '');
+                            requirementSource = requirementSource.trim();
+                        }
+
+                        if (requirementSource.includes('in ') || requirementSource.includes('for ') || requirementSource.includes('to '))
+                            console.log(requirementSource);
+                    });
+                });
+            });
+
+            console.log(dealerList);
+            console.log(questMap);
+        });
+    </script>
+</head>
+
+<body>
+
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="11">Prapor </th>
+            </tr>
+
+            <tr>
+                <th>Debut </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 5 Scavs at Customs</li>
+                        <li>Hand over 2 MP-133 pump-action shotguns</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Checking </th>
+
+                <td>
+                    <ul>
+                        <li>Find the bronze pocket watch
+                            <ul>
+                                <li>(Optional) Find the key to the tank truck</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the bronze pocket watch to Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Shootout picnic </th>
+
+                <td>
+                    <ul>
+                        <li>Neutralize 15 Scavs on Woods</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Delivery from the past </th>
+
+                <td>
+                    <ul>
+                        <li>Find a secure case in the Tarcone Director's Office at the Customs terminal</li>
+                        <li>Leave the case in the Factory swing room, on 2nd floor of shop 3</li>
+                        <li>Survive and exit Factory location</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>BP depot </th>
+
+                <td>
+                    <ul>
+                        <li>Mark fuel tank №1 with beacon on Customs</li>
+                        <li>Mark fuel tank №2 with beacon on Customs</li>
+                        <li>Mark fuel tank №3 with beacon on Customs</li>
+                        <li>Mark fuel tank №4 with beacon on Customs</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The bunker - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find underground bunker</li>
+                        <li>Locate control room in the underground bunker</li>
+                        <li>Survive and extract</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The bunker - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Locate the hermetic door leading to the hospital (white bishop)</li>
+                        <li>Locate one of two hermetic doors leading to academy building (black bishop)</li>
+                        <li>Locate one of two hermetic doors leading to barracks №1 (black pawn)</li>
+                        <li>Locate one of two hermetic doors leading to barracks №2 (white pawn)</li>
+                        <li>Locate the hermetic door leading to the building of the air control center (white king)</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Bad rep evidence </th>
+
+                <td>
+                    <ul>
+                        <li>Find secure folder 0031 in a bunkhouse on Customs
+                            <ul>
+                                <li>(Optional) Gain access to the closed room in the Factory offices</li>
+                                <li>(Optional) Find the bunkhouse key</li>
+                            </ul>
+                        </li>
+                        <li>Hand over secure folder 0031 to Prapor</li>
+                        <li>Survive and exit Customs location</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Ice cream cones </th>
+
+                <td>
+                    <ul>
+                        <li>Find 6 60-round mags for AK
+                            <ul>
+                                <li>(Optional) Find the key from the bunker in the Terragroup employee room</li>
+                                <li>(Optional) Locate the right bunker in the Woods</li>
+                            </ul>
+                        </li>
+                        <li>Hand over 6 60 round mags for AK to Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Postman Pat - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find a letter on a messenger in the Factory</li>
+                        <li>Survive and exit Factory location</li>
+                        <li>Hand over the letter to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Shaking up teller </th>
+
+                <td>
+                    <ul>
+                        <li>Find something valuable in the dorm room 203
+                            <ul>
+                                <li>(Optional) Gain access to room 214</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the item to Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Punisher - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 15 Scavs at the Shoreline using AKM series weapon</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Punisher - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 12 Scavs at the Shoreline using a suppressed weapon</li>
+                        <li>Find in raid 7 lower half-masks</li>
+                        <li>Hand masks over to Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Punisher - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 25 Scavs on Customs using AKS-74U</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Punisher - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 10 Scavs in Woods using 12 gauge shotguns</li>
+                        <li>Kill 10 PMCs on Shoreline while wearing a balaclava and a scav vest.</li>
+                        <li>Find in raid 5 knives Bars A-2607</li>
+                        <li>Handover knives to Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Punisher - Part 5 </th>
+
+                <td>
+                    <ul>
+                        <li>Find 3 AK-74N</li>
+                        <li>Handover AK-74N rifles to Prapor</li>
+                        <li>Find 3 M4A1 assault rifles</li>
+                        <li>Handover M4A1 rifles to Prapor</li>
+                        <li>Find 5 PM pistols</li>
+                        <li>Handover pistols to Prapor</li>
+                        <li>Kill 10 PMC operatives. You must be wearing a PACA vest and 6b47 helmet</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Punisher - Part 6 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 15 PMC operators. You must use SVD</li>
+                        <li>Find 7 PMC USEC dogtags</li>
+                        <li>Hand over 7 PMC USEC dogtags</li>
+                        <li>Find 7 PMC BEAR dogtags</li>
+                        <li>Hand over 7 PMC BEAR dogtags</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Polikhim hobo </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 25 Scavs on Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Big customer </th>
+
+                <td>
+                    <ul>
+                        <li>Find a transport with chemicals</li>
+                        <li>Mark the chemical transport with a beacon</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>No offence </th>
+
+                <td>
+                    <ul>
+                        <li>Find 10 M67 grenades</li>
+                        <li>Handover grenades to Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Grenadier </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 12 PMC's with grenades</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Perfect mediator </th>
+
+                <td>
+                    <ul>
+                        <li>Reach 4-th level of standing with Ragman</li>
+                        <li>Reach 4-th level of standing with Skier</li>
+                        <li>Reach 4-th level of standing with Mechanic</li>
+                        <li>Reach 4-th level of standing with Peacekeeper</li>
+                        <li>Reach 4-th level of standing with Prapor</li>
+                        <li>Reach 4-th level of standing with Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Insomnia </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 30 PMC's during nighttime (23 to 04)</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Test drive - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 5 PMC's using an M1A with a Hybrid 46 silencer and a Trijicon REAP-IR thermal scope</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Regulated materials </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid military battery</li>
+                        <li>Handover military battery</li>
+                        <li>Find in raid 10 30-mil. shells for BMP cannon</li>
+                        <li>Handover 10 30-mil. shells for BMP cannon</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Therapist </th>
+            </tr>
+
+            <tr>
+                <th>Shortage </th>
+
+                <td>
+                    <ul>
+                        <li>Find 5 Salewa kits</li>
+                        <li>Hand over 5 Salewa kits to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sanitary Standards - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find gas analyzer
+                            <ul>
+                                <li>(Optional) Get access to the pumping station at the Factory</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the gas analyzer to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sanitary Standards - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 2 gas analyzers</li>
+                        <li>Hand over the gas analyzers to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Operation Aquarius - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find hidden water in the dorm</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Operation Aquarius - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate 15 Scavs on Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Painkiller </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 4 morphine syringes</li>
+                        <li>Hand the syringes over to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Pharmacist </th>
+
+                <td>
+                    <ul>
+                        <li>Find a case with the device
+                            <ul>
+                                <li>(Optional) Find the paramedic's car</li>
+                                <li>(Optional) Get into dorm room 114</li>
+                            </ul>
+                        </li>
+                        <li>Hand over the case to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Supply plans </th>
+
+                <td>
+                    <ul>
+                        <li>Find the secure folder on the sawmill</li>
+                        <li>Survive and exit Woods location</li>
+                        <li>Hand over the folder to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>General wares </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 15 cans of meat</li>
+                        <li>Hand the cans over to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Car repair </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 4 car batteries</li>
+                        <li>Find in raid 8 spark plugs</li>
+                        <li>Hand car batteries over to Therapist</li>
+                        <li>Hand spark plugs over to Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Mark 1st ambulance</li>
+                        <li>Mark 2nd ambulance</li>
+                        <li>Mark 3rd ambulance</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Gather info on the fate of the Terragroup research</li>
+                        <li>Hand over info on the fate of the Terragroup research</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find the car that belonged to the head of the Medical Service</li>
+                        <li>Pick up the blood sample</li>
+                        <li>Hand over the blood sample</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Increase Health skill level to 4</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Health Care Privacy - Part 5 </th>
+
+                <td>
+                    <ul>
+                        <li>Locate the drop spot in the nighttime in Factory</li>
+                        <li>Obtain 3 packs of gunpowder and leave them in the designated spot</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Postman Pat - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Hand over the letter from messenger to the Therapist</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Out of curiosity </th>
+
+                <td>
+                    <ul>
+                        <li>Find a transport with chemicals</li>
+                        <li>Mark the chemical transport with a beacon</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Trust regain </th>
+
+                <td>
+                    <ul>
+                        <li>Find 303 dorm room key</li>
+                        <li>Find ZB-014 key</li>
+                        <li>Find the customs military checkpoint key</li>
+                        <li>Find gas station closet key</li>
+                        <li>Hand over 303 key</li>
+                        <li>Hand over ZB-014 key</li>
+                        <li>Hand over the checkpoint key</li>
+                        <li>Hand over closet key</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Hippocratic Vow </th>
+
+                <td>
+                    <ul>
+                        <li>Handover 500 dollars.</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Private clinic </th>
+
+                <td>
+                    <ul>
+                        <li>Handover 3 Ophthalmoscopes</li>
+                        <li>Handover 3 LEDX Skin Transilluminators</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Athlete </th>
+
+                <td>
+                    <ul>
+                        <li>Earn 10 Health skill level</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Decontamination service </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 30 Scavs at the Interchange, from the range less than 60 meters.You must be wearing spec. gear</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>An apple a day - keeps the doctor away </th>
+
+                <td>
+                    <ul>
+                        <li>Handover 400,000 roubles</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Skier </th>
+            </tr>
+
+            <tr>
+                <th>Supplier </th>
+
+                <td>
+                    <ul>
+                        <li>Hand over 4 body armor to Skier</li>
+                        <li>Hand over 4 shotguns to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Extortionist </th>
+
+                <td>
+                    <ul>
+                        <li>Find the hidden valuable cargo
+                            <ul>
+                                <li>(Optional) Find the messenger body</li>
+                                <li>(Optional) Find a place where the messenger hid the item</li>
+                            </ul>
+                        </li>
+                        <li>Hand it over to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Stirrup </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate 3 PMC operators. You must be using pistols</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>What's on the flash drive? </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid two USB flash drives with information</li>
+                        <li>Hand them over to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Golden swag </th>
+
+                <td>
+                    <ul>
+                        <li>Find a Gilded Zibbo lighter</li>
+                        <li>Leave the lighter in the bunkhouse in the trailer parking (Customs)</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Chemical - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find some information about the Deputy Chief's past life
+                            <ul>
+                                <li>(Optional) Find a sleeping place of the former Deputy Chief of Security</li>
+                            </ul>
+                        </li>
+                        <li>Hand it over to Skier</li>
+                        <li>Find items that can help the investigation</li>
+                        <li>Hand them over to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Chemical - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find any information that could help with the investigation</li>
+                        <li>Hand it over to Skier</li>
+                        <li>Find any evidence that could help with the investigation</li>
+                        <li>Hand the evidence over to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Chemical - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find a Syringe with a chemical in the Factory</li>
+                        <li>Hand over the syringe to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Chemical - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Find a transport with chemicals</li>
+                        <li>Mark the chemical transport with a beacon</li>
+                        <li>Survive and extract Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Loyalty buyout </th>
+
+                <td>
+                    <ul>
+                        <li>Give 1 million roubles to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Friend from the West - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 7 USEC</li>
+                        <li>Find 7 PMC USEC dogtags</li>
+                        <li>Hand over 7 PMC USEC dogtags</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Friend from the West - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Hand over $6,000</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"Vitamins" - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Get first Chemical container</li>
+                        <li>Hand over first Chemical container</li>
+                        <li>Get second Chemical container</li>
+                        <li>Hand over second Chemical container</li>
+                        <li>Get third Chemical container</li>
+                        <li>Hand over third Chemical container</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"Vitamins" - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 3 Medical bloodset</li>
+                        <li>Hand over Medical bloodset, 3 pcs</li>
+                        <li>Find in raid 4 Respirator</li>
+                        <li>Hand over Respirator, 4 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Lend lease - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Get first Motor Controller</li>
+                        <li>Hand over first controller</li>
+                        <li>Get second Motor Controller</li>
+                        <li>Hand over second controller</li>
+                        <li>Get third Motor Controller</li>
+                        <li>Hand over third controller</li>
+                        <li>Get first Single-axis Fiber Optic Gyroscope</li>
+                        <li>Hand over first Single-axis Fiber Optic Gyroscope</li>
+                        <li>Get second Single-axis Fiber Optic Gyroscope</li>
+                        <li>Hand over second Single-axis Fiber Optic Gyroscope</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Informed means armed </th>
+
+                <td>
+                    <ul>
+                        <li>Install a WIFI camera to watch the pier</li>
+                        <li>Install the WIFI camera to watch the road to port</li>
+                        <li>Install the WIFI camera to watch Kiba Arms store</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Chumming </th>
+
+                <td>
+                    <ul>
+                        <li>Stash 3 gold chains under the mattress next to BTR-80A</li>
+                        <li>Stash 3 gold chains in the microwave on the 3rd floor of dorms</li>
+                        <li>Stash 3 gold chains in the middle accommodation unit of the sawmill</li>
+                        <li>Kill 5 PMC operators on Interchange in time period from 23:00 till 10:00</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Kind of sabotage </th>
+
+                <td>
+                    <ul>
+                        <li>Hand over folder 0052 to Skier</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Silent caliber </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 20 Scavs with a suppressed 12 gauge shotgun</li>
+                        <li>Kill 10 PMC's with a suppressed 12 gauge shotgun</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Flint </th>
+
+                <td>
+                    <ul>
+                        <li>Earn 6 Stress Resistance skill level</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Bullshit </th>
+
+                <td>
+                    <ul>
+                        <li>Find False flash drive</li>
+                        <li>Put fake flash drive (Dorms, 3-rd floor. Pile of trash opposite the stairs)</li>
+                        <li>Put sniper rifle SV-98 (Dorms, 3-rd floor. Pile of trash opposite the stairs</li>
+                        <li>Put Roler watch (Dorms, 3-rd floor. Pile of trash opposite the stairs)</li>
+                        <li>Do not kill Scavs at Customs until the quest is completed</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Setup </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 15 PMC's at Customs. You must be wearing spec. gear</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Peacekeeper</th>
+            </tr>
+
+            <tr>
+                <th>Fishing Gear </th>
+
+                <td>
+                    <ul>
+                        <li>Find the secret spot</li>
+                        <li>Leave sniper rifle in place</li>
+                        <li>Leave multitool in place</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Tigr Safari </th>
+
+                <td>
+                    <ul>
+                        <li>Mark first Tigr vehicle at Customs</li>
+                        <li>Mark second Tigr vehicle at Customs</li>
+                        <li>Mark third Tigr vehicle at Customs</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Scrap Metal </th>
+
+                <td>
+                    <ul>
+                        <li>Mark first tank T-90 at Shoreline</li>
+                        <li>Mark second tank T-90 at Shoreline</li>
+                        <li>Mark third tank T-90 at Shoreline</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Eagle Eye </th>
+
+                <td>
+                    <ul>
+                        <li>Find the first UAV crash site</li>
+                        <li>Find SAS disk from the first crashed drone</li>
+                        <li>Hand over SAS disk from the first crashed drone</li>
+                        <li>Find the second UAV crash site</li>
+                        <li>Find SAS disk from the second crashed drone</li>
+                        <li>Hand over SAS disk from the second crashed drone</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Humanitarian Supplies </th>
+
+                <td>
+                    <ul>
+                        <li>Mark first truck with lost UN cargo
+                        </li>
+                        <li>Mark second truck with lost UN cargo
+                        </li>
+                        <li>Find 5 MRE ration packs</li>
+                        <li>Deliver 5 MRE ration packs to Peacekeeper</li>
+                        <li>Kill 10 Scavs at the Shoreline. You must be wearing UN uniform (MF-UNTAR armor vest and UNTAR helmet)</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Cult - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find the missing informant</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Cult - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Put the beacon on the ritual spot at the Customs</li>
+                        <li>Put the beacon on the ritual spot in the Woods</li>
+                        <li>Put the beacon on the ritual spot in the Shoreline</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 7 Scavs at the Shoreline with 12 gauge shotgun headshots</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Mark the helicopter with a beacon</li>
+                        <li>Mark a safe road with a beacon</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid WD-40 100ml</li>
+                        <li>Hand over WD-40 100ml</li>
+                        <li>Find in raid Clin wipers, 2 pcs</li>
+                        <li>Hand over Clin wipers, 2 pcs</li>
+                        <li>Find in raid Corrugated hoses, 2 pcs</li>
+                        <li>Hand over Corrugated hoses, 2 pcs</li>
+                        <li>Find in raid Ox bleach, 2 pcs</li>
+                        <li>Hand over Ox bleach, 2 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Find generators in right wing</li>
+                        <li>Find generators in left wing</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 5 </th>
+
+                <td>
+                    <ul>
+                        <li>Find the key from the locked resort rooms</li>
+                        <li>Hand over key from the locked resort rooms</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 6 </th>
+
+                <td>
+                    <ul>
+                        <li>Hand over $8,000</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Spa Tour - Part 7 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Morphine injector, 4 pcs</li>
+                        <li>Hand over Morphine injector, 4 pcs</li>
+                        <li>Find in raid Heat-exchange alkali surface washer, 2 pcs</li>
+                        <li>Hand over Heat-exchange alkali surface washer, 2 pcs</li>
+                        <li>Find in raid Corrugated hose, 2 pcs</li>
+                        <li>Hand over Corrugated hose, 2 pcs</li>
+                        <li>Find in raid 5L propane tank, 2 pcs</li>
+                        <li>Hand over 5L propane tank, 2 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Cargo X - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find the cargo record in the computer room</li>
+                        <li>Hand over the retrieved data to Peacekeeper</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Cargo X - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find a room with reservoirs</li>
+                        <li>Find any information on the second part of the shipment</li>
+                        <li>Give the info on the second part of the cargo to Peacekeeper</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Cargo X - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find hidden Terragroup cargo</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Lend lease - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Military COFDM wireless Signal Transmitter</li>
+                        <li>Find in raid 2 Virtex programmable processors</li>
+                        <li>Handover Military COFDM wireless Signal Transmitter</li>
+                        <li>Handover 2 Virtex programmable processors</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Wet Job - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 10 Scavs at the Shoreline using a suppressed M4 or ADAR</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Wet Job - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find the fisher's dwelling</li>
+                        <li>Set the beacon</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Wet Job - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find Artyom's car</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Wet Job - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Find a list of resort tenants</li>
+                        <li>Hand over the list of tenants to Peacekeeper</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Wet Job - Part 5 </th>
+
+                <td>
+                    <ul>
+                        <li>Find info on Artyom's work</li>
+                        <li>Hand over the info to Peacekeeper</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Wet Job - Part 6 </th>
+
+                <td>
+                    <ul>
+                        <li>Reach level 7 in Sniper rifle handling skill</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The guide </th>
+
+                <td>
+                    <ul>
+                        <li>Survive at Interchange (Status: Survived)</li>
+                        <li>Survive at Shoreline (Status: Survived)</li>
+                        <li>Survive at Factory (Status: Survived)</li>
+                        <li>Survive at Laboratory (Status: Survived)</li>
+                        <li>Survive at Woods (Status: Survived)</li>
+                        <li>Survive at Customs (Status: Survived)</li>
+                        <li>Survive at Reserve (Status: Survived)</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Peacekeeping mission </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 12 Scavs on Customs while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                        <li>Kill 12 Scavs on Interchange while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                        <li>Kill 12 Scavs on Shoreline while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                        <li>Kill 12 Scavs on Woods while dressed in the UN uniform (UNTAR helmet, MF-UNTAR armor vest, Colt M4A1)</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Mentor </th>
+
+                <td>
+                    <ul>
+                        <li>Handover 50,000 euros</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Mechanic </th>
+            </tr>
+
+            <tr>
+                <th>Gunsmith - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify MP-133 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AKS-74U to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify MP5 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify M4A1 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 5 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify DVL-10 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 6 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify R11 RSASS to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 7 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify Remington Model 870 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 8 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AKM to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 9 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AKS-74N to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 10 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AK-105 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 11 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AS VAL to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 12 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AK-102 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 13 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify SIG MPX to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 14 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify AKMN to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 15 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify M1A to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gunsmith - Part 16 </th>
+
+                <td>
+                    <ul>
+                        <li>Modify M4A1 to comply with the required specification</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Farming - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Fix the first control board</li>
+                        <li>Fix the second control board</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Farming - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>"Find in raid Powercord, 2 pcs</li>
+                        <li>Hand over Powercord, 2 pcs</li>
+                        <li>"Find in raid T-Shaped Plug, 4 pcs</li>
+                        <li>Hand over T-Shaped Plug, 4 pcs</li>
+                        <li>"Find in raid Printed circuit board, 2 pcs</li>
+                        <li>Hand over Printed circuit board, 2 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Farming - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find a warehouse of confiscate</li>
+                        <li>Get package with graphics cards</li>
+                        <li>Hand over package with graphics cards</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Farming - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Graphics card, 3 pcs</li>
+                        <li>Hand over Graphics card, 3 pcs</li>
+                        <li>Find in raid CPU Fan, 8 pcs</li>
+                        <li>Hand over CPU Fan, 8 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Signal - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find the first signal source</li>
+                        <li>Find the second signal source</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Signal - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 3 PC CPU</li>
+                        <li>Find in raid 3 Rechargeable battery</li>
+                        <li>Find in raid 3 Printed circuit board</li>
+                        <li>Find in raid 3 Broken GPhone</li>
+                        <li>Hand over PC CPU, 3 pcs</li>
+                        <li>Hand over Rechargeable battery, 3 pcs</li>
+                        <li>Hand over Printed circuit board, 3 pcs</li>
+                        <li>Hand over Broken GPhone, 3 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Signal - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Place first jammer</li>
+                        <li>Place second jammer</li>
+                        <li>Place third jammer</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Signal - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Increase memory skill level to 4</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Bad habit </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Malboro cigarettes, 5 pcs</li>
+                        <li>Hand over Malboro cigarettes, 5 pcs</li>
+                        <li>Find in raid Strike cigarettes, 5 pcs</li>
+                        <li>Hand over Strike cigarettes, 5 pcs</li>
+                        <li>Find in raid Wilston cigarettes, 5 pcs</li>
+                        <li>Hand over Wilston cigarettes, 5 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Scout </th>
+
+                <td>
+                    <ul>
+                        <li>Find a way out of the factory 1</li>
+                        <li>Find a way out of the factory 2</li>
+                        <li>Find a way out of the factory 3</li>
+                        <li>Survive and exit the location</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Insider </th>
+
+                <td>
+                    <ul>
+                        <li>Reach level 3 loyalty with Prapor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Psycho Sniper </th>
+
+                <td>
+                    <ul>
+                        <li>Upgrade the Sniper skill to level 9</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Import </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid UHF RFID Reader</li>
+                        <li>Find in raid VPX Flash Storage Module</li>
+                        <li>Handover UHF RFID Reader</li>
+                        <li>Handover VPX Flash Storage Module</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Fertilizers </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 5 Wires</li>
+                        <li>Find in raid 5 Capacitors</li>
+                        <li>Handover 5 Wires</li>
+                        <li>Handover 5 Capacitors</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>A Shooter Born in Heaven </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 3 PMCs with headshots in the Woods from a distance of more than 100 meters.</li>
+                        <li>Kill 3 PMCs with headshots in the Interchange from a distance of more than 100 meters.</li>
+                        <li>Kill 3 PMCs with headshots in the Shoreline from a distance of more than 100 meters.</li>
+                        <li>Kill 3 PMCs with headshots in the Customs from a distance of more than 100 meters.</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Introduction </th>
+
+                <td>
+                    <ul>
+                        <li>Find Jaeger's camp</li>
+                        <li>Find Jaeger's message</li>
+                        <li>Handover the message to the Mechanic</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Ragman </th>
+            </tr>
+
+            <tr>
+                <th>Only business </th>
+
+                <td>
+                    <ul>
+                        <li>Obtain level 2 loyalty with Ragman</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Make ULTRA Great Again </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 25 Scavs at the Interchange.</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Big sale </th>
+
+                <td>
+                    <ul>
+                        <li>Check AVOKADO</li>
+                        <li>Check KOSTIN</li>
+                        <li>Check tRend</li>
+                        <li>Check DINO CLOTHES</li>
+                        <li>Check TOP BRAND</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Blood of War - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Mark tank 1</li>
+                        <li>Mark tank 2</li>
+                        <li>Mark tank 3</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Dressed to kill </th>
+
+                <td>
+                    <ul>
+                        <li>Hand over Ushanka ear-flap cap, 7 pcs</li>
+                        <li>Hand over Kinda cowboy hat, 7 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Gratitude </th>
+
+                <td>
+                    <ul>
+                        <li>Find the secret spot</li>
+                        <li>Leave the Ghost balaclava in place</li>
+                        <li>Leave the Shemagh in place</li>
+                        <li>Leave the RayBench sunglasses in place</li>
+                        <li>Leave the Round frame sunglasses in place</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sales Night </th>
+
+                <td>
+                    <ul>
+                        <li>Survive in the raid at Interchange 7 times</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Hot delivery </th>
+
+                <td>
+                    <ul>
+                        <li>Stash Peltor ComTac 2 in specified place</li>
+                        <li>Stash 6B47 Ratnik-BSh Helmet in specified place</li>
+                        <li>Stash BNTI Gzhel-K armor in specified place</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Database - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Get Goshan cargo manifests</li>
+                        <li>Hand over Goshan cargo manifests</li>
+                        <li>Get OLI cargo manifests</li>
+                        <li>Hand over OLI cargo manifests</li>
+                        <li>Get IDEA cargo manifests</li>
+                        <li>Hand over IDEA cargo manifests</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Database - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Get OLI cargo route documents</li>
+                        <li>Hand over OLI cargo route documents</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Minibus </th>
+
+                <td>
+                    <ul>
+                        <li>Mark first minibus</li>
+                        <li>Mark second minibus</li>
+                        <li>Mark third minibus</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sew it good - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Ski hat with holes for eyes</li>
+                        <li>Hand over Ski hat with holes for eyes</li>
+                        <li>Find in raid Pilgrim tourist backpack</li>
+                        <li>Hand over Pilgrim tourist backpack</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sew it good - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Get Gzhel in 0-50% condition</li>
+                        <li>Hand over Gzhel in 0-50% condition</li>
+                        <li>Get Gzhel in 50-100% condition</li>
+                        <li>Hand over Gzhel in 50-100% condition</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sew it good - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Get 6B43 with 0-50% condition</li>
+                        <li>Hand over 6B43 with 0-50% condition</li>
+                        <li>Get 6B43 with 50-100% condition</li>
+                        <li>Hand over 6B43 with 50-100% condition</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Sew it good - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 2 Wartech (TV-109, TV-106)</li>
+                        <li>Hand over 2 Wartech (TV-109, TV-106)</li>
+                        <li>Find in raid 2 BlackRock chest rig</li>
+                        <li>Hand over 2 BlackRock chest rig</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Blood of War - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Fuel conditioner, 4 pcs</li>
+                        <li>Hand over Fuel conditioner, 4 pcs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The Blood of War - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Find and mark first fuel stash</li>
+                        <li>Find and mark second fuel stash</li>
+                        <li>Find and mark third fuel stash</li>
+                        <li>Survive and leave the area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The key to success </th>
+
+                <td>
+                    <ul>
+                        <li>Get Clothes design handbook Part 1</li>
+                        <li>Hand over Clothes design handbook Part 1</li>
+                        <li>Get Clothes design handbook Part 2</li>
+                        <li>Hand over Clothes design handbook Part 2</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Living high is not a crime - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid Bronze lion, 2 pcs</li>
+                        <li>Hand over Bronze lion, 2 pcs</li>
+                        <li>Find in raid Horse figurine, 2 pcs</li>
+                        <li>Hand over Horse figurine, 2 pcs</li>
+                        <li>Find in raid Cat figurine</li>
+                        <li>Hand over Cat figurine</li>
+                        <li>Find in raid Roler submariner gold wrist watch</li>
+                        <li>Hand over Roler submariner gold wrist watch</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Living high is not a crime - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 3 antique teapots</li>
+                        <li>Find in raid 2 antique vases</li>
+                        <li>Handover 3 antique teapots</li>
+                        <li>Handover 2 antique vases</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Charisma brings success </th>
+
+                <td>
+                    <ul>
+                        <li>Increase the Charisma level to 10</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>No fuss needed </th>
+
+                <td>
+                    <ul>
+                        <li>Increase the Therapist loyalty level to 3</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Supervisor </th>
+
+                <td>
+                    <ul>
+                        <li>Get key from Goshan cash registers</li>
+                        <li>Hand over key from Goshan cash registers</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Scavenger </th>
+
+                <td>
+                    <ul>
+                        <li>Earn 9 Search skill level</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The stylish one </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate Killa 100 times</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Textile - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Obtain in raid 5 pcs. of Aramid fiber cloth</li>
+                        <li>Obtain in raid 10 pcs. of Ripstop cloth</li>
+                        <li>Obtain in raid 3 pcs. of paracord</li>
+                        <li>Hand over Aramid fiber cloth 5 pcs.</li>
+                        <li>Hand over Ripstop cloth 10 pcs.</li>
+                        <li>Hand over paracord 3 pcs.</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Textile - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Obtain in raid 10 pcs. of Fleece cloth</li>
+                        <li>Hand over Fleece cloth 10 pcs.</li>
+                        <li>Obtain in raid 10 pcs. of Polyamide fabric Cordura</li>
+                        <li>Hand over Polyamide fabric Cordura 10 pcs.</li>
+                        <li>Obtain in raid KEKTAPE duct tape 5 pcs.</li>
+                        <li>Hand over KEKTAPE duct tape 5 pcs.</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Jaeger</th>
+            </tr>
+
+            <tr>
+                <th>Acquaintance </th>
+
+                <td>
+                    <ul>
+                        <li>Get 5 Iskra lunch box</li>
+                        <li>Get 6 packs of Emelya rye croutons</li>
+                        <li>Get 3 cans of delicious beef stew</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Unprotected, but dangerous </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 5 scavs on Woods. You should not wear body armor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Thrifty </th>
+
+                <td>
+                    <ul>
+                        <li>Stash "Iskra" MRE in the ZB-016 bunker</li>
+                        <li>Stash bottle of water in the ZB-016 bunker</li>
+                        <li>Stash "Iskra" MRE in the ZB-014 bunker</li>
+                        <li>Stash bottle of water in the ZB-014 bunker</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Zhivchik </th>
+
+                <td>
+                    <ul>
+                        <li>Spend 5 minutes in a state of complete dehydration</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Wounded beast </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 4 scavs while suffering from pain effect</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Tough guy </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate 4 scavs on Woods in a single raid. You must not use medicine.</li>
+                        <li>Don't use any medicine during the quest</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Cold blooded </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate 3 PMCs with the headshot while having tremor</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Junkie </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 20 scavs on Woods while having stimulant effects</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>The survivalist path - Combat medic </th>
+
+                <td>
+                    <ul>
+                        <li>Reach level 5 Vitality skill</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Secured perimeter </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate 8 PMС on Factory in the office area</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - The trophy </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate Reshala</li>
+                        <li>Find in raid the golden TT</li>
+                        <li>Handover golden TT to Jaeger</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Woods cleaning </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 40 scavs all over the Tarkov territory</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Controller </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 2 PMCs blinded with the flashbang</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Sell-out </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate Killa</li>
+                        <li>Find In Raid Killa's helmet</li>
+                        <li>Handover Killa's helmet to Jaeger</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Woods keeper </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate Shturman</li>
+                        <li>Find in raid Shturman's key</li>
+                        <li>Handover the Shturman's stash key to Jaeger</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Justice </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 3 scavs that are dressed in police uniform</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Evil watchman </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 7 PMCs in the Dorms area on Customs</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Eraser - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Find and eliminate Glukhar</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Huntsman path - Eraser - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Eliminate 8 raiders</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Ambulance </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid portable defibrillator</li>
+                        <li>Find in raid 2 CMS surgery kits</li>
+                        <li>Handover portable defibrillator</li>
+                        <li>Handover 2 CMS surgery kits</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Shady business </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 3 flash drives</li>
+                        <li>Handover 3 flash drives</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Nostalgia </th>
+
+                <td>
+                    <ul>
+                        <li>Find a room with the view of a bay, where Jaeger was staying</li>
+                        <li>Find Jaegers' photo album</li>
+                        <li>Handover photo album to Jaeger</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Fishing place </th>
+
+                <td>
+                    <ul>
+                        <li>Find in raid 3 TerraGroup Labs access keycards</li>
+                        <li>Handover 3 TerraGroup Labs access keycards</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Courtesy visit </th>
+
+                <td>
+                    <ul>
+                        <li>Find priest house</li>
+                        <li>Find fisherman house</li>
+                        <li>Find chairman house</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Hunting trip </th>
+
+                <td>
+                    <ul>
+                        <li>Give the Jaeger 3x M700 sniper rifles of a certain configuration</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Reserv </th>
+
+                <td>
+                    <ul>
+                        <li>Find the food storage</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 1 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 8 Scavs over 40 meters away with a Mosin rifle without a scope</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 2 </th>
+
+                <td>
+                    <ul>
+                        <li>Make 3 hits in the legs from more than 60 meters away with a Mosin</li>
+                        <li>Make 2 headshots from more than 60 meters away with a Mosin</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 3 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 4 PMC operatives with a Mosin at close range, less than 25 meters away</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 4 </th>
+
+                <td>
+                    <ul>
+                        <li>Level up the Sniper Rifles skill to 4</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 5 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 10 Scavs at Customs with a Mosin rifle between 21:00 and 5:00</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 6 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 7 Scav snipers with a Mosin</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 7 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 5 PMC operatives with a suppressed Mosin at least 55 meters away</li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <th>"The Tarkov shooter" - Part 8 </th>
+
+                <td>
+                    <ul>
+                        <li>Kill 3 PMC operatives with a Mosin over one raid in the Woods</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table style="width:100%;">
+        <tbody>
+            <tr>
+                <th colspan="10">Fence </th>
+            </tr>
+
+            <tr>
+                <th>Collector </th>
+
+                <td>
+                    <ul>
+                        <li>Find an Old firesteel in raid</li>
+                        <li>Handover the Old firesteel</li>
+                        <li>Find an Antique axe in raid</li>
+                        <li>Handover the Antique axe</li>
+                        <li>Find a Battered antique Book in raid</li>
+                        <li>Handover the Battered antique Book</li>
+                        <li>Find a FireKlean gun lube in raid</li>
+                        <li>Handover the FireKlean gun lube</li>
+                        <li>Find a Golden rooster in raid</li>
+                        <li>Handover the Golden rooster</li>
+                        <li>Find a Silver Badge in raid</li>
+                        <li>Handover the Silver Badge</li>
+                        <li>Find a Deadlyslob's beard oil in raid</li>
+                        <li>Handover the Deadlyslob's beard oil</li>
+                        <li>Find a Golden 1GPhone in raid</li>
+                        <li>Handover the Golden 1GPhone</li>
+                        <li>Find a Jar of DevilDog mayo in raid</li>
+                        <li>Handover the Jar of DevilDog mayo</li>
+                        <li>Find a Can of sprats in raid</li>
+                        <li>Handover the Can of sprats</li>
+                        <li>Find a Fake mustache in raid</li>
+                        <li>Handover the Fake mustache</li>
+                        <li>Find a Kotton beanie in raid</li>
+                        <li>Handover the Kotton beanie</li>
+                        <li>Find a Can of Dr. Lupo's coffee beans in raid</li>
+                        <li>Handover the Can of Dr. Lupo's coffee beans</li>
+                        <li>Find a Pestily plague mask in raid</li>
+                        <li>Handover the Pestily plague mask</li>
+                        <li>Find a Raven figurine in raid</li>
+                        <li>Handover the Raven figurine</li>
+                        <li>Find a Shroud half-mask in raid</li>
+                        <li>Handover the Shroud half-mask</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>
