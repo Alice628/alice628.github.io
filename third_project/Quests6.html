@@ -20,7 +20,7 @@
                         return true;
                     }
                     let questName = $(quest).children('th').eq(0).html();
-                    questMap[dealerName][questName] = {};
+                    //questMap[dealerName][questName] = {};
                     $(quest).children('td').find('li').each(function(index3, requirement) {
                         //console.log($(requirement));
                         let requirementHtml = $(requirement).html();
@@ -28,13 +28,9 @@
                             return true;
                         }
                         let index_start = requirementHtml.indexOf('Find');
-                        let index_end = requirementHtml.indexOf('<');
                         let requirementSource;
-                        if (index_end != -1) {
-                            requirementSource = requirementHtml.substring(index_start + 5, index_end);
-                        } else {
-                            requirementSource = requirementHtml.substring(index_start + 5);
-                        }
+                        requirementSource = requirementHtml.substring(index_start + 5);
+
                         requirementSource = requirementSource.trim();
                         //console.log(requirementHtml);
 
@@ -46,20 +42,24 @@
                             requirementSource = requirementSource.trim();
                         }
 
-                        if (requirementSource.includes('in ') || requirementSource.includes('for ') || requirementSource.includes('to '))
-                            console.log(requirementSource);
+                        if (questMap[dealerName][questName] == null) {
+                            questMap[dealerName][questName] = {};
+                        }
+                        questMap[dealerName][questName][requirementSource] = 0;
+                        //console.log(requirementSource);
+
                     });
                 });
             });
 
-            console.log(dealerList);
-            console.log(questMap);
+            //console.log(dealerList);
+            //console.log(questMap);
+            console.log(JSON.stringify(questMap));
         });
     </script>
 </head>
 
 <body>
-
     <table style="width:100%;">
         <tbody>
             <tr>
@@ -83,9 +83,7 @@
                 <td>
                     <ul>
                         <li>Find the bronze pocket watch
-                            <ul>
-                                <li>(Optional) Find the key to the tank truck</li>
-                            </ul>
+
                         </li>
                         <li>Hand over the bronze pocket watch to Prapor</li>
                     </ul>
@@ -161,10 +159,7 @@
                 <td>
                     <ul>
                         <li>Find secure folder 0031 in a bunkhouse on Customs
-                            <ul>
-                                <li>(Optional) Gain access to the closed room in the Factory offices</li>
-                                <li>(Optional) Find the bunkhouse key</li>
-                            </ul>
+
                         </li>
                         <li>Hand over secure folder 0031 to Prapor</li>
                         <li>Survive and exit Customs location</li>
@@ -178,10 +173,7 @@
                 <td>
                     <ul>
                         <li>Find 6 60-round mags for AK
-                            <ul>
-                                <li>(Optional) Find the key from the bunker in the Terragroup employee room</li>
-                                <li>(Optional) Locate the right bunker in the Woods</li>
-                            </ul>
+
                         </li>
                         <li>Hand over 6 60 round mags for AK to Prapor</li>
                     </ul>
@@ -206,9 +198,7 @@
                 <td>
                     <ul>
                         <li>Find something valuable in the dorm room 203
-                            <ul>
-                                <li>(Optional) Gain access to room 214</li>
-                            </ul>
+
                         </li>
                         <li>Hand over the item to Prapor</li>
                     </ul>
@@ -406,9 +396,7 @@
                 <td>
                     <ul>
                         <li>Find gas analyzer
-                            <ul>
-                                <li>(Optional) Get access to the pumping station at the Factory</li>
-                            </ul>
+
                         </li>
                         <li>Hand over the gas analyzer to Therapist</li>
                     </ul>
@@ -464,10 +452,7 @@
                 <td>
                     <ul>
                         <li>Find a case with the device
-                            <ul>
-                                <li>(Optional) Find the paramedic's car</li>
-                                <li>(Optional) Get into dorm room 114</li>
-                            </ul>
+
                         </li>
                         <li>Hand over the case to Therapist</li>
                     </ul>
@@ -684,10 +669,7 @@
                 <td>
                     <ul>
                         <li>Find the hidden valuable cargo
-                            <ul>
-                                <li>(Optional) Find the messenger body</li>
-                                <li>(Optional) Find a place where the messenger hid the item</li>
-                            </ul>
+
                         </li>
                         <li>Hand it over to Skier</li>
                     </ul>
@@ -732,9 +714,7 @@
                 <td>
                     <ul>
                         <li>Find some information about the Deputy Chief's past life
-                            <ul>
-                                <li>(Optional) Find a sleeping place of the former Deputy Chief of Security</li>
-                            </ul>
+
                         </li>
                         <li>Hand it over to Skier</li>
                         <li>Find items that can help the investigation</li>
@@ -1006,8 +986,10 @@
                 <td>
                     <ul>
                         <li>Mark first truck with lost UN cargo
+
                         </li>
                         <li>Mark second truck with lost UN cargo
+
                         </li>
                         <li>Find 5 MRE ration packs</li>
                         <li>Deliver 5 MRE ration packs to Peacekeeper</li>
@@ -2415,9 +2397,6 @@
             </tr>
         </tbody>
     </table>
-
-
-
 </body>
 
 </html>
