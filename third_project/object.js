@@ -1,181 +1,96 @@
 let dealer = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
 let questMap = {
     "Prapor": {
-        "Checking ": {
-            "the bronze pocket watch": 0
-        },
-        "Delivery from the past ": {
-            "a secure case in the Tarcone Director's Office at the Customs terminal": 0
-        },
-        "The bunker - Part 1 ": {
-            "underground bunker": 0
-        },
-        "Bad rep evidence ": {
-            "secure folder 0031 in a bunkhouse on Customs": 0
-        },
         "Ice cream cones ": {
-            "6 60-round mags for AK": 0
-        },
-        "Postman Pat - Part 1 ": {
-            "a letter on a messenger in the Factory": 0
-        },
-        "Shaking up teller ": {
-            "something valuable in the dorm room 203": 0
+            "60-round mags for AK": 6
         },
         "The Punisher - Part 2 ": {
-            "7 lower half-masks": 0
+            "lower half-mask": 7
         },
         "The Punisher - Part 4 ": {
-            "5 knives Bars A-2607": 0
+            "knives Bars A-2607": 5
         },
         "The Punisher - Part 5 ": {
-            "3 AK-74N": 0,
-            "3 M4A1 assault rifles": 0,
-            "5 PM pistols": 0
+            "AK-74N": 3,
+            "M4A1 assault rifle": 3,
+            "PM pistol": 5
         },
         "The Punisher - Part 6 ": {
-            "7 PMC USEC dogtags": 0,
-            "7 PMC BEAR dogtags": 0
-        },
-        "Big customer ": {
-            "a transport with chemicals": 0
+            "PMC USEC dogtag": 7,
+            "PMC BEAR dogtag": 7
         },
         "No offence ": {
-            "10 M67 grenades": 0
+            "M67 grenades": 10
         },
         "Regulated materials ": {
-            "military battery": 0,
-            "10 30-mil. shells for BMP cannon": 0
+            "military battery": 1,
+            "30-mil. shells for BMP cannon": 10
         }
     },
     "Therapist": {
         "Shortage ": {
-            "5 Salewa kits": 0
+            "Salewa kit": 5
         },
         "Sanitary Standards - Part 1 ": {
-            "gas analyzer": 0
+            "gas analyzer": 1
         },
         "Sanitary Standards - Part 2 ": {
-            "2 gas analyzers": 0
-        },
-        "Operation Aquarius - Part 1 ": {
-            "hidden water in the dorm": 0
+            "gas analyzer": 2
         },
         "Painkiller ": {
-            "4 morphine syringes": 0
-        },
-        "Pharmacist ": {
-            "a case with the device": 0
-        },
-        "Supply plans ": {
-            "the secure folder on the sawmill": 0
+            "Morphine injector": 4
         },
         "General wares ": {
-            "15 cans of meat": 0
+            "cans of meat": 15
         },
         "Car repair ": {
-            "4 car batteries": 0,
-            "8 spark plugs": 0
-        },
-        "Health Care Privacy - Part 3 ": {
-            "the car that belonged to the head of the Medical Service": 0
-        },
-        "Out of curiosity ": {
-            "a transport with chemicals": 0
+            "car battery": 4,
+            "spark plug": 8
         },
         "Trust regain ": {
-            "303 dorm room key": 0,
-            "ZB-014 key": 0,
-            "the customs military checkpoint key": 0,
-            "gas station closet key": 0
+            "303 dorm room key": 1,
+            "ZB-014 key": 1,
+            "the customs military checkpoint key": 1,
+            "gas station closet key": 1
         }
     },
     "Skier": {
-        "The Extortionist ": {
-            "the hidden valuable cargo": 0
-        },
         "What's on the flash drive? ": {
-            "two USB flash drives with information": 0
-        },
-        "Golden swag ": {
-            "a Gilded Zibbo lighter": 0
-        },
-        "Chemical - Part 1 ": {
-            "some information about the Deputy Chief's past life": 0,
-            "items that can help the investigation": 0
-        },
-        "Chemical - Part 2 ": {
-            "any information that could help with the investigation": 0,
-            "any evidence that could help with the investigation": 0
-        },
-        "Chemical - Part 3 ": {
-            "a Syringe with a chemical in the Factory": 0
-        },
-        "Chemical - Part 4 ": {
-            "a transport with chemicals": 0
+            "USB flash drive": 2
         },
         "Friend from the West - Part 1 ": {
-            "7 PMC USEC dogtags": 0
+            "PMC USEC dogtags": 7
         },
         "\"Vitamins\" - Part 2 ": {
-            "3 Medical bloodset": 0,
-            "4 Respirator": 0
-        },
-        "Bullshit ": {
-            "False flash drive": 0
+            "Medical bloodset": 3,
+            "Respirator": 4
         }
     },
     "Peacekeeper": {
-        "Fishing Gear ": {
-            "the secret spot": 0
-        },
-        "Eagle Eye ": {
-            "the first UAV crash site": 0,
-            "SAS disk from the first crashed drone": 0,
-            "the second UAV crash site": 0,
-            "SAS disk from the second crashed drone": 0
-        },
         "Humanitarian Supplies ": {
-            "5 MRE ration packs": 0
-        },
-        "The Cult - Part 1 ": {
-            "the missing informant": 0
+            "MRE ration packs": 5
         },
         "Spa Tour - Part 3 ": {
-            "WD-40 100ml": 0,
-            "Clin wipers, 2 pcs": 0,
-            "Corrugated hoses, 2 pcs": 0,
-            "Ox bleach, 2 pcs": 0
-        },
-        "Spa Tour - Part 4 ": {
-            "generators in right wing": 0,
-            "generators in left wing": 0
+            "WD-40 100ml": 1,
+            "Clin wiper": 2,
+            "Corrugated hose": 2,
+            "Ox bleach": 2
         },
         "Spa Tour - Part 5 ": {
-            "the key from the locked resort rooms": 0
+            "the key from the locked resort rooms": 1
         },
         "Spa Tour - Part 7 ": {
-            "Morphine injector, 4 pcs": 0,
-            "Heat-exchange alkali surface washer, 2 pcs": 0,
-            "Corrugated hose, 2 pcs": 0,
-            "5L propane tank, 2 pcs": 0
+            "Morphine injector": 4,
+            "Heat-exchange alkali surface washer": 2,
+            "Corrugated hose": 2,
+            "5L propane tank": 2
         },
         "Cargo X - Part 1 ": {
-            "the cargo record in the computer room": 0
-        },
-        "Cargo X - Part 2 ": {
-            "a room with reservoirs": 0,
-            "any information on the second part of the shipment": 0
-        },
-        "Cargo X - Part 3 ": {
-            "hidden Terragroup cargo": 0
+            "the cargo record in the computer room": 1
         },
         "Lend lease - Part 2 ": {
-            "Military COFDM wireless Signal Transmitter": 0,
-            "2 Virtex programmable processors": 0
-        },
-        "Wet Job - Part 2 ": {
-            "the fisher's dwelling": 0
+            "Military COFDM wireless Signal Transmitter": 1,
+            "Virtex programmable processors": 2
         },
         "Wet Job - Part 3 ": {
             "Artyom's car": 0
