@@ -1,63 +1,75 @@
-let dealer = ["Prapor", "Therapist", "Fence", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger"];
+let dealer = ["Prapor", "Therapist", "Skier", "Peacekeeper", "Mechanic", "Ragman", "Jaeger", "Fence"];
 let questMap = {
     "Prapor": {
+        "Delivery from the past ": {
+            "secure case in the Tarcone Director's Office at the Customs terminal": 1
+        },
+        "The bunker - Part 1 ": {
+            "underground bunker": 0
+        },
+        "Bad rep evidence ": {
+            "secure folder 0031 in a bunkhouse on Customs": 0
+        },
         "Ice cream cones ": {
             "60-round mags for AK": 6
         },
+        "Postman Pat - Part 1 ": {
+            "letter on a messenger in the Factory": 1
+        },
         "The Punisher - Part 2 ": {
-            "lower half-mask": 7
+            "(In raid)lower half-masks": 7
         },
         "The Punisher - Part 4 ": {
-            "knives Bars A-2607": 5
+            "(In raid)knives Bars A-2607": 5
         },
         "The Punisher - Part 5 ": {
             "AK-74N": 3,
-            "M4A1 assault rifle": 3,
-            "PM pistol": 5
+            "M4A1 assault rifles": 3,
+            "PM pistols": 5
         },
         "The Punisher - Part 6 ": {
-            "PMC USEC dogtag": 7,
-            "PMC BEAR dogtag": 7
+            "PMC USEC dogtags": 7,
+            "PMC BEAR dogtags": 7
         },
         "Big customer ": {
-            "transport with chemical": 1
+            "transport with chemicals": 1
         },
         "No offence ": {
-            "M67 grenade": 10
+            "M67 grenades": 10
         },
         "Regulated materials ": {
-            "military battery": 0,
-            "30-mil. shells for BMP cannon": 10
+            "(In raid)military battery": 0,
+            "(In raid)30-mil. shells for BMP cannon": 10
         }
     },
     "Therapist": {
         "Shortage ": {
-            "Salewa kit": 5
+            "Salewa kits": 5
         },
         "Sanitary Standards - Part 1 ": {
             "gas analyzer": 0
         },
         "Sanitary Standards - Part 2 ": {
-            "gas analyzer": 2
+            "(In raid)gas analyzers": 2
         },
         "Operation Aquarius - Part 1 ": {
             "hidden water in the dorm": 0
         },
         "Painkiller ": {
-            "morphine syringe": 4
+            "(In raid)morphine syringes": 4
         },
         "Pharmacist ": {
             "case with the device": 1
         },
         "General wares ": {
-            "cans of meat": 15
+            "(In raid)cans of meat": 15
         },
         "Car repair ": {
-            "car battery": 4,
-            "spark plug": 8
+            "(In raid)car batteries": 4,
+            "(In raid)spark plugs": 8
         },
         "Out of curiosity ": {
-            "transport with chemical": 1
+            "transport with chemicals": 1
         },
         "Trust regain ": {
             "303 dorm room key": 1,
@@ -68,7 +80,7 @@ let questMap = {
     },
     "Skier": {
         "What's on the flash drive? ": {
-            "two USB flash drives with information": 0
+            "(In raid)two USB flash drives with information": 0
         },
         "Golden swag ": {
             "Gilded Zibbo lighter": 1
@@ -80,14 +92,14 @@ let questMap = {
             "Syringe with a chemical in the Factory": 1
         },
         "Chemical - Part 4 ": {
-            "transport with chemical": 1
+            "transport with chemicals": 1
         },
         "Friend from the West - Part 1 ": {
-            "PMC USEC dogtag": 7
+            "PMC USEC dogtags": 7
         },
         "\"Vitamins\" - Part 2 ": {
-            "Medical bloodset": 3,
-            "Respirator": 4
+            "(In raid)Medical bloodset": 3,
+            "(In raid)Respirator": 4
         },
         "Bullshit ": {
             "False flash drive": 0
@@ -99,13 +111,13 @@ let questMap = {
             "SAS disk from the second crashed drone": 0
         },
         "Humanitarian Supplies ": {
-            "MRE ration pack": 5
+            "MRE ration packs": 5
         },
         "Spa Tour - Part 3 ": {
-            "WD-40 100ml": 0,
-            "Clin wipers, 2 pcs": 0,
-            "Corrugated hoses, 2 pcs": 0,
-            "Ox bleach, 2 pcs": 0
+            "(In raid)WD-40 100ml": 0,
+            "(In raid)Clin wipers, 2 pcs": 0,
+            "(In raid)Corrugated hoses, 2 pcs": 0,
+            "(In raid)Ox bleach, 2 pcs": 0
         },
         "Spa Tour - Part 4 ": {
             "generators in right wing": 0,
@@ -115,10 +127,10 @@ let questMap = {
             "the key from the locked resort rooms": 1
         },
         "Spa Tour - Part 7 ": {
-            "Morphine injector, 4 pcs": 0,
-            "Heat-exchange alkali surface washer, 2 pcs": 0,
-            "Corrugated hose, 2 pcs": 0,
-            "5L propane tank, 2 pcs": 0
+            "(In raid)Morphine injector, 4 pcs": 0,
+            "(In raid)Heat-exchange alkali surface washer, 2 pcs": 0,
+            "(In raid)Corrugated hose, 2 pcs": 0,
+            "(In raid)5L propane tank, 2 pcs": 0
         },
         "Cargo X - Part 2 ": {
             "room with reservoirs": 1
@@ -127,8 +139,8 @@ let questMap = {
             "hidden Terragroup cargo": 0
         },
         "Lend lease - Part 2 ": {
-            "Military COFDM wireless Signal Transmitter": 0,
-            "Virtex programmable processor": 2
+            "(In raid)Military COFDM wireless Signal Transmitter": 0,
+            "(In raid)Virtex programmable processors": 2
         },
         "Wet Job - Part 3 ": {
             "Artyom's car": 0
@@ -142,27 +154,27 @@ let questMap = {
     },
     "Mechanic": {
         "Farming - Part 2 ": {
-            "Powercord, 2 pcs": 0,
-            "T-Shaped Plug, 4 pcs": 0,
-            "Printed circuit board, 2 pcs": 0
+            "(In raid)Powercord, 2 pcs": 0,
+            "(In raid)T-Shaped Plug, 4 pcs": 0,
+            "(In raid)Printed circuit board, 2 pcs": 0
         },
         "Farming - Part 3 ": {
             "warehouse of confiscate": 1
         },
         "Farming - Part 4 ": {
-            "Graphics card, 3 pcs": 0,
-            "CPU Fan, 8 pcs": 0
+            "(In raid)Graphics card, 3 pcs": 0,
+            "(In raid)CPU Fan, 8 pcs": 0
         },
         "Signal - Part 2 ": {
-            "PC CPU": 3,
-            "Rechargeable battery": 3,
-            "Printed circuit board": 3,
-            "Broken GPhone": 3
+            "(In raid)PC CPU": 3,
+            "(In raid)Rechargeable battery": 3,
+            "(In raid)Printed circuit board": 3,
+            "(In raid)Broken GPhone": 3
         },
         "Bad habit ": {
-            "Malboro cigarettes, 5 pcs": 0,
-            "Strike cigarettes, 5 pcs": 0,
-            "Wilston cigarettes, 5 pcs": 0
+            "(In raid)Malboro cigarettes, 5 pcs": 0,
+            "(In raid)Strike cigarettes, 5 pcs": 0,
+            "(In raid)Wilston cigarettes, 5 pcs": 0
         },
         "Scout ": {
             "way out of the factory 1": 1,
@@ -170,12 +182,12 @@ let questMap = {
             "way out of the factory 3": 1
         },
         "Import ": {
-            "UHF RFID Reader": 0,
-            "VPX Flash Storage Module": 0
+            "(In raid)UHF RFID Reader": 0,
+            "(In raid)VPX Flash Storage Module": 0
         },
         "Fertilizers ": {
-            "Wires": 5,
-            "Capacitors": 5
+            "(In raid)Wires": 5,
+            "(In raid)Capacitors": 5
         },
         "Introduction ": {
             "Jaeger's camp": 0,
@@ -184,50 +196,50 @@ let questMap = {
     },
     "Ragman": {
         "Sew it good - Part 1 ": {
-            "Ski hat with holes for eyes": 0,
-            "Pilgrim tourist backpack": 0
+            "(In raid)Ski hat with holes for eyes": 0,
+            "(In raid)Pilgrim tourist backpack": 0
         },
         "Sew it good - Part 4 ": {
-            "Wartech (TV-109, TV-106)": 2,
-            "BlackRock chest rig": 2
+            "(In raid)Wartech (TV-109, TV-106)": 2,
+            "(In raid)BlackRock chest rig": 2
         },
         "The Blood of War - Part 2 ": {
-            "Fuel conditioner, 4 pcs": 0
+            "(In raid)Fuel conditioner, 4 pcs": 0
         },
         "Living high is not a crime - Part 1 ": {
-            "Bronze lion, 2 pcs": 0,
-            "Horse figurine, 2 pcs": 0,
-            "Cat figurine": 0,
-            "Roler submariner gold wrist watch": 0
+            "(In raid)Bronze lion, 2 pcs": 0,
+            "(In raid)Horse figurine, 2 pcs": 0,
+            "(In raid)Cat figurine": 0,
+            "(In raid)Roler submariner gold wrist watch": 0
         },
         "Living high is not a crime - Part 2 ": {
-            "antique teapot": 3,
-            "antique vase": 2
+            "(In raid)antique teapots": 3,
+            "(In raid)antique vases": 2
         }
     },
     "Jaeger": {
         "Huntsman path - The trophy ": {
-            "the golden TT": 1
+            "(In raid)the golden TT": 1
         },
         "Huntsman path - Sell-out ": {
-            "Killa's helmet": 0
+            "(In raid)Killa's helmet": 0
         },
         "Huntsman path - Woods keeper ": {
-            "Shturman's key": 1
+            "(In raid)Shturman's key": 1
         },
         "Ambulance ": {
-            "portable defibrillator": 0,
-            "CMS surgery kit": 2
+            "(In raid)portable defibrillator": 0,
+            "(In raid)CMS surgery kits": 2
         },
         "Shady business ": {
-            "flash drive": 3
+            "(In raid)flash drives": 3
         },
         "Nostalgia ": {
             "room with the view of a bay, where Jaeger was staying": 1,
             "Jaegers' photo album": 0
         },
         "Fishing place ": {
-            "3 TerraGroup Labs access keycard": 1
+            "(In raid)3 TerraGroup Labs access keycards": 1
         },
         "Courtesy visit ": {
             "priest house": 0,
@@ -237,22 +249,22 @@ let questMap = {
     },
     "Fence": {
         "Collector ": {
-            "Old firesteel": 1,
-            "Antique axe": 1,
-            "Battered antique Book": 1,
-            "FireKlean gun lube": 1,
-            "Golden rooster": 1,
-            "Silver Badge": 1,
-            "Deadlyslob's beard oil": 1,
-            "Golden 1GPhone": 1,
-            "Jar of DevilDog mayo": 1,
-            "Can of sprats": 1,
-            "Fake mustache": 1,
-            "Kotton beanie": 1,
-            "Can of Dr. Lupo's coffee beans": 1,
-            "Pestily plague mask": 1,
-            "Raven figurine": 1,
-            "Shroud half-mask": 1
+            "(In raid)Old firesteel": 1,
+            "(In raid)Antique axe": 1,
+            "(In raid)Battered antique Book": 1,
+            "(In raid)FireKlean gun lube": 1,
+            "(In raid)Golden rooster": 1,
+            "(In raid)Silver Badge": 1,
+            "(In raid)Deadlyslob's beard oil": 1,
+            "(In raid)Golden 1GPhone": 1,
+            "(In raid)Jar of DevilDog mayo": 1,
+            "(In raid)Can of sprats": 1,
+            "(In raid)Fake mustache": 1,
+            "(In raid)Kotton beanie": 1,
+            "(In raid)Can of Dr. Lupo's coffee beans": 1,
+            "(In raid)Pestily plague mask": 1,
+            "(In raid)Raven figurine": 1,
+            "(In raid)Shroud half-mask": 1
         }
     }
 }
@@ -261,32 +273,17 @@ let questMapInRaid = {
     "Therapist": {
         "Sanitary standards part - 2": {
             "Gas analyzer": 2
-
-
-
         },
         "Painkiller": {
             "Morphine injector": 4
-
-
-
         },
         "General wares": {
             "Can of beef stew": 15
-
-
-
         },
         "Car repair": {
             "Car battery": 4,
             "Spark plug": 8
-
-
-
         }
-
-
-
     },
     "Fence": {
         "Collector": {
@@ -306,30 +303,15 @@ let questMapInRaid = {
             "Pestily plague mask": 1,
             "Raven figurine": 1,
             "Shroud harf-mask": 1
-
-
-
         }
-
-
-
     },
     "Skier": {
         "What's on the flash drive?": {
             "Secure Flash drive": 2
-
-
-
         },
         "Vitamins - Part.2": {
             "Respirator": 5
-
-
-
         }
-
-
-
     },
     "Peacekeeper": {
         "Spa tour - Part 3": {
@@ -337,149 +319,83 @@ let questMapInRaid = {
             "Clin wiper": 2,
             "Corrugated hose": 2,
             "Ox bleach": 2
-
-
-
         },
         "Spa tour - Part 7": {
             "Morphine injector": 4,
             "Heat-exchange alkali surface washer": 2,
             "Corrugated hose": 2,
             "5L propane tank": 2
-
-
-
         }
-
-
-
     },
     "Mechanic": {
         "Farming - Part 2": {
             "Powercord": 2,
             "T-Shaped Plug": 4,
             "Printed circuit board": 2
-
-
-
         },
         "Farming - Part 4": {
             "Graphics card": 3,
             "CPU Fan": 8
-
-
-
         },
         "Signal - Part 2": {
             "PC CPU": 3,
             "Rechargeable battery": 3,
             "Printed circuit board": 3,
             "Broken GPhone": 3
-
-
-
         },
         "Fertilizer": {
             "Wires": 5,
             "Capacitors": 5
-
-
-
         }
-
-
-
     },
     "Ragman": {
         "The Blood of war - Part 2": {
             "Fuel conditioner": 4
-
-
-
         },
         "Sew it good - Part 4": {
             "Wartech": 2,
             "BlackRock chest rig": 2
-
-
-
         },
         "Living high is not a crime - Part 1": {
             "Bronze lion": 2,
             "Horse figurine": 2,
             "Cat figurine": 1,
             "Roler submariner gold wrist watch": 1
-
-
-
         },
         "Living high is not a crime - Part 2": {
             "Antique teapot": 3,
             "Antique vase": 2
-
-
-
         },
         "Textile - Part 1": {
             "Aramid fabric": 5,
             "Ripstop fabric": 10,
             "Paracord": 3,
-
-
-
         },
         "Textile - Part 2": {
             "Fleece fabric": 5,
             "Polyaramide cordura fabric": 10,
             "KEKtape": 5
-
-
-
         }
-
-
-
     },
     "Jaeger": {
         "Huntsman path - The trophy": {
             "Golden TT": 1
-
-
-
         },
         "Huntsman path - Sell-out": {
             "Killa's helmet": 1
-
-
-
         },
         "Huntsman path - Woods keeper": {
             "Shturman's key": 1
-
-
-
         },
         "Shady business": {
             "Flash drive": 3
-
-
-
         },
         "Ambulance": {
             "CMS surgery kit": 2,
             "Portable defibrillator": 2
-
-
-
         },
         "Fishing place": {
             "TerraGroup Labs access keycard": 3
-
-
-
         }
-
-
-
     },
 }

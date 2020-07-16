@@ -69,6 +69,10 @@
                             requirementSource = requirementSource.replace(prefix + ' ', '');
                         }
 
+                        if (isInRaid) {
+                            requirementSource = "(In raid)" + requirementSource;
+                        }
+
                         if (questMap[dealerName][questName] == null) {
                             questMap[dealerName][questName] = {};
                         }
