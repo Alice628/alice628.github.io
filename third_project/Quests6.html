@@ -3,7 +3,7 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="third_project.js"></script>
+    <script src="object.js"></script>
     <script>
         let dealerList = [];
         let questMap = {};
@@ -86,7 +86,26 @@
 
             //console.log(dealerList);
             //console.log(questMap);
-            console.log(JSON.stringify(questMap));
+            //console.log(JSON.stringify(questMap));
+
+            let questTotalRequirement = {}
+            let keys = Object.keys(questRequirementMap);
+            keys.forEach(function(item, index, array) {
+                let keys2 = Object.keys(questRequirementMap[item]);
+                keys2.forEach(function(item2, index2, array2) {
+                    let keys3 = Object.keys(questRequirementMap[item][item2]);
+                    keys3.forEach(function(item3, index3, array3) {
+                        let materialName = item3;
+                        let amount = questRequirementMap[item][item2][item3];
+                        if (questTotalRequirement[materialName] == null) {
+                            questTotalRequirement[materialName] = 0;
+                        }
+                        questTotalRequirement[materialName] += amount;
+                    });
+                });
+            });
+
+            console.log(questTotalRequirement);
         });
     </script>
 </head>
