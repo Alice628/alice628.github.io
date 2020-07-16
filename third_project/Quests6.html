@@ -40,12 +40,40 @@
                             isInRaid = true;
                             requirementSource = requirementSource.replace('in raid', '');
                             requirementSource = requirementSource.trim();
+                        } else if (requirementSource.includes('In Raid')) {
+                            isInRaid = true;
+                            requirementSource = requirementSource.replace('In Raid', '');
+                            requirementSource = requirementSource.trim();
+                        }
+
+                        let amount = 0;
+                        let index_space = requirementSource.indexOf(' ');
+                        let prefix = requirementSource.substring(0, index_space);
+                        //console.log(prefix);
+
+                        if (prefix.includes('some') || prefix.includes('and') || prefix.includes('any')) {
+                            return true;
+                        } else if (prefix.includes('the')) {
+                            if (!requirementSource.includes('TT') && !requirementSource.includes('key')) {
+                                return true;
+                            }
+                        }
+
+                        if (prefix == 'a' || prefix == 'an') {
+                            amount = 1;
+                            requirementSource = requirementSource.replace(prefix + ' ', '');
+                        } else if (prefix == 'the' || requirementSource.includes('key')) {
+                            amount = 1;
+                        } else if (!isNaN(prefix)) {
+                            amount = Number(prefix);
+                            requirementSource = requirementSource.replace(prefix + ' ', '');
                         }
 
                         if (questMap[dealerName][questName] == null) {
                             questMap[dealerName][questName] = {};
                         }
-                        questMap[dealerName][questName][requirementSource] = 0;
+
+                        questMap[dealerName][questName][requirementSource] = amount;
                         //console.log(requirementSource);
 
                     });
