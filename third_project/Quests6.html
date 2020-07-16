@@ -19,7 +19,7 @@
                     if (index2 == 0) {
                         return true;
                     }
-                    let questName = $(quest).children('th').eq(0).html();
+                    let questName = $(quest).children('th').eq(0).html().trim();
                     //questMap[dealerName][questName] = {};
                     $(quest).children('td').find('li').each(function(index3, requirement) {
                         //console.log($(requirement));
