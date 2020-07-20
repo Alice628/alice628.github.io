@@ -105,7 +105,26 @@
                 });
             });
 
-            console.log(questTotalRequirement);
+            //console.log(JSON.stringify(questTotalRequirement));
+
+            let questTotalRequirementInRaid = {}
+            let keysInRaid = Object.keys(questRequirementMapInRaid);
+            keysInRaid.forEach(function(item, index, array) {
+                let keys2InRaid = Object.keys(questRequirementMapInRaid[item]);
+                keys2InRaid.forEach(function(item2, index2, array2) {
+                    let keys3InRaid = Object.keys(questRequirementMapInRaid[item][item2]);
+                    keys3InRaid.forEach(function(item3, index3, array3) {
+                        let materialName = item3;
+                        let amount = questRequirementMapInRaid[item][item2][item3];
+                        if (questTotalRequirementInRaid[materialName] == null) {
+                            questTotalRequirementInRaid[materialName] = 0;
+                        }
+                        questTotalRequirementInRaid[materialName] += amount;
+                    });
+                });
+            });
+
+            console.log(JSON.stringify(questTotalRequirementInRaid));
         });
     </script>
 </head>
