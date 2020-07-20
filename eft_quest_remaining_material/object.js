@@ -1,4 +1,4 @@
-let dealer = [
+let dealerList = [
     "Prapor",
     "Therapist",
     "Skier",

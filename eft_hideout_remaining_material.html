@@ -15,8 +15,8 @@
             console.log(materialList);
             console.log(totalRequirement);
             console.log(materialMap);
-            fn_lenderOption();
-            fn_lenderContents(totalRequirement)
+            fn_renderOption();
+            fn_renderContents(totalRequirement)
             $("#fileInput").on('change', function() {
                 readFile(event.target.files[0]);
             })

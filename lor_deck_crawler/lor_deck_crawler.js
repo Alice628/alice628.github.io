@@ -1,25 +1,25 @@
-
 let snackbarTimeOut;
-function fn_lender() {
-    fn_lenderList()
-    fn_lenderSelect()
+
+function fn_render() {
+    fn_renderList()
+    fn_renderSelect()
 }
 
-function fn_lenderList() {
+function fn_renderList() {
     let listHTML = "";
-    codeList.forEach(function (deck, index) {
+    codeList.forEach(function(deck, index) {
         listHTML += '<p id="' + (index + 1) + '">'
         listHTML += '<span class="title">' + deck.title + '</span><br>'
         listHTML += '<span class="code">' + deck.code + '</span>'
         listHTML += '</p>'
     })
     $("#list_container").html(listHTML);
-    $("#list_container > p > span").on("click", function () {
+    $("#list_container > p > span").on("click", function() {
         fn_onClickText(this);
     })
 }
 
-function fn_lenderSelect() {
+function fn_renderSelect() {
     let sltHTML = "";
     sltHTML += '<select id="slt_index">';
     for (let i = 1; i <= codeList.length; i++) {
@@ -28,7 +28,7 @@ function fn_lenderSelect() {
     sltHTML += '</select>';
     $("#slt_container").html(sltHTML);
 
-    $("select").on("change", function () {
+    $("select").on("change", function() {
         fn_onChangeSelect();
     })
     fn_onChangeSelect();
@@ -110,5 +110,5 @@ function fn_showSnackbar(index, type) {
 
     // After 3 seconds, remove the show class from DIV
     clearTimeout(snackbarTimeOut);
-    snackbarTimeOut = setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    snackbarTimeOut = setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
 }

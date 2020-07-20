@@ -4,7 +4,7 @@ let isShow = true; // 더이상 필요하지 않은 재료를 보여줄지 여�
  * 재료리스트 영역을 랜더링한다.
  * @param {ObjectConstructor} requirement 필요한 재료 맵
  */
-function fn_lenderContents(requirement) {
+function fn_renderContents(requirement) {
     let keys = Object.keys(requirement); //모듈들을 가져온다
     let contentsHtml = ''; // 붙여넣을 콘텐츠html
     contentsHtml += '<table>'; //테이블 시작
@@ -25,7 +25,7 @@ function fn_lenderContents(requirement) {
 /**
  * 모듈레벨을 선택하는 셀렉트박스 영역을 랜더링한다.
  */
-function fn_lenderOption() {
+function fn_renderOption() {
     let moduleSelectHtml = ''; // 붙여넣을 콘텐츠html
     moduleSelectHtml += '<table>'; //테이블 시작
     moduleList.forEach(function(item, index, array) { // Hideout.js에 있는 모듈리스트를 순환한다.
@@ -62,7 +62,7 @@ function fn_changeSelect() {
     let remainRequirement = fn_constructRemainRequirement(); // 남은 수량을 구성한다.
 
     //console.log(remainRequirement);
-    fn_lenderContents(remainRequirement); // 재료리스트 영역을 랜더링한다.
+    fn_renderContents(remainRequirement); // 재료리스트 영역을 랜더링한다.
 }
 
 /**
@@ -118,5 +118,5 @@ function fn_changeShowCheck(element) {
     let remainRequirement = fn_constructRemainRequirement(); // 셀렉트박스 값으로 남은 재료수를 구성한다.
 
     //console.log(remainRequirement);
-    fn_lenderContents(remainRequirement); // 재료리스트 영역을 랜더링한다.
+    fn_renderContents(remainRequirement); // 재료리스트 영역을 랜더링한다.
 }
