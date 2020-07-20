@@ -1,0 +1,62 @@
+{
+"Prapor": {
+    "Ice cream cones": 0,
+    "The Punisher - Part 2": 0,
+    "The Punisher - Part 4": 0,
+    "The Punisher - Part 5": 0,
+    "The Punisher - Part 6": 0,
+    "No offence": 0,
+    "Regulated materials": 0,
+},
+"Therapist": {
+    "Shortage": 0,
+    "Sanitary Standards - Part 1": 0,
+    "Sanitary Standards - Part 2": 0,
+    "Painkiller": 0,
+    "Pharmacist": 0,
+    "General wares": 0,
+    "Car repair": 0,
+    "Trust regain": 0,
+},
+"Skier": {
+    "What's on the flash drive?": 0,
+    "Friend from the West - Part 1": 0,
+    "\"Vitamins\" - Part 2": 0,
+    "Bullshit": 0,
+},
+"Peacekeeper": {
+    "Humanitarian Supplies": 0,
+    "Spa Tour - Part 3": 0,
+    "Spa Tour - Part 5": 0,
+    "Spa Tour - Part 7": 0,
+    "Lend lease - Part 2": 0,
+},
+"Mechanic": {
+    "Farming - Part 2": 0,
+    "Farming - Part 4": 0,
+    "Signal - Part 2": 0,
+    "Bad habit": 0,
+    "Import": 0,
+    "Fertilizers": 0,
+},
+"Ragman": {
+    "Sew it good - Part 1": 0,
+    "Sew it good - Part 4": 0,
+    "The Blood of War - Part 2": 0,
+    "Living high is not a crime - Part 1": 0,
+    "Living high is not a crime - Part 2": 0,
+    "Textile - Part 1": 0,
+    "Textile - Part 2": 0,
+},
+"Jaeger": {
+    "Huntsman path - The trophy": 0,
+    "Huntsman path - Sell-out": 0,
+    "Huntsman path - Woods keeper": 0,
+    "Ambulance": 0,
+    "Shady business": 0,
+    "Fishing place": 0,
+},
+"Fence": {
+    "Collector": 0,
+}
+}
