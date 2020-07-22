@@ -4,20 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EFT quest remaining material</title>
     <link rel="stylesheet" type="text/css" href="eft_quest_remaining_material.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="eft_quest_remaining_material.js"></script>
     <script src="object.js"></script>
     <script>
+        let totalRequirement = {};
+
         function fn_renderContents() {
 
         }
 
-        function fn_renderOptions() {
-            dealerList.forEach(function(dealer, index) {
+        function fn_renderOptions(completeMap) {
+            let localMap = JSON.parse(JSON.stringify(completeMap));
+            let dealerListHtml = '';
+            dealerListHtml += '<table id="dealerFrame">';
+            dealerListHtml += '<colgroup><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"></colgroup>';
+            dealerListHtml += '<tbody><tr>';
+            dealerList.forEach(function(dealerName, index) {
+                dealerListHtml += '<td id="' + dealerName + '_container">';
+                dealerListHtml += '<h4>';
+                dealerListHtml += dealerName;
+                dealerListHtml += '</h4>';
+                let questList = localMap[dealerName];
+                let questNameList = Object.keys(questList);
+                questNameList.forEach(function(questName, index, array) {
+                    dealerListHtml += '<p>';
+                    if (questList[questName] == null || questList[questName] == 0) {
+                        dealerListHtml += '<input type="checkbox" id="' + questName + '">';
+                    } else {
+                        dealerListHtml += '<input type="checkbox" id="' + questName + '" checked="checked">';
+                    }
+                    dealerListHtml += '<label for="' + questName + '">' + questName + '</label>';
+                    dealerListHtml += '</p>';
+                });
+                dealerListHtml += '</td>';
+            });
 
-            })
+            dealerListHtml += '</tr></tbody>';
+            dealerListHtml += '</table>';
+            $("#dealerContainer").html(dealerListHtml);
+        }
+
+        function fn_calcTotalRequirement(requirementMap) {
+            totalRequirement = {};
+            let keys = Object.keys(requirementMap);
+            keys.forEach(function(item, index, array) {
+                let keys2 = Object.keys(requirementMap[item]);
+                keys2.forEach(function(item2, index2, array2) {
+                    let keys3 = Object.keys(requirementMap[item][item2]);
+                    keys3.forEach(function(item3, index3, array3) {
+                        let materialName = item3;
+                        let amount = requirementMap[item][item2][item3];
+                        if (totalRequirement[materialName] == null) {
+                            totalRequirement[materialName] = 0;
+                        }
+                        totalRequirement[materialName] += amount;
+                    });
+                });
+            });
+        }
+
+        function fn_changeInRaidCheckbox(element) {
+            let isInRaid = element.prop('checked');
+            if (!isInRaid) {
+                fn_calcTotalRequirement(questRequirementMap);
+            } else {
+                fn_calcTotalRequirement(questRequirementMapInRaid);
+            }
         }
 
         $(function() {
@@ -25,12 +80,22 @@
             console.log(questRequirementMapInRaid);
             console.log(questTotalRequirement);
             console.log(questTotalRequirementInRaid);
+            fn_calcTotalRequirement(questRequirementMap);
+            fn_renderOptions(questCompletetMap);
+
+            $("#inRaid_checkbox").on('change', function() {
+                fn_changeInRaidCheckbox($(this));
+            })
         });
     </script>
 </head>
 
 <body>
-    test
+    <div id="optionContainer">
+        <input type="checkbox" id="inRaid_checkbox"><label for="inRaid_checkbox">Check to see [In Raid] only</label>
+    </div>
+    <div id="dealerContainer"></div>
+    <div id="requirementContainer"></div>
 </body>
 
 </html>

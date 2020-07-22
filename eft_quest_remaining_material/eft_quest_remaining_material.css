@@ -1,0 +1,7 @@
+#dealerFrame {
+    width: 100%;
+}
+
+#dealerFrame>tbody>tr>td {
+    vertical-align: top;
+}
