@@ -19,6 +19,7 @@
         function fn_renderOptions(completeMap) {
             let localMap = JSON.parse(JSON.stringify(completeMap));
             let dealerListHtml = '';
+            let dealerList = Object.keys(completeMap);
             dealerListHtml += '<table id="dealerFrame">';
             dealerListHtml += '<colgroup><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%"></colgroup>';
             dealerListHtml += '<tbody><tr>';
@@ -30,7 +31,7 @@
                 let questList = localMap[dealerName];
                 let questNameList = Object.keys(questList);
                 questNameList.forEach(function(questName, index, array) {
-                    dealerListHtml += '<p>';
+                    dealerListHtml += '<p style="font-size: xx-small;">';
                     if (questList[questName] == null || questList[questName] == 0) {
                         dealerListHtml += '<input type="checkbox" id="' + questName + '">';
                     } else {
@@ -78,8 +79,10 @@
         $(function() {
             console.log(questRequirementMap);
             console.log(questRequirementMapInRaid);
+            /*
             console.log(questTotalRequirement);
             console.log(questTotalRequirementInRaid);
+            */
             fn_calcTotalRequirement(questRequirementMap);
             fn_renderOptions(questCompletetMap);
 
