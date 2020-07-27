@@ -11,12 +11,33 @@
     <script src="object.js"></script>
     <script>
         let totalRequirement = {};
+        let completedQuestList = [];
+        let isInRaid = false;
 
         function fn_renderContents() {
+            let requirementList = JSON.parse(JSON.stringify(totalRequirement));
+            let requirementListHtml = '';
+            let requirementNameList = Object.keys(requirementList);
 
+            requirementListHtml += '<table>';
+            requirementNameList.forEach(function(name, index, array) {
+                requirementListHtml += '<tr>';
+                requirementListHtml += '<th style="text-align: right;">';
+                requirementListHtml += name;
+                requirementListHtml += '</th>';
+                requirementListHtml += '<td>';
+                requirementListHtml += requirementList[name];
+                requirementListHtml += '</td>';
+                requirementListHtml += '</tr>';
+            });
+
+            requirementListHtml += '</table>';
+            $("#requirementContainer").html(requirementListHtml);
         }
 
-        function fn_renderOptions(completeMap) {
+        function fn_renderOptions() {
+            let completeMap = JSON.parse(JSON.stringify(questCompletetMap));
+            $("#dealerContainer input[type=checkbox]").off('change');
             let localMap = JSON.parse(JSON.stringify(completeMap));
             let dealerListHtml = '';
             let dealerList = Object.keys(completeMap);
@@ -32,10 +53,10 @@
                 let questNameList = Object.keys(questList);
                 questNameList.forEach(function(questName, index, array) {
                     dealerListHtml += '<p style="font-size: xx-small;">';
-                    if (questList[questName] == null || questList[questName] == 0) {
-                        dealerListHtml += '<input type="checkbox" id="' + questName + '">';
-                    } else {
+                    if (questList[questName] == null || questList[questName] != 0) {
                         dealerListHtml += '<input type="checkbox" id="' + questName + '" checked="checked">';
+                    } else {
+                        dealerListHtml += '<input type="checkbox" id="' + questName + '">';
                     }
                     dealerListHtml += '<label for="' + questName + '">' + questName + '</label>';
                     dealerListHtml += '</p>';
@@ -46,34 +67,54 @@
             dealerListHtml += '</tr></tbody>';
             dealerListHtml += '</table>';
             $("#dealerContainer").html(dealerListHtml);
+            $("#dealerContainer input[type=checkbox]").on('change', function() {
+                fn_changeOptionCheckbox();
+                fn_calcTotalRequirement();
+                fn_renderContents();
+            });
         }
 
-        function fn_calcTotalRequirement(requirementMap) {
+        function fn_calcTotalRequirement() {
+            let requirementMap;
+            if (!isInRaid) {
+                requirementMap = questRequirementMap;
+            } else {
+                requirementMap = questRequirementMapInRaid;
+            }
             totalRequirement = {};
-            let keys = Object.keys(requirementMap);
-            keys.forEach(function(item, index, array) {
-                let keys2 = Object.keys(requirementMap[item]);
-                keys2.forEach(function(item2, index2, array2) {
-                    let keys3 = Object.keys(requirementMap[item][item2]);
-                    keys3.forEach(function(item3, index3, array3) {
-                        let materialName = item3;
-                        let amount = requirementMap[item][item2][item3];
-                        if (totalRequirement[materialName] == null) {
-                            totalRequirement[materialName] = 0;
-                        }
-                        totalRequirement[materialName] += amount;
-                    });
+            let dealerNameList = Object.keys(requirementMap);
+            dealerNameList.forEach(function(dealerName, index, array) {
+                let questNameList = Object.keys(requirementMap[dealerName]);
+                questNameList.forEach(function(questName, index2, array2) {
+                    if (completedQuestList.indexOf(questName) == -1) {
+                        let materialNameList = Object.keys(requirementMap[dealerName][questName]);
+                        materialNameList.forEach(function(materialName, index3, array3) {
+                            let amount = requirementMap[dealerName][questName][materialName];
+                            if (totalRequirement[materialName] == null) {
+                                totalRequirement[materialName] = 0;
+                            }
+                            totalRequirement[materialName] += amount;
+                        });
+                    }
                 });
             });
         }
 
-        function fn_changeInRaidCheckbox(element) {
-            let isInRaid = element.prop('checked');
-            if (!isInRaid) {
-                fn_calcTotalRequirement(questRequirementMap);
-            } else {
-                fn_calcTotalRequirement(questRequirementMapInRaid);
-            }
+        function fn_changeInRaidCheckbox() {
+            isInRaid = $("#inRaid_checkbox").prop('checked');
+        }
+
+        function fn_changeOptionCheckbox() {
+            completedQuestList = [];
+            $("#dealerContainer input[type=checkbox]").each(function(index, element) {
+                let isChecked = $(element).prop('checked');
+                if (isChecked) {
+                    let questName = $(element).prop('id');
+                    if (completedQuestList.indexOf(questName) == -1) {
+                        completedQuestList.push(questName);
+                    }
+                }
+            })
         }
 
         $(function() {
@@ -83,11 +124,14 @@
             console.log(questTotalRequirement);
             console.log(questTotalRequirementInRaid);
             */
-            fn_calcTotalRequirement(questRequirementMap);
-            fn_renderOptions(questCompletetMap);
+            fn_calcTotalRequirement();
+            fn_renderOptions();
+            fn_renderContents();
 
             $("#inRaid_checkbox").on('change', function() {
-                fn_changeInRaidCheckbox($(this));
+                fn_changeInRaidCheckbox();
+                fn_calcTotalRequirement();
+                fn_renderContents();
             })
         });
     </script>
