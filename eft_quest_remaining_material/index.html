@@ -117,13 +117,31 @@
             })
         }
 
+        function readFile(file) {
+            var reader = new FileReader(); // 파일리더 객체 생성
+            reader.onload = function() { // 파일을 읽을때 콜백함수 설정
+                try {
+                    let fileContents = JSON.parse(reader.result); // 템플릿이 object형식이라 읽어서 바로 파싱한다.
+                    let keys = Object.keys(fileContents); // 읽은 퀘스트의 목록을 추출한다.
+                    keys.forEach(function(item, index, array) { //퀘스트목록을 순환한다.
+                        if (fileContents[item] == 1) {
+                            $("#dealerContainer input[type=checkbox]#" + item).prop("selected", true);
+                        }
+                    });
+                    fn_changeOptionCheckbox();
+                    fn_calcTotalRequirement();
+                    fn_renderContents();
+                } catch (error) {
+                    alert("Wrong file\nPlease download template");
+                }
+
+            };
+            reader.readAsText(file, /* optional */ "euc-kr"); // 파일을 읽는다.
+        }
+
         $(function() {
             console.log(questRequirementMap);
             console.log(questRequirementMapInRaid);
-            /*
-            console.log(questTotalRequirement);
-            console.log(questTotalRequirementInRaid);
-            */
             fn_calcTotalRequirement();
             fn_renderOptions();
             fn_renderContents();
@@ -132,13 +150,19 @@
                 fn_changeInRaidCheckbox();
                 fn_calcTotalRequirement();
                 fn_renderContents();
-            })
+            });
+
+            $("#fileInput").on('change', function() {
+                readFile(event.target.files[0]);
+            });
         });
     </script>
 </head>
 
 <body>
     <div id="optionContainer">
+        <a href="eft_quest_template.txt" download="eft_quest_template.txt">Download template</a>
+        <span>/</span> Upload template -> <input type="file" id="fileInput">
         <input type="checkbox" id="inRaid_checkbox"><label for="inRaid_checkbox">Check to see [In Raid] only</label>
     </div>
     <div id="dealerContainer"></div>
