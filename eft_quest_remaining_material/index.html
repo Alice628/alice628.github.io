@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="eft_quest_remaining_material.js"></script>
     <script src="object.js"></script>
+    <script src="iconSource.js"></script>
+
     <script>
         let totalRequirement = {};
         let completedQuestList = [];
@@ -23,8 +25,11 @@
             requirementNameList.forEach(function(name, index, array) {
                 requirementListHtml += '<tr>';
                 requirementListHtml += '<th style="text-align: right;">';
-                requirementListHtml += name;
+                requirementListHtml += name + '(' + materialShortNameList[name] + ')';
                 requirementListHtml += '</th>';
+                requirementListHtml += '<td>';
+                requirementListHtml += '<img alt="icon" src="' + iconSource[name] + '" decoding="async" width="64" height="64">';
+                requirementListHtml += '</td>';
                 requirementListHtml += '<td>';
                 requirementListHtml += requirementList[name];
                 requirementListHtml += '</td>';
