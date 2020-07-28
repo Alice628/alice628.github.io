@@ -151,7 +151,7 @@ let questRequirementMap = {
         },
         "Textile - Part 2": {
             "Fleece fabric": 5,
-            "Polyaramide cordura fabric": 10,
+            "Polyamide fabric Cordura": 10,
             "KEKtape": 5
         }
     },
@@ -170,7 +170,7 @@ let questRequirementMap = {
             "CMS surgery kit": 2
         },
         "Shady business": {
-            "Flash drive": 3
+            "Secure Flash drive": 3
         },
         "Fishing place": {
             "TerraGroup Labs access keycard": 3
@@ -312,7 +312,7 @@ let questRequirementMapInRaid = {
         },
         "Textile - Part 2": {
             "Fleece fabric": 5,
-            "Polyaramide cordura fabric": 10,
+            "Polyamide fabric Cordura": 10,
             "KEKtape": 5
         }
     },
@@ -331,7 +331,7 @@ let questRequirementMapInRaid = {
             "CMS surgery kit": 2
         },
         "Shady business": {
-            "Flash drive": 3
+            "Secure Flash drive": 3
         },
         "Fishing place": {
             "TerraGroup Labs access keycard": 3
