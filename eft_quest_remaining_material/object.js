@@ -109,9 +109,9 @@ let questRequirementMap = {
             "Broken GPhone": 3
         },
         "Bad habit": {
-            "Malboro cigarette": 5,
-            "Strike cigarette": 5,
-            "Wilston cigarette": 5
+            "Malboro cigarettes": 5,
+            "Strike cigarettes": 5,
+            "Wilston cigarettes": 5
         },
         "Import": {
             "UHF RFID Reader": 1,
@@ -270,9 +270,9 @@ let questRequirementMapInRaid = {
             "Broken GPhone": 3
         },
         "Bad habit": {
-            "Malboro cigarette": 5,
-            "Strike cigarette": 5,
-            "Wilston cigarette": 5
+            "Malboro cigarettes": 5,
+            "Strike cigarettes": 5,
+            "Wilston cigarettes": 5
         },
         "Import": {
             "UHF RFID Reader": 1,

@@ -21,16 +21,16 @@
             let requirementListHtml = '';
             let requirementNameList = Object.keys(requirementList);
 
-            requirementListHtml += '<table>';
+            requirementListHtml += '<table style="border-bottom: solid 1px black ;">';
             requirementNameList.forEach(function(name, index, array) {
                 requirementListHtml += '<tr>';
                 requirementListHtml += '<th style="text-align: right;">';
                 requirementListHtml += name + '(' + materialShortNameList[name] + ')';
                 requirementListHtml += '</th>';
                 requirementListHtml += '<td>';
-                requirementListHtml += '<img alt="icon" src="' + iconSource[name] + '" decoding="async" width="64" height="64">';
+                requirementListHtml += '<img alt="icon" src="' + iconSource[name] + '" decoding="async">';
                 requirementListHtml += '</td>';
-                requirementListHtml += '<td>';
+                requirementListHtml += '<td style="font-size: x-large;">';
                 requirementListHtml += requirementList[name];
                 requirementListHtml += '</td>';
                 requirementListHtml += '</tr>';
@@ -177,7 +177,8 @@
         <span>/</span> Upload template -> <input type="file" id="fileInput">
         <input type="checkbox" id="inRaid_checkbox"><label for="inRaid_checkbox">Check to see [In Raid] only</label>
     </div>
-    <div id="dealerContainer"></div>
+    <div id="dealerContainer">
+    </div>
     <div id="requirementContainer"></div>
 </body>
 

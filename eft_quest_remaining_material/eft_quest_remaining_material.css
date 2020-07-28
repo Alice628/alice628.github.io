@@ -5,3 +5,15 @@
 #dealerFrame>tbody>tr>td {
     vertical-align: top;
 }
+
+table {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+}

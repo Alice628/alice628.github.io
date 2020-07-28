@@ -14,8 +14,8 @@ function fn_renderContents(requirement) {
         }
         contentsHtml += '<tr>'; // 행시작
         contentsHtml += '<th style="text-align: right;">' + item + '(' + materialShortNameList[item] + ')' + '</th>'; // 1열 테이블 헤더: 재료이름
-        contentsHtml += '<td><img alt="' + item + '_icon.png" src="' + iconSource[item] + '" decoding="async" width="64" height="64"></td>'; // 2열: 재료 아이콘
-        contentsHtml += '<td>' + requirement[item] + '</td>'; // 3열: 재료 남은 수량
+        contentsHtml += '<td><img alt="' + item + '_icon.png" src="' + iconSource[item] + '" decoding="async"></td>'; // 2열: 재료 아이콘
+        contentsHtml += '<td style="font-size: x-large;">' + requirement[item] + '</td>'; // 3열: 재료 남은 수량
         contentsHtml += '</tr>'; // 행끝
     })
     contentsHtml += '</table>'; // 테이블 끝
