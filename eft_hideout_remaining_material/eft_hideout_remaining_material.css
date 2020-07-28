@@ -1,11 +1,14 @@
 table {
-    width: 100%;
-    border: 1px solid #444444;
+    /* width: 100%; */
     border-collapse: collapse;
 }
 
-th,
-td {
-    border: 1px solid black;
+td,
+th {
+    border-bottom: 1px solid black;
     /* padding: 10px; */
+}
+
+img {
+    height: 60%;
 }
