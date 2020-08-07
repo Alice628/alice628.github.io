@@ -111,9 +111,9 @@ function readFile(file) {
 
 /**
  * 체크박스 변경 함수
- * @param {ObjectConstructor} element 체크박스 요소
  */
-function fn_changeShowCheck(element) {
+function fn_changeShowCheck() {
+    let element = $("#showCheck");
     isShow = !(element.prop('checked')); // 체크하면 isShow = false
     let remainRequirement = fn_constructRemainRequirement(); // 셀렉트박스 값으로 남은 재료수를 구성한다.
 

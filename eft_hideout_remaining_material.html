@@ -18,11 +18,12 @@
             console.log(materialMap);
             fn_renderOption();
             fn_renderContents(totalRequirement)
+            fn_changeShowCheck()
             $("#fileInput").on('change', function() {
                 readFile(event.target.files[0]);
             })
             $("#showCheck").on('change', function() {
-                fn_changeShowCheck($(this))
+                fn_changeShowCheck()
             })
         });
     </script>
@@ -32,7 +33,7 @@
     <div id="templateContainer">
         <a href="eft_hideout_remaining_material/eft_hideout_template.txt" download="eft_hideout_template.txt">Download template</a>
         <span>/</span> Upload template -> <input type="file" id="fileInput">
-        <span><input type="checkbox" id="showCheck"><label for="showCheck">Don't show materials that you don't need</label></span>
+        <span><input type="checkbox" id="showCheck" checked><label for="showCheck">Don't show materials that you don't need</label></span>
     </div>
     <div id="optionContainer"></div>
     <div id="contentsContainer"></div>
