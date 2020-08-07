@@ -32,6 +32,8 @@
             $("#fileInput").on('change', function() {
                 readFile(event.target.files[0]);
             });
+
+            $("#inRaid_checkbox").change();
         });
     </script>
 </head>
@@ -40,7 +42,7 @@
     <div id="optionContainer">
         <a href="eft_quest_template.txt" download="eft_quest_template.txt">Download template</a>
         <span>/</span> Upload template -> <input type="file" id="fileInput">
-        <input type="checkbox" id="inRaid_checkbox"><label for="inRaid_checkbox">Check to see [In Raid] only</label>
+        <input type="checkbox" id="inRaid_checkbox" checked><label for="inRaid_checkbox">Check to see [In Raid] only</label>
     </div>
     <div id="dealerContainer">
     </div>

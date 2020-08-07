@@ -18,13 +18,14 @@
             console.log(materialMap);
             fn_renderOption();
             fn_renderContents(totalRequirement)
-            fn_changeShowCheck()
+
             $("#fileInput").on('change', function() {
                 readFile(event.target.files[0]);
             })
             $("#showCheck").on('change', function() {
                 fn_changeShowCheck()
             })
+            $("#showCheck").change()
         });
     </script>
 </head>
