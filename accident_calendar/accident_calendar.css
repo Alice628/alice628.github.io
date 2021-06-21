@@ -24,7 +24,6 @@ body {
     padding-right: 1em;
 }
 
-.evenEvent {
-    background-color: green !important;
-    border-color: green !important;
+a.fc-daygrid-event {
+    font-size: 1.5em;
 }
