@@ -1,14 +1,160 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='accident_calendar/accident_calendar.css'>
     <script src='accident_calendar/accident_calendar.js'></script>
+    <link href='accident_calendar/fullcalendar-5.7.2/lib/main.css' rel='stylesheet' />
+    <script src='accident_calendar/fullcalendar-5.7.2/lib/main.js'></script>
+    <script src='accident_calendar/fullcalendar-5.7.2/lib/locales-all.js'></script>
+    <script src='accident_calendar/config.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                height: '100%',
+                expandRows: true,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                },
+                locale: 'ko',
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                selectMirror: true,
+                select: function(arg) {
+                    // if (title) {
+                    //   calendar.addEvent({
+                    //     title: title,
+                    //     start: arg.start,
+                    //     end: arg.end,
+                    //     allDay: arg.allDay
+                    //   })
+                    // }
+
+                    if (!confirm('사고날짜가 ' + arg.startStr + ' 맞습니까?')) {
+                        return false;
+                    }
+                    calendar.removeAllEvents();
+
+                    let accidentCalendarOptions = eventConfic.eventArr;
+                    let accidentDate = new Date(arg.start);
+                    let toggle = true;
+                    for (let i = 0; i < accidentCalendarOptions.length; i++) {
+                        for (let j = 0; j < accidentCalendarOptions[i].repetition; j++) {
+                            let start = new Date(accidentDate.getTime());
+                            accidentDate.setDate(accidentDate.getDate() + accidentCalendarOptions[i].days);
+                            let end = new Date(accidentDate.getTime());
+                            console.log(toggle)
+                            let event = calendar.addEvent({
+                                title: accidentCalendarOptions[i].times + '번 방문 가능',
+                                start: start,
+                                end: end,
+                                allDay: arg.allDay,
+                                color: toggle ? 'green' : 'skyblue',
+                            });
+
+                            toggle = !toggle;
+                        }
+                    }
+
+                    console.log(calendar.getEvents())
+                    calendar.setOption('selectable', false);
+                    calendar.unselect();
+                },
+                eventClick: function(arg) {
+                    // if (confirm('Are you sure you want to delete this event?')) {
+                    //   arg.event.remove()
+                    // }
+                    if (!confirm('사고 날짜를 다시 선택하시겠습니까?')) {
+                        return false;
+                    }
+
+                    calendar.removeAllEvents();
+                    calendar.setOption('selectable', true);
+                },
+                editable: true,
+                dayMaxEvents: true, // allow "more" link when too many events
+                events: [{
+                    title: 'All Day Event',
+                    start: '2021-06-01'
+                }, {
+                    title: 'Long Event',
+                    start: '2021-06-07',
+                    end: '2021-06-10'
+                }, {
+                    groupId: 999,
+                    title: 'Repeating Event',
+                    start: '2021-06-09T16:00:00'
+                }, {
+                    groupId: 999,
+                    title: 'Repeating Event',
+                    start: '2021-06-16T16:00:00'
+                }, {
+                    title: 'Conference',
+                    start: '2021-06-11',
+                    end: '2021-06-13'
+                }, {
+                    title: 'Meeting',
+                    start: '2021-06-12T10:30:00',
+                    end: '2021-06-12T12:30:00'
+                }, {
+                    title: 'Lunch',
+                    start: '2021-06-12T12:00:00'
+                }, {
+                    title: 'Meeting',
+                    start: '2021-06-12T14:30:00'
+                }, {
+                    title: 'Happy Hour',
+                    start: '2021-06-12T17:30:00'
+                }, {
+                    title: 'Dinner',
+                    start: '2021-06-12T20:00:00'
+                }, {
+                    title: 'Birthday Party',
+                    start: '2021-06-13T07:00:00'
+                }, {
+                    title: 'Click for Google',
+                    url: 'http://google.com/',
+                    start: '2021-06-28'
+                }],
+            });
+
+            calendar.render();
+        });
+
+        function differentiateEvent() {
+            $('a.fc-h-event').each(function(index, element) {
+                $(element).removeClass('evenEvent');
+            })
+
+            $('a.fc-h-event').each(function(index, element) {
+                if (isEven(index)) {
+                    $(element).addClass('evenEvent');
+                }
+            })
+        }
+
+        function isEven(n) {
+            n = Number(n);
+            return n === 0 || !!(n && !(n % 2));
+        }
+    </script>
 </head>
+
 <body>
 
+    <div id='calendar-container'>
+        <div id='calendar'></div>
+    </div>
+
 </body>
+
 </html>
