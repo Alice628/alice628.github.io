@@ -31,11 +31,16 @@
                 selectMirror: true,
                 longPressDelay: 1,
                 select: function(arg) {
+                    if (calendar.getEvents().length > 0) {
+                        if (!confirm('사고 날짜를 다시 선택하시겠습니까?')) {
+                            return false;
+                        }
+                        calendar.removeAllEvents();
+                    }
+
                     if (!confirm('사고날짜가 ' + arg.startStr + ' 맞습니까?')) {
                         return false;
                     }
-
-                    calendar.removeAllEvents();
 
                     let accidentCalendarOptions = eventConfic.eventArr;
                     let accidentDate = new Date(arg.start);
@@ -48,7 +53,7 @@
                             let end = new Date(accidentDate.getTime());
 
                             calendar.addEvent({
-                                title: accidentCalendarOptions[i].times == accidentCalendarOptions[i].days ? '매일' : accidentCalendarOptions[i].times + '회',
+                                title: accidentCalendarOptions[i].times,
                                 start: start,
                                 end: end,
                                 allDay: arg.allDay,
@@ -59,7 +64,6 @@
                         }
                     }
 
-                    calendar.setOption('selectable', false);
                     calendar.unselect();
                 },
                 eventClick: function(arg) {
@@ -68,9 +72,8 @@
                     }
 
                     calendar.removeAllEvents();
-                    calendar.setOption('selectable', true);
                 },
-                editable: true,
+                editable: false,
                 dayMaxEvents: true, // allow "more" link when too many events
                 events: [],
             });
