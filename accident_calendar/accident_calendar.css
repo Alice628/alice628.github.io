@@ -27,3 +27,8 @@ body {
 a.fc-daygrid-event {
     font-size: 1.5em;
 }
+
+button.fc-logo-button {
+    background-image: url('image/logo.png');
+    background-repeat: no-repeat;
+}

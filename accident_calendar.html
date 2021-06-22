@@ -20,10 +20,19 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 height: '100%',
                 expandRows: true,
+                customButtons: {
+                    logo: {
+                        text: '',
+                        icon: 'prev',
+                        click: function() {
+                            alert('clicked the custom button!');
+                        }
+                    }
+                },
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: '',
+                    right: 'logo',
                 },
                 locale: 'ko',
                 navLinks: false, // can click day/week names to navigate views
@@ -57,7 +66,7 @@
                                 start: start,
                                 end: end,
                                 allDay: arg.allDay,
-                                color: toggle ? 'green' : 'skyblue',
+                                color: toggle ? eventConfic.eventColor[0] : eventConfic.eventColor[1],
                             });
 
                             toggle = !toggle;
@@ -79,6 +88,8 @@
             });
 
             calendar.render();
+
+
         });
     </script>
 </head>

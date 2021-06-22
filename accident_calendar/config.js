@@ -20,4 +20,5 @@ let eventConfic = {
             repetition: 100 /*번의 기간 반복 */ ,
         },
     ],
+    eventColor: ['#8E2622', '#101454'],
 };
