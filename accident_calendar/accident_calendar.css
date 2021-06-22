@@ -8,7 +8,7 @@ body {
 
 #calendar-container {
     position: fixed;
-    top: 10%;
+    top: 20%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -31,7 +31,7 @@ a.fc-daygrid-event {
 #top {
     height: 100%;
     position: fixed;
-    bottom: 90%;
+    bottom: 80%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -39,5 +39,9 @@ a.fc-daygrid-event {
 }
 
 img#logo {
+    height: 10%;
+}
+
+h1.guide {
     height: 10%;
 }
