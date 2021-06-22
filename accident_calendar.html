@@ -29,6 +29,7 @@
                 navLinks: false, // can click day/week names to navigate views
                 selectable: true,
                 selectMirror: true,
+                longPressDelay: 1,
                 select: function(arg) {
                     if (!confirm('사고날짜가 ' + arg.startStr + ' 맞습니까?')) {
                         return false;
