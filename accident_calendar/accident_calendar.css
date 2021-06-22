@@ -8,7 +8,7 @@ body {
 
 #calendar-container {
     position: fixed;
-    top: 0;
+    top: 10%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -28,7 +28,16 @@ a.fc-daygrid-event {
     font-size: 1.5em;
 }
 
-button.fc-logo-button {
-    background-image: url('image/logo.png');
-    background-repeat: no-repeat;
+#top {
+    height: 100%;
+    position: fixed;
+    bottom: 90%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+img#logo {
+    height: 10%;
 }

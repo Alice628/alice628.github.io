@@ -20,19 +20,9 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 height: '100%',
                 expandRows: true,
-                customButtons: {
-                    logo: {
-                        text: '',
-                        icon: 'prev',
-                        click: function() {
-                            alert('clicked the custom button!');
-                        }
-                    }
-                },
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'logo',
                 },
                 locale: 'ko',
                 navLinks: false, // can click day/week names to navigate views
@@ -88,13 +78,15 @@
             });
 
             calendar.render();
-
-
         });
     </script>
 </head>
 
 <body>
+    <div id='top'>
+        <img id='logo' src="accident_calendar/image/logo.png">
+    </div>
+
     <div id='calendar-container'>
         <div id='calendar'></div>
     </div>
