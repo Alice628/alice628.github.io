@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>출처: <a href="https://game.naver.com/lounge/Iron_Saga/board/detail/717891" target="_blank">22/07/09 겟타콜라보 뉴비들을 위한
+      Zero 부터 시작하는 아이언사가 -순수100% 뉴비편 3-</a></p>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    $(function () {
+      console.log('aaa')
+
+      // axios.get('http://apis.naver.com/nng_main/nng_main/community/lounge/Iron_Saga/feed/717891', {
+      //   headers: {
+      //     crossdomain: true,
+      //     'Access-Control-Allow-Origin': '*',
+      //     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      //     'Access-Control-Allow-Methods': 'GET',
+      //   }
+      // })// 'https://apis.naver.com/nng_main/nng_main/lounge/Iron_Saga/new/popularFeeds/board?loungeId=Iron_Saga&feedId=717891', {})// 'https://game.naver.com/lounge/Iron_Saga/board/detail/717891', {})// 'https://apis.naver.com/nng_main/nng_main/community/lounge/Iron_Saga/feed/717891', {})
+      axios({
+        // 크롤링을 원하는 페이지 URL
+        url: 'http://apis.naver.com/nng_main/nng_main/community/lounge/Iron_Saga/feed/717891',
+        method: 'GET',
+        responseType: 'arraybuffer',
+        // headers: {
+        //   'Access-Control-Allow-Origin': '*',
+        // },
+      })
+        .then(function (response) {
+          let content = response.data.content.feed.contents
+          console.log(content)
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(function () {
+          // always executed
+        });
+    })
+  </script>
+</body>
+
+</html>
