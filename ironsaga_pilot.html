@@ -30,9 +30,12 @@
         url: 'https://apis.naver.com/nng_main/nng_main/community/lounge/Iron_Saga/feed/717891',
         method: 'GET',
         responseType: 'arraybuffer',
-        // headers: {
-        //   'Access-Control-Allow-Origin': '*',
-        // },
+        headers: {
+          'crossdomain': true,
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+          'Access-Control-Allow-Methods': 'GET',
+        },
       })
         .then(function (response) {
           let content = response.data.content.feed.contents
