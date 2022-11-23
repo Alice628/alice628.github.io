@@ -2,44 +2,101 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script>
-    $(function () {
-      console.log('aaa')
-      axios({
-        // 크롤링을 원하는 페이지 URL
-        url: 'https://genshin.honeyhunterworld.com/fam_talent_common/?lang=KO',
-        method: 'GET',
-        responseType: 'arraybuffer',
-        headers: {
-          'crossdomain': true,
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Max-Age': 3600,
-          'Access-Control-Allow-Headers': 'Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization',
-        },
-      })
-        .then(function (response) {
-          let content = response.data.content.feed.contents
-          console.log(response)
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let itemNmMap = {};
+        let isLoad = false;
+        $(function () {
+            mainFunction();
         })
-        .catch(function (error) {
-          console.log(error);
-        })
-        .finally(function () {
-          // always executed
-        });
-    })
-  </script>
+
+        async function mainFunction() {
+            itemNmMap = Object.assign(
+                await generateMeterialMap('fam_char_jewel'),
+                await generateMeterialMap('fam_char_stone'),
+                await generateMeterialMap('fam_char_local'),
+                await generateMeterialMap('fam_talent_book'),
+                await generateMeterialMap('fam_talent_boss'),
+                await generateMeterialMap('fam_talent_common'),
+                await generateMeterialMap('fam_char_exp_item'),
+                await generateMeterialMap('fam_wep_primary'),
+                await generateMeterialMap('fam_wep_secondary'),
+                await generateMeterialMap('fam_wep_common'),
+                await generateMeterialMap('fam_wep_exp_item'),
+            );
+            console.log(itemNmMap)
+
+            isLoad = true;
+        }
+
+        async function generateMeterialMap(uriCode) {
+            let nameMap = {};
+            let koList = [];
+            let enList = [];
+            let isErr = false;
+            try {
+                let response = await axios({
+                    // 크롤링을 원하는 페이지 URL
+                    url: 'https://genshin.honeyhunterworld.com/' + uriCode + '/?lang=KO',
+                    method: 'GET',
+                    dataType: 'jsonp',
+                    // jsonpCallback: "myCallback",
+                })
+                let fullHtml = response.data.replaceAll('src', 'data');
+                let fullElement = $(fullHtml);
+                let rowData = fullElement.find('table.genshin_table').find('tbody').html();
+                let trList = JSON.parse(rowData.split('sortable_data.push(')[1].split(');')[0]);
+                for (let tr of trList) {
+                    let itemNmTd = tr[1];
+                    let itemNm = $(itemNmTd).html();
+                    koList.push(itemNm);
+                }
+            } catch (err) {
+                isErr = true;
+            }
+
+            try {
+                let response = await axios({
+                    // 크롤링을 원하는 페이지 URL
+                    url: 'https://genshin.honeyhunterworld.com/' + uriCode + '/?lang=EN',
+                    method: 'GET',
+                    dataType: 'jsonp',
+                    // jsonpCallback: "myCallback",
+                })
+                let fullHtml = response.data.replaceAll('src', 'data');
+                let fullElement = $(fullHtml);
+                let rowData = fullElement.find('table.genshin_table').find('tbody').html();
+                let trList = JSON.parse(rowData.split('sortable_data.push(')[1].split(');')[0]);
+                for (let tr of trList) {
+                    let itemNmTd = tr[1];
+                    let itemNm = $(itemNmTd).html();
+                    enList.push(itemNm);
+                }
+            } catch (err) {
+                isErr = true;
+            }
+
+            for (let i = 0; i < enList.length; i++) {
+                nameMap[enList[i]] = koList[i];
+            }
+
+            if(isErr) {
+                nameMap = await generateMeterialMap(uriCode);
+            }
+
+            return nameMap;
+        }
+
+    </script>
 </body>
 
 </html>
