@@ -6,96 +6,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="genshin_meterials/genshin_meterials.css">
+    <script src="genshin_meterials/genshin_meterials.js"></script>
 </head>
 
 <body>
+    Upload template -> <input type="file" id="fileInput" style="display: none;">
+    <h1>캐릭재화</h1>
+    <table>
+        <thead>
+            <tr><th>개수</th></tr>
+        </thead>
+        <tbody id="tbody_charJewel">
+        </tbody>
+    </table>
+
+    <h1>특성 재화</h1>
+    <table>
+        <thead>
+            <tr><th>0.23</th><th></th><th></th><th></th><th></th><th>1.97</th><th></th><th></th><th></th><th></th><th>2.2</th></tr>
+        </thead>
+        <tbody id="tbody_talentBook">
+        </tbody>
+    </table>
+
+    <h1>무기 재화</h1>
+    <table>
+        <thead>
+            <tr><th>0.07</th><th></th><th>0.64</th><th></th><th></th><th>2.4</th><th></th><th></th><th>2.2</th></tr>
+        </thead>
+        <tbody id="tbody_wepMaterial">
+        </tbody>
+    </table>
+
+    <h1>필드 토벌</h1>
+    <table>
+        <thead>
+            <tr><th>tier3</th><th>tier2</th><th>tier1</th></tr>
+        </thead>
+        <tbody id="tbody_fieldMaterial">
+        </tbody>
+    </table>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    영문명    
+                </th>
+                <th>
+                    한글명
+                </th>
+                <th>
+                    보유량    
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        let itemNmMap = {};
         let isLoad = false;
         $(function () {
+            $("#fileInput").on('change', function() {
+                console.log('file change')
+                readFile(event.target.files[0]);
+            })
+
             mainFunction();
         })
-
-        async function mainFunction() {
-            itemNmMap = Object.assign(
-                await generateMeterialMap('fam_char_jewel'),
-                await generateMeterialMap('fam_char_stone'),
-                await generateMeterialMap('fam_char_local'),
-                await generateMeterialMap('fam_talent_book'),
-                await generateMeterialMap('fam_talent_boss'),
-                await generateMeterialMap('fam_talent_common'),
-                await generateMeterialMap('fam_char_exp_item'),
-                await generateMeterialMap('fam_wep_primary'),
-                await generateMeterialMap('fam_wep_secondary'),
-                await generateMeterialMap('fam_wep_common'),
-                await generateMeterialMap('fam_wep_exp_item'),
-            );
-            console.log(itemNmMap)
-
-            isLoad = true;
-        }
-
-        async function generateMeterialMap(uriCode) {
-            let nameMap = {};
-            let koList = [];
-            let enList = [];
-            let isErr = false;
-            try {
-                let response = await axios({
-                    // 크롤링을 원하는 페이지 URL
-                    url: 'https://genshin.honeyhunterworld.com/' + uriCode + '/?lang=KO',
-                    method: 'GET',
-                    dataType: 'jsonp',
-                    // jsonpCallback: "myCallback",
-                })
-                let fullHtml = response.data.replaceAll('src', 'data');
-                let fullElement = $(fullHtml);
-                let rowData = fullElement.find('table.genshin_table').find('tbody').html();
-                let trList = JSON.parse(rowData.split('sortable_data.push(')[1].split(');')[0]);
-                for (let tr of trList) {
-                    let itemNmTd = tr[1];
-                    let itemNm = $(itemNmTd).html();
-                    koList.push(itemNm);
-                }
-            } catch (err) {
-                isErr = true;
-            }
-
-            try {
-                let response = await axios({
-                    // 크롤링을 원하는 페이지 URL
-                    url: 'https://genshin.honeyhunterworld.com/' + uriCode + '/?lang=EN',
-                    method: 'GET',
-                    dataType: 'jsonp',
-                    // jsonpCallback: "myCallback",
-                })
-                let fullHtml = response.data.replaceAll('src', 'data');
-                let fullElement = $(fullHtml);
-                let rowData = fullElement.find('table.genshin_table').find('tbody').html();
-                let trList = JSON.parse(rowData.split('sortable_data.push(')[1].split(');')[0]);
-                for (let tr of trList) {
-                    let itemNmTd = tr[1];
-                    let itemNm = $(itemNmTd).html();
-                    enList.push(itemNm);
-                }
-            } catch (err) {
-                isErr = true;
-            }
-
-            for (let i = 0; i < enList.length; i++) {
-                nameMap[enList[i]] = koList[i];
-            }
-
-            if(isErr) {
-                nameMap = await generateMeterialMap(uriCode);
-            }
-
-            return nameMap;
-        }
-
     </script>
 </body>
 
